@@ -1,17 +1,14 @@
 (function () {
   var D = window.DATOS;
-  var mapa = L.map('mapa', { scrollWheelZoom: false });
+  var mapa = L.map('mapa', { scrollWheelZoom: true });
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(mapa);
-  mapa.on('click', function () { mapa.scrollWheelZoom.enable(); });
-  mapa.on('mouseout', function () { mapa.scrollWheelZoom.disable(); });
 
   D.arciprestazgos.forEach(function (a) {
     a.poligonos.forEach(function (p) {
       L.polygon(p, { color: a.color, weight: 1.5, fillColor: a.color, fillOpacity: 0.18 })
-        .bindTooltip('Arciprestazgo de ' + a.nombre, { sticky: true })
         .on('click', function () { location.href = a.url; })
         .addTo(mapa);
     });
