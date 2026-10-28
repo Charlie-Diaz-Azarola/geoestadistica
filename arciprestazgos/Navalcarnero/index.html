@@ -6,6 +6,7 @@
 <title>Arciprestazgo de Navalcarnero · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Poblaciones y parroquias del arciprestazgo de Navalcarnero">
 <link rel="stylesheet" href="../../assets/estilo.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,8 +14,9 @@
 <nav class="miga"><a href="../../index.html">Inicio</a> › Navalcarnero</nav>
 <article class="ficha">
 <h2>Arciprestazgo de Navalcarnero</h2>
+<div id="mapa" role="application" aria-label="Mapa de las parroquias del arciprestazgo de Navalcarnero"></div>
 <dl>
-<dt>Extensión</dt><dd>396,12 km² (39.612 ha)</dd>
+<dt>Extensión</dt><dd>395,04 km² (39.504 ha)</dd>
 </dl>
 <h3>Aldea del Fresno</h3>
 <ul>
@@ -49,7 +51,10 @@
 <li>Inmaculada Concepción · <a href="Villanueva%20de%20Perales/Inmaculada%20Concepci%C3%B3n/index.html">Ver ficha</a></li>
 </ul>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorios.js"></script>
+<script src="../../assets/mapa-arciprestazgo.js"></script>
 </main>
-<footer><div class="ancho">Geoestadística de la Diócesis de Getafe</div></footer>
+<footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>
 </html>

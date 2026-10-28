@@ -42,3 +42,5 @@ footer { border-top: 1px solid var(--linea); padding: 16px 0; color: var(--suave
 .arc-lista h3 a.ficha-enlace { font-size: .85rem; font-weight: normal; margin-left: 10px; }
 .arc-lista p { margin: 4px 0; }
 .extension { color: var(--suave); font-size: .95rem; }
+.ficha #mapa { height: 460px; margin: 16px 0 8px; }
+@media (max-width: 600px) { .ficha #mapa { height: 420px; } }
