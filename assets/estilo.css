@@ -42,5 +42,7 @@ footer { border-top: 1px solid var(--linea); padding: 16px 0; color: var(--suave
 .arc-lista h3 a.ficha-enlace { font-size: .85rem; font-weight: normal; margin-left: 10px; }
 .arc-lista p { margin: 4px 0; }
 .extension { color: var(--suave); font-size: .95rem; }
+.ficha ul.parroquias { list-style: none; padding-left: 4px; }
+.ficha li .muestra { display: inline-block; width: .75em; height: .75em; border-radius: 50%; margin-right: 8px; vertical-align: baseline; }
 .ficha #mapa { height: 460px; margin: 16px 0 8px; }
 @media (max-width: 600px) { .ficha #mapa { height: 420px; } }
