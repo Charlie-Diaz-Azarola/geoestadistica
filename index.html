@@ -3,61 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Geoestadística de la Diócesis de Getafe</title>
-<meta name="description" content="Mapa de los 13 arciprestazgos y las 127 parroquias de la Diócesis de Getafe">
-<link rel="stylesheet" href="assets/estilo.css?v=b074e510">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<title>Diócesis de Getafe. Geoestadística.</title>
+<meta name="description" content="Geoestadística de la Diócesis de Getafe: arciprestazgos y parroquias, y previsión de desarrollos urbanísticos">
+<link rel="stylesheet" href="assets/estilo.css?v=c45a5748">
 </head>
 <body>
-<header><div class="ancho"><a href="index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
+<header><div class="ancho"><a href="index.html"><h1>Diócesis de Getafe. Geoestadística.</h1></a></div></header>
 <main class="ancho">
-<div id="mapa" role="application" aria-label="Mapa de los arciprestazgos y parroquias de la Diócesis de Getafe"></div>
-<section class="arc-lista">
-<h2>Arciprestazgos</h2>
-<h3 id="alcorcon"><span class="muestra" style="background:#e6194b"></span>Alcorcón<a class="ficha-enlace" href="arciprestazgos/Alcorc%C3%B3n/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Alcorcón.</p>
-<p class="extension"><strong>Extensión:</strong> 31,18 km² (3.118 ha)</p>
-<h3 id="aranjuez"><span class="muestra" style="background:#3cb44b"></span>Aranjuez<a class="ficha-enlace" href="arciprestazgos/Aranjuez/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Aranjuez.</p>
-<p class="extension"><strong>Extensión:</strong> 189,49 km² (18.949 ha)</p>
-<h3 id="chinchon"><span class="muestra" style="background:#4363d8"></span>Chinchón<a class="ficha-enlace" href="arciprestazgos/Chinch%C3%B3n/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Belmonte de Tajo, Chinchón, Colmenar de Oreja, Valdelaguna, Villaconejos.</p>
-<p class="extension"><strong>Extensión:</strong> 339,39 km² (33.939 ha)</p>
-<h3 id="fuenlabrada"><span class="muestra" style="background:#f58231"></span>Fuenlabrada<a class="ficha-enlace" href="arciprestazgos/Fuenlabrada/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Fuenlabrada.</p>
-<p class="extension"><strong>Extensión:</strong> 39,41 km² (3.941 ha)</p>
-<h3 id="getafe"><span class="muestra" style="background:#911eb4"></span>Getafe<a class="ficha-enlace" href="arciprestazgos/Getafe/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Getafe, Perales del Río.</p>
-<p class="extension"><strong>Extensión:</strong> 78,76 km² (7.876 ha)</p>
-<h3 id="grinon"><span class="muestra" style="background:#008080"></span>Griñón<a class="ficha-enlace" href="arciprestazgos/Gri%C3%B1%C3%B3n/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Arroyomolinos, Batres, Casarrubuelos, Cubas de la Sagra, Griñón, Humanes de Madrid, Moraleja de Enmedio, Serranillos del Valle.</p>
-<p class="extension"><strong>Extensión:</strong> 142,75 km² (14.275 ha)</p>
-<h3 id="leganes"><span class="muestra" style="background:#bfef45"></span>Leganés<a class="ficha-enlace" href="arciprestazgos/Legan%C3%A9s/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Leganés.</p>
-<p class="extension"><strong>Extensión:</strong> 43,07 km² (4.307 ha)</p>
-<h3 id="mostoles"><span class="muestra" style="background:#333333"></span>Móstoles<a class="ficha-enlace" href="arciprestazgos/M%C3%B3stoles/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Móstoles.</p>
-<p class="extension"><strong>Extensión:</strong> 44,53 km² (4.453 ha)</p>
-<h3 id="navalcarnero"><span class="muestra" style="background:#4fc3f7"></span>Navalcarnero<a class="ficha-enlace" href="arciprestazgos/Navalcarnero/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Aldea del Fresno, El Álamo, Navalcarnero, Sevilla la Nueva, Villa del Prado, Villamanta, Villamantilla, Villanueva de Perales.</p>
-<p class="extension"><strong>Extensión:</strong> 395,04 km² (39.504 ha)</p>
-<h3 id="parla"><span class="muestra" style="background:#000075"></span>Parla<a class="ficha-enlace" href="arciprestazgos/Parla/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Parla, Torrejón de la Calzada, Torrejón de Velasco.</p>
-<p class="extension"><strong>Extensión:</strong> 85,46 km² (8.546 ha)</p>
-<h3 id="san-martin-de-valdeiglesias"><span class="muestra" style="background:#f032e6"></span>San Martín de Valdeiglesias<a class="ficha-enlace" href="arciprestazgos/San%20Mart%C3%ADn%20de%20Valdeiglesias/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Cadalso de los Vidrios, Cenicientos, Chapinería, Colmenar del Arroyo, Navas del Rey, Pelayos de la Presa, Rozas de Puerto Real, San Martín de Valdeiglesias.</p>
-<p class="extension"><strong>Extensión:</strong> 395,21 km² (39.521 ha)</p>
-<h3 id="valdemoro"><span class="muestra" style="background:#ff6fae"></span>Valdemoro<a class="ficha-enlace" href="arciprestazgos/Valdemoro/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Ciempozuelos, Pinto, San Martín de la Vega, Titulcia, Valdemoro.</p>
-<p class="extension"><strong>Extensión:</strong> 291,60 km² (29.160 ha)</p>
-<h3 id="villaviciosa-de-odon"><span class="muestra" style="background:#c49c00"></span>Villaviciosa de Odón<a class="ficha-enlace" href="arciprestazgos/Villaviciosa%20de%20Od%C3%B3n/index.html">Ver ficha</a></h3>
-<p><strong>Poblaciones:</strong> Boadilla del Monte, Brunete, Quijorna, Villanueva de la Cañada, Villaviciosa de Odón.</p>
-<p class="extension"><strong>Extensión:</strong> 227,07 km² (22.707 ha)</p>
+<section class="portada">
+<a class="tarjeta-seccion" href="arciprestazgos-y-parroquias/index.html"><img src="assets/miniatura-arciprestazgos.png" width="600" height="400" alt=""><h2>Arciprestazgos y parroquias</h2><p>Mapa de los 13 arciprestazgos y las 127 parroquias de la diócesis, con la ficha de cada parroquia: dirección, contacto, extensión y territorio.</p></a>
+<a class="tarjeta-seccion" href="desarrollos-urbanisticos/index.html"><img src="assets/miniatura-desarrollos.png" width="600" height="400" alt=""><h2>Previsión de desarrollos urbanísticos</h2><p>Desarrollos residenciales previstos hasta 2045 en el territorio de la diócesis según ABC (octubre de 2026), con las parroquias en las que se sitúan.</p></a>
 </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-<script src="assets/datos.js"></script>
-<script src="assets/mapa.js"></script>
 </main>
-<footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
+<footer><div class="ancho">Diócesis de Getafe. Geoestadística.</div></footer>
 </body>
 </html>

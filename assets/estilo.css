@@ -47,3 +47,19 @@ footer { border-top: 1px solid var(--linea); padding: 16px 0; color: var(--suave
 .ficha #mapa { height: 460px; margin: 16px 0 8px; }
 @media (max-width: 600px) { .ficha #mapa { height: 420px; } }
 .ficha img.atlas { display: block; width: 100%; max-width: 700px; height: auto; border: 1px solid var(--linea); border-radius: 8px; margin: 16px 0; }
+.portada { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 600px) { .portada { grid-template-columns: 1fr; } }
+a.tarjeta-seccion { display: block; background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 8px; overflow: hidden; color: var(--texto); text-decoration: none; }
+a.tarjeta-seccion:hover, a.tarjeta-seccion:focus { border-color: var(--acento); }
+a.tarjeta-seccion img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--linea); }
+a.tarjeta-seccion h2 { margin: 14px 16px 6px; font-size: 1.3rem; color: var(--acento); }
+a.tarjeta-seccion p { margin: 0 16px 16px; color: var(--suave); font-size: .95rem; }
+.tabla { overflow-x: auto; margin: 8px 0 20px; }
+table.desarrollos { border-collapse: collapse; width: 100%; font-size: .9rem; line-height: 1.35; }
+table.desarrollos th, table.desarrollos td { padding: 6px 5px; border-bottom: 1px solid var(--linea); text-align: left; vertical-align: top; }
+table.desarrollos th { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--suave); font-weight: normal; }
+table.desarrollos .num { text-align: right; white-space: nowrap; }
+table.desarrollos tfoot td { font-weight: bold; border-bottom: 0; }
+.ficha .apartado p { margin: 6px 0 10px; }
+ul.fuentes li { font-size: .95rem; overflow-wrap: anywhere; }
+.ficha dd .nota { display: block; margin-top: 4px; font-size: .9rem; color: var(--suave); }
