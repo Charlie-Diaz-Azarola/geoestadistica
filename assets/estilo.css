@@ -63,3 +63,14 @@ table.desarrollos tfoot td { font-weight: bold; border-bottom: 0; }
 .ficha .apartado p { margin: 6px 0 10px; }
 ul.fuentes li { font-size: .95rem; overflow-wrap: anywhere; }
 .ficha dd .nota { display: block; margin-top: 4px; font-size: .9rem; color: var(--suave); }
+table.desarrollos .nota { display: block; font-size: .8rem; color: var(--suave); }
+table.desarrollos tr.entregada td { color: var(--suave); }
+table.desarrollos tfoot tr.total-general td { border-top: 2px solid var(--linea); }
+.filtro { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 12px; }
+.filtro button { font: inherit; font-size: .9rem; padding: 6px 12px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--linea); background: var(--tarjeta); color: var(--texto); }
+.filtro button[aria-pressed="true"] { background: var(--acento); border-color: var(--acento); color: var(--fondo); }
+ul.leyenda { list-style: none; padding: 0; margin: -12px 0 20px; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .85rem; color: var(--suave); }
+ul.leyenda .muestra { display: inline-block; width: 14px; height: 14px; margin-right: 6px; vertical-align: -2px; border: 2px solid; }
+ul.leyenda .punto { border-radius: 50%; }
+.oculta { display: none; }
