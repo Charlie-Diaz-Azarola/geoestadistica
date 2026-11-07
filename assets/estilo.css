@@ -61,6 +61,7 @@ table.desarrollos th { font-size: .8rem; text-transform: uppercase; letter-spaci
 table.desarrollos .num { text-align: right; white-space: nowrap; }
 table.desarrollos tfoot td { font-weight: bold; border-bottom: 0; }
 .ficha .apartado p { margin: 6px 0 10px; }
+.ficha .apartado p.nota { color: var(--suave); font-style: italic; }
 ul.fuentes li { font-size: .95rem; overflow-wrap: anywhere; }
 .ficha dd .nota { display: block; margin-top: 4px; font-size: .9rem; color: var(--suave); }
 table.desarrollos .nota { display: block; font-size: .8rem; color: var(--suave); }
