@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>San Pablo VI · Móstoles · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia San Pablo VI (Móstoles, arciprestazgo de Móstoles)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Móstoles</a> › Móstoles</nav>
 <article class="ficha">
 <h2>San Pablo VI</h2>
-<a href="../../../../atlas/136.jpg"><img class="atlas" src="../../../../atlas/136.jpg" width="1181" height="1181" alt="Territorio de la parroquia San Pablo VI"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia San Pablo VI"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Móstoles</a></dd>
 <dt>Población</dt><dd>Móstoles</dd>
@@ -27,6 +28,9 @@
 <p>&quot;Partiendo de la glorieta donde confluyen las calles Moraleja de Enmedio y Desarrollo, arrancan por el eje de la calle Desarrollo (en dirección noreste); siguen por el eje de la calle Andrómeda hasta la confluencia con la calle Camino de Humanes; continúan por el eje de la calle Camino de Humanes (en dirección sur) hasta la confluencia con la Avenida de la Onu; continúan por el eje de la Avenida de la Onu (en dirección noreste) hasta el cruce con la calle Simón Hernández; continúan por el eje de la calle Simón Hernández hasta el límite con el término municipal de Móstoles-Fuenlabrada (en dirección sureste) y continúan por dicho límite hasta el límite con el término municipal de Móstoles-Moraleja de Enmedio; avanzan por los límites de los términos municipales de Móstoles-Moraleja de Enmedio (en dirección oeste) hasta el cruce con la calle Alcalá de Henares; continúan por el eje de la calle Alcalá de Henares (en dirección norte) hasta la confluencia con el camino de Moraleja de Enmedio y continúan por la calle Moraleja de Enmedio hasta la glorieta donde confluye con la calle Desarrollo, punto de partida.</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nuestra Señora de la Consolación · Móstoles · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia Nuestra Señora de la Consolación (Móstoles, arciprestazgo de Móstoles)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Móstoles</a> › Móstoles</nav>
 <article class="ficha">
 <h2>Nuestra Señora de la Consolación</h2>
-<a href="../../../../atlas/062.jpg"><img class="atlas" src="../../../../atlas/062.jpg" width="1181" height="1181" alt="Territorio de la parroquia Nuestra Señora de la Consolación"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia Nuestra Señora de la Consolación"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Móstoles</a></dd>
 <dt>Población</dt><dd>Móstoles</dd>
@@ -28,6 +29,9 @@
 <p>&quot;Partiendo de la confluencia de la Avenida de Portugal (antigua carretera N-V) con el Paseo de Goya, arrancan por el eje del Paseo de Goya (en dirección norte); siguen por el eje de la línea del ferrocarril (en dirección noreste); por el límite de los términos municipales de Móstoles y Alcorcón (en dirección noroeste); a través de una línea recta imaginaria, hasta la rotonda donde desemboca la calle Margarita en la Avenida Alcalde de Móstoles (en dirección oeste); por el eje de la Avenida Alcalde de Móstoles hasta el encuentro con la calle Tulipán (en dirección suroeste); por una línea recta imaginaria, hasta la carretera de Villaviciosa (en dirección oeste); por la carretera de Villaviciosa y la calle Granada (en dirección sureste); y por la Avenida de Portugal (en dirección noreste) hasta la confluencia con el Paseo de Goya, punto de partida&quot;. (Decreto de rectificación de límites de 27-5-99. Boletin de Junio-99, pág. 643)</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Santos Apóstoles · Boadilla del Monte · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia Santos Apóstoles (Boadilla del Monte, arciprestazgo de Villaviciosa de Odón)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Villaviciosa de Odón</a> › Boadilla del Monte</nav>
 <article class="ficha">
 <h2>Santos Apóstoles</h2>
-<a href="../../../../atlas/019.jpg"><img class="atlas" src="../../../../atlas/019.jpg" width="1181" height="1181" alt="Territorio de la parroquia Santos Apóstoles"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia Santos Apóstoles"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Villaviciosa de Odón</a></dd>
 <dt>Población</dt><dd>Boadilla del Monte</dd>
@@ -34,6 +35,9 @@
 <p>y, en concreto, incluye: a) Urbanización Valdepastores. b) Urbanización Pino Centinela. c) Urbanización Monte de las Encinas. d) Parte del &quot;Monte de Boadilla&quot;, a la izquierda de la carretera de Boadilla a Majadahonda, entre las urbanizaciones Valdepastores, Pino Centinela, Monte de las Encinas y Valdecabañas, incluido lo que se conoce como &quot;Vedado de Fabra&quot;. e) Urbanización Valdecabañas. f) Urbanización Bonanza. g) Parte de terreno &quot;en cuchillo&quot; y sin urbanizar, entre las urbanizaciones Bonanza y Las Lomas, que se conoce como &quot;Pinar de Romanillos&quot;. h) Urbanización Las Lomas. i) Parte de terreno, también sin urbanizar actualmente, comprendido entre las urbanizaciones Las Lomas y Parque de Boadilla y el &quot;camino de acceso a Romanillos&quot;. j) Urbanización &quot;Parque de Boadilla&quot;. k) Terreno actualmente sin urbanizar, comprendido entre las urbanizaciones El Olivar de Miraval, Las Lomas y Parque de Boadilla y la calle Río Guadarrama, al que denominamos &quot;Parte de Prado Grande&quot;. l) Urbanización El Olivar de Miraval, a la izquierda de la carretera de Boadilla del Monte a Brunete&quot; (Decreto de erección de 1-7-93)</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>San José · Pinto · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia San José (Pinto, arciprestazgo de Valdemoro)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Valdemoro</a> › Pinto</nav>
 <article class="ficha">
 <h2>San José</h2>
-<a href="../../../../atlas/077.jpg"><img class="atlas" src="../../../../atlas/077.jpg" width="1181" height="1181" alt="Territorio de la parroquia San José"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia San José"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Valdemoro</a></dd>
 <dt>Población</dt><dd>Pinto</dd>
@@ -28,6 +29,9 @@
 <p>“Partiendo de la confluencia de la autopista Madrid-Andalucía (A-4) con la carretera Pinto-San Martín de la Vega (M-506), arrancan por el eje de la autopista A-4 (en dirección norte); siguen por el eje de la entrada que desemboca en la plaza donde confluyen las calles Las Alpujarras, Cataluña y San Juan (en dirección noroeste), por el eje de las calles San Juan (en dirección suroeste), Infanta Isabel (en dirección suroeste), San Martín (en dirección noroeste), Avenida de España (en dirección suroeste), Pedro Faura (en dirección noroeste), Torrejón (en dirección suroeste), por el eje de las vías del ferrocarril Madrid-Alicante (en dirección sureste), por los límites de los términos municipales de Pinto-Valdemoro (en dirección noreste), por el eje de la carretera Pinto-San Martín de la Vega (M-506, en dirección noroeste) hasta la confluencia con autopista Madrid-Andalucía (A-4), punto de partida”. (B.O. Abril, 2007, pág. 453)</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>María Auxiliadora · Fuenlabrada · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia María Auxiliadora (Fuenlabrada, arciprestazgo de Fuenlabrada)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Fuenlabrada</a> › Fuenlabrada</nav>
 <article class="ficha">
 <h2>María Auxiliadora</h2>
-<a href="../../../../atlas/031.jpg"><img class="atlas" src="../../../../atlas/031.jpg" width="1181" height="1181" alt="Territorio de la parroquia María Auxiliadora"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia María Auxiliadora"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Fuenlabrada</a></dd>
 <dt>Población</dt><dd>Fuenlabrada</dd>
@@ -28,6 +29,9 @@
 <p>&quot;Partiendo de la confluencia de la calle Móstoles con la Avenida de Cantabria, arrancan por el eje de la Avenida de Cantabria (en dirección noreste); continúan por el eje de la calle Reinosa (en dirección norte), por el eje de la Avenida de las Comarcas (en dirección noreste y hasta la calle Santoña), por una línea recta imaginaria hasta el término municipal de Leganés (en dirección norte), por los límites de los términos municipales de Fuenlabrada y Leganés (en dirección noroeste),l por el eje de la carretera M-407 (en dirección suroeste) y por el eje de la autovía Móstoles-Fuenlabrada y por el eje de la calle Móstoles (en dirección sureste) hasta la confluencia con la Avenida de Cantabria, punto de partida&quot; (Boletín Oficial, Junio-2000, pág. 547-548)</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

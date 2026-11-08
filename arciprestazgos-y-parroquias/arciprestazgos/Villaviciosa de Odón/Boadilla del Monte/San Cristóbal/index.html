@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>San Cristóbal · Boadilla del Monte · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia San Cristóbal (Boadilla del Monte, arciprestazgo de Villaviciosa de Odón)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Villaviciosa de Odón</a> › Boadilla del Monte</nav>
 <article class="ficha">
 <h2>San Cristóbal</h2>
-<a href="../../../../atlas/018.jpg"><img class="atlas" src="../../../../atlas/018.jpg" width="1181" height="1181" alt="Territorio de la parroquia San Cristóbal"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia San Cristóbal"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Villaviciosa de Odón</a></dd>
 <dt>Población</dt><dd>Boadilla del Monte</dd>
@@ -28,6 +29,9 @@
 <p>“Partiendo del punto de encuentro de la carretera M-511 con los límites de los términos municipales de Boadilla del Monte y Villaviciosa de Odón, arrancan por los límites de los términos municipales de Boadilla del Monte y Villaviciosa de Odón (en dirección sureste); siguen por los límites de los términos municipales de Boadilla del Monte con Alcorcón, Pozuelo de Alarcón y Majadahonda (en dirección noreste, noroeste y oeste, respectivamente), por el eje de la carretera M-516 (en dirección sur), por el eje de la calle La Alberca (en dirección suroeste), por el eje de la calle Ronda (en dirección sur) y por el eje de la carretera M-511 hasta el encuentro con los límites de los términos municipales de Boadilla del Monte y Villaviciosa de Odón, punto de partida”. (Rectificación de límites, 8-MAR-2001, B.O. ABR-2001, pág. 451-452)</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

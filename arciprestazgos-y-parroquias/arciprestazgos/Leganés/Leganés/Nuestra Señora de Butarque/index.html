@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nuestra Señora de Butarque · Leganés · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia Nuestra Señora de Butarque (Leganés, arciprestazgo de Leganés)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Leganés</a> › Leganés</nav>
 <article class="ficha">
 <h2>Nuestra Señora de Butarque</h2>
-<a href="../../../../atlas/104.jpg"><img class="atlas" src="../../../../atlas/104.jpg" width="1181" height="1181" alt="Territorio de la parroquia Nuestra Señora de Butarque"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia Nuestra Señora de Butarque"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Leganés</a></dd>
 <dt>Población</dt><dd>Leganés</dd>
@@ -29,6 +30,9 @@
 <p>SUGERENCIAS DEL PÁRROCO EN EL INFORME PARA LA VISITA PASTORAL: &quot;PARTIENDO DE LA CONFLUENCIA DEL FERROCARRIL A PORTUGAL CON LA CALLE BUTARQUE (QUIZAS HABRIA QUE DECIR C/ SABATINI), CONTINUAN POR ESTE ULTIMO HASTA LA C/ GENERAL BARRON (HOY AV. DE LA UNIVERSIDAD); SIGUEN POR ESTA Y POR LAS CALLES DE MADRID Y DE NAPOLES HASTA LA CARRETERA DE LEGANES A MADRID (HOY AV. DE FUENLABRADA); CONTINUAN POR ESTA CARRETERA HASTA EL FERROCARRIL DE PORTUGAL, SIGUIENDO POR EL MISMO EN DIRECCION SUR HASTA LA CALLE DE BUTARQUE (O SABATINI), PUNTO DE PARTIDA. Nota: si no se incluye la calle Sabatini, el campus de la universidad Carlos III no pertenecería a ninguna parroquia.</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

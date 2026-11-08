@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>San Saturnino · Alcorcón · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia San Saturnino (Alcorcón, arciprestazgo de Alcorcón)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Alcorcón</a> › Alcorcón</nav>
 <article class="ficha">
 <h2>San Saturnino</h2>
-<a href="../../../../atlas/004.jpg"><img class="atlas" src="../../../../atlas/004.jpg" width="1181" height="1181" alt="Territorio de la parroquia San Saturnino"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia San Saturnino"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Alcorcón</a></dd>
 <dt>Población</dt><dd>Alcorcón</dd>
@@ -28,6 +29,9 @@
 <p>&quot;Partiendo del punto de confluencia de la avenida Lisboa con la calle Carballino, arrancan por el eje de la calle Carballino (en dirección sureste); siguen por el eje de la avenida Alcalde José Aranda (en dirección suroeste), por el eje de la avenida Leganés (en dirección noroeste), por el eje de la avenida Móstoles (en dirección noreste), por el eje de las vías del ferrocarril Madrid-Móstoles (C-5, en dirección noreste), por una línea recta imaginaria (en dirección sureste) hasta la confluencia de la avenida Lisboa con la calle Carballino, punto de partida.&quot; (Decreto de actualización de límites, 21-6-2005. B.O. de julio-agosto 2005, pág. 789)</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

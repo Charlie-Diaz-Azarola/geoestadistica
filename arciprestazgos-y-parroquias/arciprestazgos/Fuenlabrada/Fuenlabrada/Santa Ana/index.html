@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Santa Ana · Fuenlabrada · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia Santa Ana (Fuenlabrada, arciprestazgo de Fuenlabrada)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Fuenlabrada</a> › Fuenlabrada</nav>
 <article class="ficha">
 <h2>Santa Ana</h2>
-<a href="../../../../atlas/111.jpg"><img class="atlas" src="../../../../atlas/111.jpg" width="1181" height="1181" alt="Territorio de la parroquia Santa Ana"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia Santa Ana"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Fuenlabrada</a></dd>
 <dt>Población</dt><dd>Fuenlabrada</dd>
@@ -28,6 +29,9 @@
 <p>“Partiendo de la intersección de las calles Comunidad de Madrid y Los Arados, arrancan por el eje de la calle Comunidad de Madrid (en dirección noroeste); continúan por el eje de la calle Extremadura (en dirección este), por el eje de la calle Constitución (en dirección sureste), por el eje de la carretera Villaviciosa-Pinto (en dirección sureste), por el eje de la autovía Móstoles-Pinto (en dirección sureste y hasta el límite municipal de Pinto), por los límites de los términos municipales de Fuenlabrada y Pinto (en dirección sur), por los límites de los términos municipales de Fuenlabrada y Parla (en dirección oeste), por una línea recta imaginaria hasta la calle Los Arados (en dirección norte), por el eje de la calle Los Arados (en dirección norte) hasta la confluencia con la calle Comunidad de Madrid, punto de partida”. (Decreto de erección de 25-5-2000; Boletín Oficial, Junio-2000, pág 539-540)</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

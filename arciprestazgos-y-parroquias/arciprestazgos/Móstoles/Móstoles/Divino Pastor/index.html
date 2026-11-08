@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Divino Pastor · Móstoles · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia Divino Pastor (Móstoles, arciprestazgo de Móstoles)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Móstoles</a> › Móstoles</nav>
 <article class="ficha">
 <h2>Divino Pastor</h2>
-<a href="../../../../atlas/061.jpg"><img class="atlas" src="../../../../atlas/061.jpg" width="1181" height="1181" alt="Territorio de la parroquia Divino Pastor"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia Divino Pastor"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Móstoles</a></dd>
 <dt>Población</dt><dd>Móstoles</dd>
@@ -28,6 +29,9 @@
 <p>&quot; Partiendo de la confluencia de la Avenida de la Constitución (antes Generalísimo) con la calle de San Marcial, siguen por el eje de esta última y de la Travesía de Leganés y por la calle Camino de Leganés hasta la calle de la Libertad; siguen por el eje de la calle de la Libertad hasta la Avenida de Barcelona; siguen por el eje de la Avenida de Barcelona y, atravesando la Avenida de la ONU, continúan por el eje de la calle Burdeos, y de aquí en línea imaginaria hasta el término municipal de Alcorcón, siguiendo por dicho término hasta un punto continuación del Paseo de Goya y por el Pase de Goya hasta la Avenida de la Constitución en su confluencia con la calle de San Marcial, punto de partida&quot; (Decreto de rectificación de límites de 12-9-84</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

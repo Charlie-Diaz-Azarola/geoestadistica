@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nuestra Señora de Buenavista · Getafe · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia Nuestra Señora de Buenavista (Getafe, arciprestazgo de Getafe)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Getafe</a> › Getafe</nav>
 <article class="ficha">
 <h2>Nuestra Señora de Buenavista</h2>
-<a href="../../../../atlas/039.jpg"><img class="atlas" src="../../../../atlas/039.jpg" width="1181" height="1181" alt="Territorio de la parroquia Nuestra Señora de Buenavista"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia Nuestra Señora de Buenavista"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Getafe</a></dd>
 <dt>Población</dt><dd>Getafe</dd>
@@ -28,6 +29,9 @@
 <p>&quot;Partiendo de la confluencia de la Avda. Adolfo Suárez con la autovía Madrid-Toledo (A-42), arrancan por el eje de la autovía Madrid-Toledo (en dirección sureste); hasta la intersección con la Avda. Juan Carlos I en el km. 15; continúa por el eje de la Avda. Juan Carlos I en dirección norte hasta la rotonda donde termina la calle Fuente de Antón Merlo, desde allí continúa por la Avda. Juan Carlos I, pero excluyendo los números de dicha avenida que pertenecerán a la nueva parroquia; al llegar a la Plaza Juan Carlos I el límite continúa por el eje de la calle Arcas del Agua hasta el cruce con la Avda. Adolfo Suárez en dirección este hasta la intersección en línea imaginaria con la autovía Madrid-Toledo (A-42) punto de partida&quot;</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

@@ -6,21 +6,26 @@
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(mapa);
 
+  // Cada parroquia: color (relleno), y opcionalmente borde, opacidad, punto (color del punto) y url
+  // (sin url no se puede pulsar: es el caso del mapa de la ficha de una parroquia).
+  function ir(capa, p) {
+    if (p.url) { capa.on('click', function () { location.href = p.url; }); }
+    return capa;
+  }
   var limites = L.latLngBounds([]);
   D.parroquias.forEach(function (p) {
     p.poligonos.forEach(function (q) {
-      var capa = L.polygon(q, { color: p.color, weight: 1.5, fillColor: p.color, fillOpacity: 0.25 })
-        .on('click', function () { location.href = p.url; })
+      var capa = ir(L.polygon(q, { color: p.borde || p.color, weight: 1.5, fillColor: p.color,
+                                   fillOpacity: p.opacidad || 0.25, interactive: !!p.url }), p)
         .addTo(mapa);
       limites.extend(capa.getBounds());
     });
   });
 
   var marcas = D.parroquias.map(function (p) {
-    return L.circleMarker([p.lat, p.lng], {
-      radius: 6, color: '#fff', weight: 1.5, fillColor: p.color, fillOpacity: 1
-    }).bindTooltip(p.n, { direction: 'right', offset: [6, 0], className: 'nombre-parroquia' })
-      .on('click', function () { location.href = p.url; })
+    return ir(L.circleMarker([p.lat, p.lng], {
+      radius: 6, color: '#fff', weight: 1.5, fillColor: p.punto || p.color, fillOpacity: 1
+    }).bindTooltip(p.n, { direction: 'right', offset: [6, 0], className: 'nombre-parroquia' }), p)
       .addTo(mapa);
   });
 

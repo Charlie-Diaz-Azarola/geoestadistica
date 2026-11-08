@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>San Antonio · Aranjuez · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia San Antonio (Aranjuez, arciprestazgo de Aranjuez)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Aranjuez</a> › Aranjuez</nav>
 <article class="ficha">
 <h2>San Antonio</h2>
-<a href="../../../../atlas/013.jpg"><img class="atlas" src="../../../../atlas/013.jpg" width="1181" height="1181" alt="Territorio de la parroquia San Antonio"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia San Antonio"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Aranjuez</a></dd>
 <dt>Población</dt><dd>Aranjuez</dd>
@@ -28,6 +29,9 @@
 <p>Partiendo de la glorieta “Santiago Rusiñol”, arrancan, dejando a la izquierda la plaza San Antonio; siguen por el eje de la calle Florida (en dirección sur), por el eje del paseo del Deleite (en dirección noreste), por el eje de la carretera de Andalucía (N-IV, en dirección suroeste), por el límite de las provincias de Madrid-Toledo (en dirección noreste), por el eje de la carretera de Ontígola (TO-3115-V, en dirección noroeste), por el eje de la calle Carretas (en dirección noreste), por el eje de la calle Capitán Angosto G. Castrillón (en dirección norte) y por el eje de la calle La Reina (en dirección suroeste) hasta la glorieta “Santiago Rusiñol”, punto de partida. (Decreto de rectificación de límites del 21-6-2005; B.O. de julio-agosto de 2005, pág. 783)</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

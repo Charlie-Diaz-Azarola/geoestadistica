@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>San Sebastián · Getafe · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia San Sebastián (Getafe, arciprestazgo de Getafe)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Getafe</a> › Getafe</nav>
 <article class="ficha">
 <h2>San Sebastián</h2>
-<a href="../../../../atlas/044.jpg"><img class="atlas" src="../../../../atlas/044.jpg" width="1181" height="1181" alt="Territorio de la parroquia San Sebastián"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia San Sebastián"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Getafe</a></dd>
 <dt>Población</dt><dd>Getafe</dd>
@@ -28,6 +29,9 @@
 <p>“Partiendo de la confluencia de las calles Madrid y General Castaños, arrancan, en dirección noroeste, por el eje de la calle General Castaños; continúan por el eje de la calle Jacinto Benavente, en dirección noroeste, hasta el ferrocarril Madrid-Badajoz; siguen por el eje de las vías del ferrocarril (en dirección noreste), por el eje de la calle Magallanes (en dirección este), por el eje de la calle Madrid (en dirección sur), por el eje de la calle Daoíz (en dirección este y sureste), por el eje de la calle Dr. Marañón (en dirección sureste), por el eje de la calle Cataluña (en dirección noreste), por los ejes de las calles Gerona y Alicante (en dirección sureste), por el eje de la Avenida de Aragón (en dirección suroeste), por el eje de la calle Plus Ultra (en dirección oeste); pasan por la calle Comadrona Asunción Fernández (en dirección norte), la plaza de España (que no queda incluida) y por la Avenida Juan de la Cierva enlazan con la calle Perales; siguen por el eje de la calle Perales (en dirección suroeste), por el eje de la calle Los Angeles (en dirección noroeste), por el eje de la calle Villaverde (en dirección noroeste), por el eje de la calle Los Huertos (en dirección noroeste), por el eje de la calle Vinagre (en dirección este), por el eje de la calle Madrid (en dirección suroeste) hasta la confluencia con la calle General Castaños, punto de partida.” (Decreto del 17 de febrero de 1998; B-O Mar-98)</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>

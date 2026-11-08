@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nuestra Señora de las Angustias · Aranjuez · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Ficha de la parroquia Nuestra Señora de las Angustias (Aranjuez, arciprestazgo de Aranjuez)">
-<link rel="stylesheet" href="../../../../../assets/estilo.css?v=94c646f0">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=9a890a85">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
 <header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
@@ -13,7 +14,7 @@
 <nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Aranjuez</a> › Aranjuez</nav>
 <article class="ficha">
 <h2>Nuestra Señora de las Angustias</h2>
-<a href="../../../../atlas/012.jpg"><img class="atlas" src="../../../../atlas/012.jpg" width="1181" height="1181" alt="Territorio de la parroquia Nuestra Señora de las Angustias"></a>
+<div id="mapa" role="application" aria-label="Mapa del territorio de la parroquia Nuestra Señora de las Angustias"></div>
 <dl>
 <dt>Arciprestazgo</dt><dd><a href="../../index.html">Aranjuez</a></dd>
 <dt>Población</dt><dd>Aranjuez</dd>
@@ -28,6 +29,9 @@
 <p>Partiendo de la glorieta Santiago Rusiñol, arrancan por el eje de la calle la Reina; siguen por el eje de la calle Capitán Angosto G. Castrillón (en dirección sur), por el eje de la calle Las Infantas (en dirección sureste), por el eje de la calle Almansa (en dirección sureste), por el eje de la calle Los Cuarteles (en dirección noreste), por una recta imaginaria hasta el límite de las provincias Madrid-Toledo (en dirección este), por el límite de las provincias Madrid-Toledo (en dirección noreste), por el río Tajo (en dirección oeste y suroeste), por el eje del puente Barcas (en dirección sur) hasta la glorieta Santiago Rusiñol, punto de partida. (Decreto de creación de límites, 21-6-2005; B.O. julio-agosto de 2005, pág. 777)</p>
 </section>
 </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorio.js"></script>
+<script src="../../../../../assets/mapa-arciprestazgo.js"></script>
 </main>
 <footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales.</div></footer>
 </body>
