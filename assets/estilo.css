@@ -49,6 +49,7 @@ footer { border-top: 1px solid var(--linea); padding: 16px 0; color: var(--suave
 .ficha-cabecera .atlas { margin: 0; width: 180px; text-align: center; }
 .ficha-cabecera .atlas img { display: block; width: 100%; height: auto; border: 1px solid var(--linea); border-radius: 6px; }
 .ficha-cabecera .atlas .boton { display: block; margin-top: 8px; padding: 8px 10px; font-size: .9rem; }
+.ficha-cabecera .atlas figcaption { margin-top: 6px; font-size: .75rem; line-height: 1.3; color: var(--suave); }
 @media (max-width: 600px) { .ficha-cabecera .atlas { width: 120px; } .ficha-cabecera .atlas .boton { font-size: .8rem; padding: 6px 8px; } }
 @media (max-width: 600px) { .ficha #mapa { height: 420px; } }
 .portada { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
