@@ -46,8 +46,10 @@ footer { border-top: 1px solid var(--linea); padding: 16px 0; color: var(--suave
 .ficha li .muestra { display: inline-block; width: .75em; height: .75em; border-radius: 50%; margin-right: 8px; vertical-align: baseline; }
 .ficha #mapa { height: 460px; margin: 16px 0 8px; }
 @media (max-width: 600px) { .ficha #mapa { height: 420px; } }
-.portada { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.portada { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 760px) { .portada { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .portada { grid-template-columns: 1fr; } }
+.en-construccion { color: var(--suave); font-style: italic; }
 a.tarjeta-seccion { display: block; background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 8px; overflow: hidden; color: var(--texto); text-decoration: none; }
 a.tarjeta-seccion:hover, a.tarjeta-seccion:focus { border-color: var(--acento); }
 a.tarjeta-seccion img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--linea); }
