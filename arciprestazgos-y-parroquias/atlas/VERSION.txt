@@ -1,2 +1,2 @@
-Versión del atlas: 01. Según geopackage del 27-oct-26
-Originales: Distribución territorial de parroquias\Atlas\01. Según geopackage del 27-oct-26
+Versión del atlas: 02. Según geopackage del 05-nov-26
+Originales: Distribución territorial de parroquias\Atlas\02. Según geopackage del 05-nov-26

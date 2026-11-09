@@ -45,6 +45,11 @@ footer { border-top: 1px solid var(--linea); padding: 16px 0; color: var(--suave
 .ficha ul.parroquias { list-style: none; padding-left: 4px; }
 .ficha li .muestra { display: inline-block; width: .75em; height: .75em; border-radius: 50%; margin-right: 8px; vertical-align: baseline; }
 .ficha #mapa { height: 460px; margin: 16px 0 8px; }
+.ficha-cabecera { display: grid; grid-template-columns: 1fr auto; gap: 0 20px; align-items: start; }
+.ficha-cabecera .atlas { margin: 0; width: 180px; text-align: center; }
+.ficha-cabecera .atlas img { display: block; width: 100%; height: auto; border: 1px solid var(--linea); border-radius: 6px; }
+.ficha-cabecera .atlas .boton { display: block; margin-top: 8px; padding: 8px 10px; font-size: .9rem; }
+@media (max-width: 600px) { .ficha-cabecera .atlas { width: 120px; } .ficha-cabecera .atlas .boton { font-size: .8rem; padding: 6px 8px; } }
 @media (max-width: 600px) { .ficha #mapa { height: 420px; } }
 .portada { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 @media (max-width: 760px) { .portada { grid-template-columns: 1fr 1fr; } }
