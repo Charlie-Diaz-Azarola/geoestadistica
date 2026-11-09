@@ -76,3 +76,21 @@ ul.leyenda { list-style: none; padding: 0; margin: -12px 0 20px; display: flex; 
 ul.leyenda .muestra { display: inline-block; width: 14px; height: 14px; margin-right: 6px; vertical-align: -2px; border: 2px solid; }
 ul.leyenda .punto { border-radius: 50%; }
 .oculta { display: none; }
+.arbol-controles { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 8px; }
+.arbol-controles button { font: inherit; font-size: .9rem; padding: 6px 12px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--linea); background: var(--tarjeta); color: var(--texto); }
+.arbol-controles[hidden], ul.arbol [hidden] { display: none; }
+ul.arbol, ul.arbol ul { list-style: none; margin: 0; padding: 0; }
+ul.arbol > li { border-bottom: 1px solid var(--linea); padding: 4px 0; }
+ul.arbol ul { padding-left: 34px; }
+ul.arbol .fila { display: flex; align-items: center; gap: 8px; min-height: 40px; }
+ul.arbol .arc > .fila a { font-size: 1.15rem; font-weight: bold; }
+ul.arbol .cuenta { color: var(--suave); font-size: .85rem; }
+ul.arbol ul.parroquias li { padding: 4px 0 4px 34px; }
+button.desplegar { flex: none; width: 30px; height: 30px; padding: 0; cursor: pointer; border-radius: 6px;
+  border: 1px solid var(--linea); background: var(--tarjeta); color: var(--acento); font-size: .8rem; line-height: 1; }
+button.desplegar::before { content: "▶"; display: inline-block; transition: transform .15s; }
+button.desplegar[aria-expanded="true"]::before { transform: rotate(90deg); }
+button.desplegar:hover, button.desplegar:focus-visible { border-color: var(--acento); }
+ul.arbol .muestra { flex: none; display: inline-block; width: .8em; height: .8em; border-radius: 50%; }
+.ficha ul.subniveles li { margin: 4px 0; }
