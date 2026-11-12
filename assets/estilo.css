@@ -100,3 +100,72 @@ button.desplegar[aria-expanded="true"]::before { transform: rotate(90deg); }
 button.desplegar:hover, button.desplegar:focus-visible { border-color: var(--acento); }
 ul.arbol .muestra { flex: none; display: inline-block; width: .8em; height: .8em; border-radius: 50%; }
 .ficha ul.subniveles li { margin: 4px 0; }
+
+.dm { --dm-1: #2a78d6; --dm-2: #eb6834; --dm-pista: #f0ece4; }
+@media (prefers-color-scheme: dark) { .dm { --dm-1: #3987e5; --dm-2: #d95926; --dm-pista: #332e2a; } }
+.dm-resumen { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0 10px; }
+@media (max-width: 700px) { .dm-resumen { grid-template-columns: 1fr 1fr; } }
+.dm-dato { border: 1px solid var(--linea); border-radius: 8px; padding: 12px 12px 10px; background: var(--fondo); }
+.dm-dato .dm-n { display: block; font-size: 1.55rem; line-height: 1.15; font-weight: bold; white-space: nowrap; }
+.dm-dato .dm-n small { font-size: .85rem; font-weight: normal; color: var(--suave); }
+@media (max-width: 400px) { .dm-dato .dm-n { font-size: 1.3rem; } .dm-fila { grid-template-columns: minmax(90px, 36%) 1fr minmax(70px, auto); gap: 6px; } }
+.dm-dato .dm-t { display: block; font-size: .9rem; }
+.dm-dato .dm-c { display: block; margin-top: 4px; font-size: .78rem; color: var(--suave); }
+.dm-frase { font-size: 1.05rem; margin: 10px 0 18px; }
+details.dm-tema { border: 1px solid var(--linea); border-radius: 8px; margin: 10px 0; background: var(--tarjeta); }
+details.dm-tema > summary { cursor: pointer; padding: 12px 14px; list-style-position: outside; margin-left: 22px; }
+details.dm-tema > summary .dm-tit { font-size: 1.15rem; font-weight: bold; color: var(--acento); }
+details.dm-tema > summary .dm-clave { display: block; color: var(--suave); font-size: .92rem; }
+details.dm-tema[open] > summary { border-bottom: 1px solid var(--linea); }
+.dm-cuerpo { padding: 6px 14px 14px; }
+.dm-cuerpo h4 { margin: 16px 0 6px; font-size: 1rem; }
+.dm-cuerpo p { margin: 6px 0 10px; }
+details.dm-mas { margin: 12px 0 0; border-top: 1px dashed var(--linea); padding-top: 8px; }
+details.dm-mas > summary { cursor: pointer; color: var(--acento); font-size: .95rem; }
+.dm-barras { margin: 6px 0 4px; }
+.dm-fila { display: grid; grid-template-columns: minmax(110px, 34%) 1fr minmax(92px, auto); gap: 10px; align-items: center; padding: 3px 0; }
+.dm-fila .dm-et { font-size: .92rem; line-height: 1.25; }
+.dm-fila .dm-pista { background: var(--dm-pista); border-radius: 4px; height: 14px; }
+.dm-fila .dm-barra { display: block; height: 14px; min-width: 2px; background: var(--dm-1); border-radius: 0 4px 4px 0; }
+.dm-fila .dm-val { font-size: .92rem; text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.dm-fila .dm-val small { display: block; color: var(--suave); font-size: .76rem; }
+.dm-piramide { margin: 8px 0; }
+.dm-leyenda { display: flex; justify-content: center; gap: 22px; font-size: .85rem; color: var(--suave); margin-bottom: 6px; }
+.dm-leyenda i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.dm-pir { display: grid; grid-template-columns: 1fr 58px 1fr; gap: 2px 6px; align-items: center; }
+.dm-pir .dm-h, .dm-pir .dm-m { height: 12px; display: flex; }
+.dm-pir .dm-h { justify-content: flex-end; }
+.dm-pir .dm-h span { background: var(--dm-1); border-radius: 4px 0 0 4px; min-width: 1px; }
+.dm-pir .dm-m span { background: var(--dm-2); border-radius: 0 4px 4px 0; min-width: 1px; }
+.dm-pir .dm-e { text-align: center; font-size: .74rem; color: var(--suave); line-height: 12px; font-variant-numeric: tabular-nums; }
+.dm-tabla { overflow-x: auto; margin: 8px 0; }
+.dm-tabla table { border-collapse: collapse; width: 100%; font-size: .9rem; font-variant-numeric: tabular-nums; }
+.dm-tabla th, .dm-tabla td { padding: 5px 6px; border-bottom: 1px solid var(--linea); text-align: right; white-space: nowrap; }
+.dm-tabla th:first-child, .dm-tabla td:first-child { text-align: left; white-space: normal; }
+.dm-tabla thead th { white-space: normal; vertical-align: bottom; line-height: 1.25; font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; color: var(--suave); font-weight: normal; }
+.dm-tabla tfoot td { font-weight: bold; border-bottom: 0; }
+.dm-tabla.dm-texto th, .dm-tabla.dm-texto td { text-align: left; white-space: normal; vertical-align: top; }
+.dm-nota { font-size: .85rem; color: var(--suave); font-style: italic; }
+.dm-fuentes li { font-size: .9rem; margin: 5px 0; }
+
+.dm { --dm-3: #1baf7a; --dm-4: #eda100; --dm-5: #e87ba4; }
+@media (prefers-color-scheme: dark) { .dm { --dm-3: #199e70; --dm-4: #c98500; --dm-5: #d55181; } }
+.dm-sect { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin: 8px 0 6px; }
+.dm-sect svg { flex: none; width: 150px; height: 150px; }
+.dm-sect ul { list-style: none; margin: 0; padding: 0; flex: 1; min-width: 230px; }
+.dm-sect li { display: grid; grid-template-columns: 14px 1fr auto; gap: 8px; align-items: baseline; padding: 3px 0; margin: 0;
+  font-size: .92rem; line-height: 1.25; border-bottom: 1px solid var(--linea); }
+.dm-sect li:last-child { border-bottom: 0; }
+.dm-sect li i { width: 12px; height: 12px; border-radius: 2px; align-self: center; }
+.dm-sect li b { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dm-sect li small { display: block; color: var(--suave); font-size: .76rem; }
+.dm-k1 { stroke: var(--dm-1); } .dm-k2 { stroke: var(--dm-2); } .dm-k3 { stroke: var(--dm-3); }
+.dm-k4 { stroke: var(--dm-4); } .dm-k5 { stroke: var(--dm-5); }
+.dm-f1 { fill: var(--dm-1); } .dm-f2 { fill: var(--dm-2); }
+svg.dm-graf { display: block; width: 100%; max-width: 560px; height: auto; margin: 8px auto 6px; font-family: inherit; }
+svg.dm-graf .tx { fill: var(--texto); font-size: 11px; font-variant-numeric: tabular-nums; }
+svg.dm-graf .ts { fill: var(--suave); font-size: 11px; }
+svg.dm-graf .eje { stroke: var(--suave); stroke-width: 1; }
+svg.dm-graf .reja { stroke: var(--linea); stroke-width: 1; }
+svg.dm-graf .lin { fill: none; stroke: var(--dm-1); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+svg.dm-graf .pto { fill: var(--dm-1); stroke: var(--tarjeta); stroke-width: 2; }
