@@ -1,8 +1,8 @@
 (function () {
-  // Página de la sección: arciprestazgos (window.DATOS) de fondo, todos los desarrollos y filtro por fuente.
+  // Página de la sección: arciprestazgos (window.DATOS) de fondo, todos los desarrollos.
   // Ficha de un desarrollo: sus parroquias (window.DES.parroquias) de fondo y su polígono, sus puntos o su límite.
   var D = window.DES, F = window.DATOS;
-  var COLOR = { abc: '#7a1f2b', otras: '#1f5f8b', municipal: '#b8650a' };
+  var COLOR = { desarrollo: '#1f5f8b', municipal: '#b8650a' };   // el color distingue el tipo, no la fuente
   var mapa = L.map('mapa', { scrollWheelZoom: true });
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
@@ -28,10 +28,9 @@
     });
   });
 
-  var capas = { abc: [], otras: [] };
-  var limites = L.latLngBounds([]);
+  var limites = L.latLngBounds([]), capas = [];
   D.desarrollos.forEach(function (d) {
-    var color = d.c === 'municipal' ? COLOR.municipal : COLOR[d.f];
+    var color = d.c === 'municipal' ? COLOR.municipal : COLOR.desarrollo;
     var estilo = d.c === 'municipal' ? { color: color, weight: 2.5, dashArray: '8 5', fill: false }
       : d.c === 'zona' ? { color: color, weight: 2, dashArray: '5 4', fillColor: color, fillOpacity: 0.12 }
       : { color: color, weight: 2, fillColor: color, fillOpacity: 0.45 };
@@ -47,7 +46,7 @@
       if (d.url) { c.on('click', function () { location.href = d.url; }); }
       c.addTo(mapa);
       limites.extend(c.getBounds ? c.getBounds() : L.latLngBounds([c.getLatLng(), c.getLatLng()]));
-      capas[d.f].push(c);
+      capas.push({ s: d.s, c: c });
     });
   });
   if (F) {
@@ -56,18 +55,15 @@
     mapa.fitBounds(limites.pad(0.25), { maxZoom: 16 });
   }
 
-  // Filtro por fuente (solo en la página de la sección)
+  // Filtro por estado (solo en la página de la sección): mapa y filas de las tablas
   var botones = document.querySelectorAll('.filtro button');
   function filtrar(f) {
     botones.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-f') === f)); });
-    Object.keys(capas).forEach(function (k) {
-      capas[k].forEach(function (c) {
-        if (f === 'todas' || f === k) { c.addTo(mapa); } else { mapa.removeLayer(c); }
-      });
+    capas.forEach(function (x) {
+      if (f === 'todos' || x.s === f) { x.c.addTo(mapa); } else { mapa.removeLayer(x.c); }
     });
-    document.querySelectorAll('[data-fuente]').forEach(function (el) {
-      var k = el.getAttribute('data-fuente');
-      el.classList.toggle('oculta', !(f === 'todas' || k === f));
+    document.querySelectorAll('[data-estado]').forEach(function (el) {
+      el.classList.toggle('oculta', !(f === 'todos' || el.getAttribute('data-estado') === f));
     });
   }
   botones.forEach(function (b) {
