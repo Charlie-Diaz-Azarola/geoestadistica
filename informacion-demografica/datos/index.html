@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descargar los datos · Información demográfica · Geoestadística de la Diócesis de Getafe</title>
+<meta name="description" content="Datos demográficos de las parroquias, poblaciones y arciprestazgos de la Diócesis de Getafe en formato CSV">
+<link rel="stylesheet" href="../../assets/estilo.css?v=f2d2dca9">
+</head>
+<body>
+<header><div class="ancho"><a href="../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Información demográfica</p></div></header>
+<main class="ancho">
+<nav class="miga"><a href="../../index.html">Geoestadística</a> › <a href="../index.html">Información demográfica</a> › Descargar los datos</nav>
+<article class="ficha">
+<h2>Descargar los datos</h2>
+<p>Los datos principales de esta sección se pueden descargar para trabajar con ellos en una hoja de cálculo (Excel, LibreOffice Calc). Son archivos CSV, con punto y coma como separador y coma decimal.</p>
+<ul>
+<li><a href="parroquias.csv" download>parroquias.csv</a>: las 127 parroquias.</li>
+<li><a href="poblaciones.csv" download>poblaciones.csv</a>: las 49 poblaciones.</li>
+<li><a href="arciprestazgos.csv" download>arciprestazgos.csv</a>: los 13 arciprestazgos y el total de la diócesis.</li>
+<li><a href="LEEME.txt" download>LEEME.txt</a>: descripción de los archivos, fuente y fecha.</li>
+</ul>
+<section class="apartado">
+<h3>Qué contiene cada columna</h3>
+<div class="dm dm-tabla dm-texto"><table><thead><tr><th>Columna</th><th>Contenido</th></tr></thead>
+<tbody>
+<tr><td>codigo, parroquia, poblacion, municipio, arciprestazgo</td><td>Identificación de la unidad (según el archivo).</td></tr>
+<tr><td>extension_km2</td><td>Extensión del territorio, en kilómetros cuadrados, según la delimitación de los territorios parroquiales.</td></tr>
+<tr><td>crecimiento_2021_2025_pct</td><td>Solo en poblaciones.csv y arciprestazgos.csv: cambio del número de habitantes del 1 de enero de 2021 al 1 de enero de 2025, en tanto por ciento (Censo anual de población, por municipios).</td></tr>
+<tr><td>crecimiento_ambito</td><td>Territorio al que se refiere el crecimiento. Si la población es solo una parte de un municipio, es el dato del municipio entero.</td></tr>
+<tr><td>habitantes_2025</td><td>Habitantes a 1 de enero de 2025 (Censo anual de población).</td></tr>
+<tr><td>habitantes_cifra_oficial</td><td>«sí» si la unidad está formada por municipios enteros y la cifra es la oficial del INE; «no» si es una estimación.</td></tr>
+<tr><td>hombres_2025, mujeres_2025</td><td>Hombres y mujeres a 1 de enero de 2025 (estimación).</td></tr>
+<tr><td>habitantes_por_km2</td><td>Habitantes de 2025 divididos por la extensión.</td></tr>
+<tr><td>edad_media_2024, pct_menores_18_2024</td><td>Edad media y porcentaje de menores de 18 años (Atlas de distribución de renta de los hogares, 2024).</td></tr>
+<tr><td>pct_65_o_mas_2025, pct_menores_15_2025</td><td>Porcentaje de personas de 65 años o más y de menores de 15, a 1 de enero de 2025.</td></tr>
+<tr><td>indice_envejecimiento_2025</td><td>Personas de 65 años o más por cada 100 menores de 15.</td></tr>
+<tr><td>pct_nacidos_otro_pais_2025, pct_nacionalidad_extranjera_2025</td><td>Porcentaje de nacidos en otro país y de personas con nacionalidad extranjera, a 1 de enero de 2025.</td></tr>
+<tr><td>renta_neta_por_persona_2024, renta_neta_por_hogar_2024</td><td>Renta neta media anual, en euros (Atlas de distribución de renta de los hogares, 2024).</td></tr>
+<tr><td>hogares_2024, personas_por_hogar_2024, pct_hogares_una_persona_2024</td><td>Número de hogares, personas por hogar y porcentaje de hogares de una sola persona (2024).</td></tr>
+<tr><td>pct_estudios_superiores_2024</td><td>Porcentaje de personas de 15 años o más con estudios superiores (Censo anual, 1 de enero de 2024).</td></tr>
+<tr><td>tasa_paro_2024</td><td>Personas en paro por cada 100 que trabajan o buscan trabajo (Censo anual, 1 de enero de 2024).</td></tr>
+</tbody></table></div></section>
+<p class="dm-nota">Fuente: Instituto Nacional de Estadística (INE), datos descargados el 12 de noviembre de 2026. Elaboración propia a partir de datos del INE; el INE no ha participado en esta elaboración. Los datos de las parroquias son estimaciones. <a href="../como-se-ha-elaborado/index.html">Procedimiento y fuentes</a>.</p>
+</article>
+</main>
+<footer><div class="ancho">Geoestadística de la Diócesis de Getafe · <a href="../../aviso-legal/index.html">Aviso legal y privacidad</a></div></footer>
+</body>
+</html>

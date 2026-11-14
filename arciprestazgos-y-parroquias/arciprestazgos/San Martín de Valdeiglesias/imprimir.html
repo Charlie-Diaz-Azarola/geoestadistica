@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa del arciprestazgo de San Martín de Valdeiglesias para imprimir · Geoestadística de la Diócesis de Getafe</title>
+<meta name="description" content="Mapa de las parroquias del arciprestazgo de San Martín de Valdeiglesias para imprimir en tamaño A3">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<link rel="stylesheet" href="../../../assets/estilo.css?v=f2d2dca9">
+<style>@page { size: A3 landscape; margin: 10mm; }</style>
+</head>
+<body class="imprimir">
+<div class="imp-barra"><a href="index.html">← Volver a la ficha del arciprestazgo</a>
+<button type="button" class="boton" onclick="window.print()">Imprimir o guardar como PDF</button>
+<span>Papel A3, orientación horizontal. Espere a que el mapa termine de cargarse y, en las opciones de impresión, active «Gráficos de fondo».</span></div>
+<div class="hoja horizontal">
+<header class="imp-cab"><h1>Arciprestazgo de San Martín de Valdeiglesias</h1>
+<p>Diócesis de Getafe · 8 parroquias · 395,21 km²</p></header>
+<div id="mapa" aria-label="Mapa de las parroquias del arciprestazgo de San Martín de Valdeiglesias"></div>
+<aside class="imp-leyenda">
+<h2>Cadalso de los Vidrios</h2>
+<ol>
+<li><span class="imp-num">1</span><span>Nuestra Señora de la Asunción</span></li>
+</ol>
+<h2>Cenicientos</h2>
+<ol>
+<li><span class="imp-num">2</span><span>San Esteban Protomártir</span></li>
+</ol>
+<h2>Chapinería</h2>
+<ol>
+<li><span class="imp-num">3</span><span>Concepción de Nuestra Señora</span></li>
+</ol>
+<h2>Colmenar del Arroyo</h2>
+<ol>
+<li><span class="imp-num">4</span><span>Nuestra Señora de la Asunción</span></li>
+</ol>
+<h2>Navas del Rey</h2>
+<ol>
+<li><span class="imp-num">5</span><span>San Eugenio Obispo</span></li>
+</ol>
+<h2>Pelayos de la Presa</h2>
+<ol>
+<li><span class="imp-num">6</span><span>Nuestra Señora de la Asunción</span></li>
+</ol>
+<h2>Rozas de Puerto Real</h2>
+<ol>
+<li><span class="imp-num">7</span><span>San Juan Bautista</span></li>
+</ol>
+<h2>San Martín de Valdeiglesias</h2>
+<ol>
+<li><span class="imp-num">8</span><span>San Martín Obispo</span></li>
+</ol>
+<p class="imp-clave"><i></i>Templo parroquial<br>El número señala el territorio de cada parroquia.</p>
+</aside>
+<footer class="imp-pie">Territorios parroquiales según la delimitación vigente a 11 de noviembre de 2026. Mapa base © colaboradores de OpenStreetMap. Geoestadística de la Diócesis de Getafe.</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="territorios.js"></script>
+<script src="../../../assets/mapa-imprimir.js?v=5ae245a4"></script>
+</body>
+</html>

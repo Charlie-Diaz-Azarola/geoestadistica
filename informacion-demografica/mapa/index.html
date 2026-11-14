@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa temático · Información demográfica · Geoestadística de la Diócesis de Getafe</title>
+<meta name="description" content="Mapa de las parroquias de la Diócesis de Getafe coloreadas según sus datos demográficos">
+<link rel="stylesheet" href="../../assets/estilo.css?v=f2d2dca9">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+</head>
+<body>
+<header><div class="ancho"><a href="../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Información demográfica</p></div></header>
+<main class="ancho">
+<nav class="miga"><a href="../../index.html">Geoestadística</a> › <a href="../index.html">Información demográfica</a> › Mapa temático</nav>
+<article class="ficha">
+<h2>Mapa temático</h2>
+<p>Elija un dato y el mapa coloreará las parroquias: cuanto más oscuro es el color, más alto es el valor. Pase el cursor por una parroquia, o púlsela, para ver su dato y abrir su ficha.</p>
+<div class="dm-filtros">
+<div><label for="tm-dato">Dato</label><select id="tm-dato"><option value="densidad">Habitantes por km²</option><option value="edad">Edad media</option><option value="p_menores18">Menores de 18</option><option value="p_65">65 o más</option><option value="i_env">Índice de envejecimiento</option><option value="p_ext">Nacidos en otro país</option><option value="renta_pp">Renta por persona</option><option value="tam_hogar">Personas por hogar</option><option value="p_uni">Hogares de una persona</option><option value="p_sup">Estudios superiores</option><option value="p_paro">Paro</option><option value="crec">Crecimiento 2021-2025 (por municipios)</option></select></div>
+</div>
+<p id="tm-explica" aria-live="polite"></p>
+<ul class="tm-leyenda" id="tm-leyenda" aria-label="Leyenda"></ul>
+<div id="mapa" class="tematico" role="application" aria-label="Mapa temático de las parroquias de la Diócesis de Getafe"></div>
+<noscript><p class="nota">El mapa necesita JavaScript. Los mismos datos están en la <a href="../comparar-parroquias/index.html">tabla comparativa</a>.</p></noscript>
+<p class="dm-nota">Las parroquias se reparten en cinco grupos con el mismo número de parroquias. Los datos de las parroquias son estimaciones. Fuente: Instituto Nacional de Estadística (INE). Elaboración propia. <a href="../comparar-parroquias/index.html">Ver los datos en una tabla</a> · <a href="../como-se-ha-elaborado/index.html">Procedimiento y fuentes</a></p>
+</article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="datos.js"></script>
+<script src="../../assets/mapa-tematico.js?v=8d6c5ee5"></script>
+</main>
+<footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. · <a href="../../aviso-legal/index.html">Aviso legal y privacidad</a></div></footer>
+</body>
+</html>

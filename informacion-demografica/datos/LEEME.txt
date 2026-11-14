@@ -1,0 +1,28 @@
+Geoestadística de la Diócesis de Getafe. Información demográfica: archivos de datos
+
+Archivos: parroquias.csv (127 parroquias), poblaciones.csv y arciprestazgos.csv (13 arciprestazgos y el total de la diócesis).
+Formato: CSV con punto y coma como separador, coma decimal y codificación UTF-8.
+
+Fuente: Instituto Nacional de Estadística (INE), www.ine.es. Datos descargados el 12 de noviembre de 2026.
+Elaboración propia a partir de datos del INE; el INE no ha participado en esta elaboración.
+
+Los datos de las parroquias son estimaciones: los datos del INE por sección censal se reparten entre las parroquias según la superficie de cada sección que cae en cada una. Los de una población, un arciprestazgo o la diócesis son la suma de los de sus parroquias. No hay datos personales: todas las cifras son agregadas.
+Procedimiento y fuentes, con detalle: página «Cómo se ha elaborado esta sección» de la web.
+
+Columnas
+- codigo, parroquia, poblacion, municipio, arciprestazgo: Identificación de la unidad (según el archivo).
+- extension_km2: Extensión del territorio, en kilómetros cuadrados, según la delimitación de los territorios parroquiales.
+- crecimiento_2021_2025_pct: Solo en poblaciones.csv y arciprestazgos.csv: cambio del número de habitantes del 1 de enero de 2021 al 1 de enero de 2025, en tanto por ciento (Censo anual de población, por municipios).
+- crecimiento_ambito: Territorio al que se refiere el crecimiento. Si la población es solo una parte de un municipio, es el dato del municipio entero.
+- habitantes_2025: Habitantes a 1 de enero de 2025 (Censo anual de población).
+- habitantes_cifra_oficial: «sí» si la unidad está formada por municipios enteros y la cifra es la oficial del INE; «no» si es una estimación.
+- hombres_2025, mujeres_2025: Hombres y mujeres a 1 de enero de 2025 (estimación).
+- habitantes_por_km2: Habitantes de 2025 divididos por la extensión.
+- edad_media_2024, pct_menores_18_2024: Edad media y porcentaje de menores de 18 años (Atlas de distribución de renta de los hogares, 2024).
+- pct_65_o_mas_2025, pct_menores_15_2025: Porcentaje de personas de 65 años o más y de menores de 15, a 1 de enero de 2025.
+- indice_envejecimiento_2025: Personas de 65 años o más por cada 100 menores de 15.
+- pct_nacidos_otro_pais_2025, pct_nacionalidad_extranjera_2025: Porcentaje de nacidos en otro país y de personas con nacionalidad extranjera, a 1 de enero de 2025.
+- renta_neta_por_persona_2024, renta_neta_por_hogar_2024: Renta neta media anual, en euros (Atlas de distribución de renta de los hogares, 2024).
+- hogares_2024, personas_por_hogar_2024, pct_hogares_una_persona_2024: Número de hogares, personas por hogar y porcentaje de hogares de una sola persona (2024).
+- pct_estudios_superiores_2024: Porcentaje de personas de 15 años o más con estudios superiores (Censo anual, 1 de enero de 2024).
+- tasa_paro_2024: Personas en paro por cada 100 que trabajan o buscan trabajo (Censo anual, 1 de enero de 2024).
