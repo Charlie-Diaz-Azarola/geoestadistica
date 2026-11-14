@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geoestadística de la Diócesis de Getafe. Presentación del proyecto</title>
+<style>
+@page { size: A4; margin: 0; }
+.barra-web { display: none; }
+@media screen {
+  body { background: #e9e4dc; padding: 0 0 8mm; }
+  .pag { margin: 6mm auto 0; box-shadow: 0 1px 6px rgba(0, 0, 0, .18); }
+  .barra-web { display: block;
+    padding: 10px 16px; background: #7a1f2b; font: 15px/1.3 Arial, Helvetica, sans-serif; }
+  .barra-web a { color: #fff; }
+}
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; color: #26211c; font: 10.5pt/1.42 Georgia, "Times New Roman", serif; }
+.pag { position: relative; width: 210mm; height: 297mm; padding: 15mm 16mm 17mm; overflow: hidden; page-break-after: always; background: #fff; }
+.pag:last-child { page-break-after: auto; }
+footer { position: absolute; left: 16mm; right: 16mm; bottom: 8mm; display: flex; justify-content: space-between;
+  border-top: .3mm solid #e2dbd0; padding-top: 2mm; font-size: 8pt; color: #6b6259; }
+h1 { margin: 0; font-size: 27pt; line-height: 1.12; color: #7a1f2b; }
+h2 { margin: 6mm 0 2mm; font-size: 15pt; color: #7a1f2b; line-height: 1.2; }
+.pag > h2:first-child, .num-seccion + h2 { margin-top: 0; }
+h3 { margin: 0 0 1.5mm; font-size: 10.5pt; text-transform: uppercase; letter-spacing: .04em; color: #6b6259; }
+p { margin: 0 0 2.5mm; }
+ul { margin: 0 0 2.5mm; padding-left: 5mm; }
+li { margin: 0 0 1.2mm; }
+a { color: #7a1f2b; text-decoration: none; }
+.num-seccion { margin: 0 0 1mm; font-size: 9pt; text-transform: uppercase; letter-spacing: .08em; color: #6b6259; }
+.entrada { font-size: 12pt; color: #4a423b; margin-bottom: 4mm; }
+.cubierta { border-bottom: .6mm solid #7a1f2b; padding: 6mm 0 6mm; margin-bottom: 6mm; }
+.antetitulo { text-transform: uppercase; letter-spacing: .1em; color: #6b6259; font-size: 10pt; margin-bottom: 3mm; }
+.lema { font-size: 13pt; color: #4a423b; margin: 4mm 0 5mm; max-width: 150mm; }
+.url { font: bold 13pt/1.3 Arial, Helvetica, sans-serif; margin: 0; }
+.url a { display: inline-block; padding: 2.5mm 5mm; background: #7a1f2b; color: #fff; border-radius: 1.5mm; }
+.fecha { color: #6b6259; font-size: 9.5pt; margin-top: 3mm; text-align: center; }
+.cifras { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3mm; margin: 0 0 4mm; }
+.cifras.tres-datos { grid-template-columns: 1fr 1fr 1.5fr; }
+.cifras.columna { grid-template-columns: 1fr; gap: 2mm; margin-bottom: 3mm; }
+.dato { border: .3mm solid #e2dbd0; border-radius: 2mm; padding: 2.5mm 3mm; background: #faf8f4; }
+.dato b { display: block; font-size: 15pt; line-height: 1.15; white-space: nowrap; }
+.dato span { display: block; font-size: 8.8pt; color: #6b6259; line-height: 1.25; }
+.columna .dato { display: flex; align-items: baseline; gap: 3mm; }
+.columna .dato b { font-size: 13pt; min-width: 19mm; text-align: right; }
+figure { margin: 0 0 3mm; }
+figure.estrecha { width: 116mm; margin: 3mm auto; }
+figure.estrecha figcaption { text-align: center; }
+figure img { display: block; width: 100%; height: auto; border: .3mm solid #d8d0c4; border-radius: 1.5mm; }
+figcaption, .pie-grafico { font-size: 8.3pt; color: #6b6259; font-style: italic; margin-top: 1.2mm; }
+.dos { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-bottom: 3mm; align-items: start; }
+.dos.ancha-izq { grid-template-columns: 1.15fr 1fr; }
+.dos.ancha-der { grid-template-columns: 1fr 1.05fr; }
+.tres { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+.caja { border: .3mm solid #e2dbd0; border-radius: 2mm; padding: 3.5mm 4mm 1.5mm; background: #faf8f4; }
+.caja h3 { color: #7a1f2b; text-transform: none; letter-spacing: 0; font-size: 12pt; }
+.niveles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+.niveles > div { position: relative; padding: 0 0 0 13mm; min-height: 12mm; }
+.niveles b { position: absolute; left: 0; top: 0; width: 10mm; height: 10mm; border-radius: 50%; background: #7a1f2b; color: #fff;
+  font: bold 14pt/10mm Georgia, serif; text-align: center; }
+.niveles h3 { color: #26211c; text-transform: none; letter-spacing: 0; font-size: 11pt; margin-bottom: .5mm; }
+.niveles p { font-size: 9.5pt; margin: 0; }
+.flujo { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 2mm; align-items: stretch; }
+.flujo > div { border: .3mm solid #7a1f2b; border-radius: 2mm; padding: 3mm 3.5mm 1mm; }
+.flujo h3 { color: #7a1f2b; }
+.flujo ul { padding-left: 4mm; font-size: 9.3pt; }
+.flecha { align-self: center; font-size: 16pt; color: #7a1f2b; }
+.aviso { margin-top: 3mm; padding: 3mm 4mm; border-left: 1.2mm solid #7a1f2b; background: #faf8f4; font-size: 9.8pt; }
+.barras { margin: 0 0 1mm; }
+.barras .fila { display: grid; grid-template-columns: var(--et) 1fr auto; gap: 2mm; align-items: center; height: 4.75mm; }
+.barras .et { font-size: 8.6pt; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.barras .pista { height: 3.1mm; }
+.barras .pista i { display: block; height: 100%; min-width: .4mm; background: var(--c); border-radius: 0 1mm 1mm 0; }
+.barras .val { font: 8.6pt/1 Georgia, serif; font-variant-numeric: tabular-nums; white-space: nowrap; min-width: 12mm; text-align: right; }
+.barras .val small { color: #6b6259; font-size: 7.8pt; margin-left: 1mm; display: inline-block; min-width: 11mm; text-align: right; }
+table.resumen { width: 100%; border-collapse: collapse; font-size: 9.8pt; margin-bottom: 2mm; }
+table.resumen th { text-align: left; font-size: 8.3pt; text-transform: uppercase; letter-spacing: .04em; color: #6b6259; font-weight: normal; }
+table.resumen th, table.resumen td { padding: 1.6mm 2mm 1.6mm 0; border-bottom: .2mm solid #e2dbd0; vertical-align: top; }
+table.resumen td:first-child { font-weight: bold; white-space: nowrap; }
+table.resumen td:last-child { white-space: nowrap; }
+.cierre { margin-top: 7mm; padding: 5mm; text-align: center; border: .3mm solid #e2dbd0; border-radius: 2mm; background: #faf8f4; }
+.cierre p { margin-bottom: 2mm; }
+</style>
+</head>
+<body>
+<nav class="barra-web"><a href="../index.html">‹ Geoestadística de la Diócesis de Getafe</a></nav>
+<section class="pag">
+<div class="cubierta">
+<p class="antetitulo">Diócesis de Getafe</p>
+<h1>Geoestadística de la Diócesis de Getafe</h1>
+<p class="lema">Propuesta de un servicio web de información sobre el territorio, la población y el crecimiento previsto
+de la diócesis</p>
+
+</div>
+<div class="cifras">
+<div class="dato"><b>13</b><span>arciprestazgos</span></div>
+<div class="dato"><b>127</b><span>parroquias</span></div>
+<div class="dato"><b>49</b><span>poblaciones</span></div>
+<div class="dato"><b>1.729.840</b><span>habitantes (2025)</span></div>
+<div class="dato"><b>2.303 km²</b><span>de territorio</span></div>
+</div>
+<h2>Qué es</h2>
+<p>Un sitio web público, de consulta libre y gratuita, que reúne en un solo lugar la información territorial y
+estadística de la diócesis: qué parroquias hay y cuál es el territorio de cada una, quiénes viven en él y cómo se
+espera que crezca. Se presenta como una propuesta de servicio para información del clero y de los feligreses.</p>
+<figure class="estrecha"><img src="img/portada.png" alt="Portada del sitio"><figcaption>Portada del sitio, con sus cinco secciones.</figcaption></figure>
+<p class="fecha">Noviembre de 2026</p>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>1 / 6</span></footer>
+</section>
+<section class="pag">
+<h2>Objetivos</h2>
+<div class="tres">
+<div class="caja"><h3>Ayudar a decidir</h3><p>Dar al obispo y a sus órganos consultores datos objetivos para estudiar la
+creación de nuevas parroquias y la distribución del clero.</p></div>
+<div class="caja"><h3>Conocer el territorio</h3><p>Ofrecer al clero y a los agentes de pastoral de cada parroquia un
+retrato de la población a la que sirven.</p></div>
+<div class="caja"><h3>Informar a todos</h3><p>Permitir que cualquier persona sepa a qué parroquia pertenece su domicilio
+y consulte los datos de su zona.</p></div>
+</div>
+<h2>Tres niveles de información</h2>
+<div class="niveles">
+<div><b>1</b><h3>Base</h3><p>Arciprestazgos, parroquias, sus territorios y sus datos básicos.</p></div>
+<div><b>2</b><h3>Demografía actual</h3><p>Quiénes viven hoy en cada parroquia, población y arciprestazgo.</p></div>
+<div><b>3</b><h3>Previsión</h3><p>Dónde se van a construir viviendas y cuántas.</p></div>
+</div>
+<h2>Metodología</h2>
+<div class="flujo">
+<div><h3>Fuentes</h3><ul>
+<li>Decretos de erección y delimitación de los territorios parroquiales.</li>
+<li>Datos del Instituto Nacional de Estadística (INE) por sección censal y por municipio.</li>
+<li>Planeamiento urbanístico oficial, boletines, licitaciones y prensa.</li></ul></div>
+<span class="flecha">→</span>
+<div><h3>Elaboración</h3><ul>
+<li>Los datos del INE se reparten entre las parroquias según la superficie de cada sección censal que cae en cada una.</li>
+<li>Los de una población, un arciprestazgo o la diócesis son la suma de sus parroquias.</li>
+<li>Cada desarrollo urbanístico se sitúa sobre el territorio de su parroquia.</li></ul></div>
+<span class="flecha">→</span>
+<div><h3>Publicación</h3><ul>
+<li>Mapas interactivos, fichas, tablas y gráficos.</li>
+<li>Datos descargables.</li>
+<li>Una página explica el procedimiento y las fuentes.</li></ul></div>
+</div>
+<h2>Criterios de trabajo</h2>
+<div class="dos">
+<ul>
+<li><strong>Solo cifras agregadas.</strong> No se publica ningún dato personal.</li>
+<li><strong>Cada dato, con su fuente y su fecha.</strong> Todo se puede comprobar en el original.</li>
+<li><strong>Sin cifras inventadas.</strong> Si un dato falta, se deja vacío y se dice por qué.</li>
+</ul>
+<ul>
+<li><strong>Proceso reproducible.</strong> El sitio se genera de forma automática a partir de los datos: actualizarlo
+cuando cambian los límites o cuando el INE publica datos nuevos es rápido.</li>
+<li><strong>Sin coste de alojamiento</strong> y sin cookies ni registro de visitantes.</li>
+</ul>
+</div>
+<p class="aviso"><strong>Alcance de los datos.</strong> Los datos demográficos de las parroquias son estimaciones:
+sirven para hacerse una buena idea, no son cifras exactas. Los de arciprestazgos y de la diócesis coinciden con las
+cifras oficiales de sus municipios. Los datos son de las personas empadronadas en el territorio, no de los feligreses.</p>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>2 / 6</span></footer>
+</section>
+<section class="pag">
+<p class="num-seccion">Sección 1</p>
+<h2>Arciprestazgos y parroquias</h2>
+<p class="entrada">El mapa de la diócesis, con la ficha de cada una de sus 127 parroquias.</p>
+<div class="dos ancha-izq">
+<figure><img src="img/s1-inicio.png" alt="Buscador de direcciones y mapa de los arciprestazgos">
+<figcaption>Buscador de direcciones y mapa de los 13 arciprestazgos.</figcaption></figure>
+<div>
+<h3>Qué ofrece</h3>
+<ul>
+<li><strong>Buscador de direcciones:</strong> se escribe una calle y un número y responde a qué parroquia y a qué
+arciprestazgo pertenece ese domicilio.</li>
+<li><strong>Ficha de cada parroquia:</strong> dirección, teléfono, correo, extensión, mapa de su territorio y texto de
+los límites según su decreto.</li>
+<li><strong>Mapa del atlas</strong> de cada parroquia, que se puede descargar.</li>
+<li><strong>Mapa de cada arciprestazgo</strong> preparado para imprimir en tamaño A3.</li>
+</ul>
+</div>
+</div>
+<div class="dos">
+<figure><img src="img/s1-ficha.png" alt="Ficha de una parroquia"><figcaption>Ficha de una parroquia.</figcaption></figure>
+<figure><img src="img/s1-a3.png" alt="Mapa de un arciprestazgo para imprimir"><figcaption>Mapa del arciprestazgo de Getafe
+para imprimir en A3.</figcaption></figure>
+</div>
+<h3>Parroquias y extensión de cada arciprestazgo</h3>
+<div class="barras" style="--c:#7a1f2b;--et:34mm">
+<div class="fila"><span class="et">Leganés</span><span class="pista"><i style="width:100.0%"></i></span><span class="val">16 <small>43 km²</small></span></div>
+<div class="fila"><span class="et">Getafe</span><span class="pista"><i style="width:87.5%"></i></span><span class="val">14 <small>79 km²</small></span></div>
+<div class="fila"><span class="et">Alcorcón</span><span class="pista"><i style="width:75.0%"></i></span><span class="val">12 <small>34 km²</small></span></div>
+<div class="fila"><span class="et">Fuenlabrada</span><span class="pista"><i style="width:68.8%"></i></span><span class="val">11 <small>39 km²</small></span></div>
+<div class="fila"><span class="et">Móstoles</span><span class="pista"><i style="width:68.8%"></i></span><span class="val">11 <small>44 km²</small></span></div>
+<div class="fila"><span class="et">Valdemoro</span><span class="pista"><i style="width:62.5%"></i></span><span class="val">10 <small>291 km²</small></span></div>
+<div class="fila"><span class="et">Villaviciosa de Odón</span><span class="pista"><i style="width:62.5%"></i></span><span class="val">10 <small>225 km²</small></span></div>
+<div class="fila"><span class="et">Griñón</span><span class="pista"><i style="width:56.2%"></i></span><span class="val">9 <small>141 km²</small></span></div>
+<div class="fila"><span class="et">Navalcarnero</span><span class="pista"><i style="width:50.0%"></i></span><span class="val">8 <small>396 km²</small></span></div>
+<div class="fila"><span class="et">Parla</span><span class="pista"><i style="width:50.0%"></i></span><span class="val">8 <small>86 km²</small></span></div>
+<div class="fila"><span class="et">San Martín de Valdeiglesias</span><span class="pista"><i style="width:50.0%"></i></span><span class="val">8 <small>395 km²</small></span></div>
+<div class="fila"><span class="et">Aranjuez</span><span class="pista"><i style="width:31.2%"></i></span><span class="val">5 <small>189 km²</small></span></div>
+<div class="fila"><span class="et">Chinchón</span><span class="pista"><i style="width:31.2%"></i></span><span class="val">5 <small>341 km²</small></span></div>
+</div>
+<p class="pie-grafico">Número de parroquias (barra) y extensión del arciprestazgo. Territorios según la delimitación vigente
+a 11 de noviembre de 2026.</p>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>3 / 6</span></footer>
+</section>
+<section class="pag">
+<p class="num-seccion">Sección 2</p>
+<h2>Información demográfica</h2>
+<p class="entrada">Quiénes viven en el territorio de cada parroquia, de cada población, de cada arciprestazgo y de toda la diócesis.</p>
+<div class="dos">
+<div>
+<h3>Qué ofrece</h3>
+<ul>
+<li><strong>Fichas en cuatro niveles</strong> con habitantes, edades, origen, estudios y trabajo, hogares, renta,
+nacimientos, defunciones y matrimonios.</li>
+<li><strong>Tablas para comparar</strong> las 127 parroquias y las 49 poblaciones, que se ordenan por cualquier dato.</li>
+<li><strong>Mapa temático:</strong> las parroquias coloreadas según el dato que se elija.</li>
+<li><strong>Descarga de los datos</strong> para trabajar con ellos en una hoja de cálculo.</li>
+</ul>
+</div>
+<figure><img src="img/s2-ficha.png" alt="Ficha demográfica de un arciprestazgo">
+<figcaption>Resumen de la ficha de un arciprestazgo; cada apartado se despliega.</figcaption></figure>
+</div>
+<div class="dos">
+<div><h3>Habitantes y crecimiento desde 2021</h3>
+<div class="barras" style="--c:#2a78d6;--et:34mm">
+<div class="fila"><span class="et">Móstoles</span><span class="pista"><i style="width:100.0%"></i></span><span class="val">214.293 <small>+2,7 %</small></span></div>
+<div class="fila"><span class="et">Leganés</span><span class="pista"><i style="width:91.4%"></i></span><span class="val">195.946 <small>+3,8 %</small></span></div>
+<div class="fila"><span class="et">Getafe</span><span class="pista"><i style="width:91.3%"></i></span><span class="val">195.628 <small>+6,4 %</small></span></div>
+<div class="fila"><span class="et">Valdemoro</span><span class="pista"><i style="width:89.3%"></i></span><span class="val">191.258 <small>+7,6 %</small></span></div>
+<div class="fila"><span class="et">Fuenlabrada</span><span class="pista"><i style="width:88.6%"></i></span><span class="val">189.814 <small>−1,5 %</small></span></div>
+<div class="fila"><span class="et">Alcorcón</span><span class="pista"><i style="width:82.5%"></i></span><span class="val">176.806 <small>+3,0 %</small></span></div>
+<div class="fila"><span class="et">Parla</span><span class="pista"><i style="width:71.6%"></i></span><span class="val">153.525 <small>+6,1 %</small></span></div>
+<div class="fila"><span class="et">Villaviciosa de Odón</span><span class="pista"><i style="width:63.2%"></i></span><span class="val">135.446 <small>+9,4 %</small></span></div>
+<div class="fila"><span class="et">Griñón</span><span class="pista"><i style="width:43.6%"></i></span><span class="val">93.398 <small>+8,5 %</small></span></div>
+<div class="fila"><span class="et">Navalcarnero</span><span class="pista"><i style="width:33.3%"></i></span><span class="val">71.407 <small>+8,8 %</small></span></div>
+<div class="fila"><span class="et">Aranjuez</span><span class="pista"><i style="width:29.8%"></i></span><span class="val">63.838 <small>+6,1 %</small></span></div>
+<div class="fila"><span class="et">San Martín de Valdeiglesias</span><span class="pista"><i style="width:12.5%"></i></span><span class="val">26.787 <small>+7,8 %</small></span></div>
+<div class="fila"><span class="et">Chinchón</span><span class="pista"><i style="width:10.1%"></i></span><span class="val">21.694 <small>+7,5 %</small></span></div>
+</div>
+<p class="pie-grafico">Diócesis: 1.729.840 habitantes, +4,9 % desde 2021.</p></div>
+<div><h3>Índice de envejecimiento</h3>
+<div class="barras" style="--c:#2a78d6;--et:34mm">
+<div class="fila"><span class="et">Alcorcón</span><span class="pista"><i style="width:100.0%"></i></span><span class="val">182</span></div>
+<div class="fila"><span class="et">Leganés</span><span class="pista"><i style="width:98.9%"></i></span><span class="val">180</span></div>
+<div class="fila"><span class="et">Móstoles</span><span class="pista"><i style="width:98.9%"></i></span><span class="val">180</span></div>
+<div class="fila"><span class="et">Fuenlabrada</span><span class="pista"><i style="width:83.0%"></i></span><span class="val">151</span></div>
+<div class="fila"><span class="et">San Martín de Valdeiglesias</span><span class="pista"><i style="width:81.9%"></i></span><span class="val">149</span></div>
+<div class="fila"><span class="et">Chinchón</span><span class="pista"><i style="width:80.2%"></i></span><span class="val">146</span></div>
+<div class="fila"><span class="et">Getafe</span><span class="pista"><i style="width:73.6%"></i></span><span class="val">134</span></div>
+<div class="fila"><span class="et">Aranjuez</span><span class="pista"><i style="width:66.5%"></i></span><span class="val">121</span></div>
+<div class="fila"><span class="et">Navalcarnero</span><span class="pista"><i style="width:50.5%"></i></span><span class="val">92</span></div>
+<div class="fila"><span class="et">Villaviciosa de Odón</span><span class="pista"><i style="width:50.5%"></i></span><span class="val">92</span></div>
+<div class="fila"><span class="et">Valdemoro</span><span class="pista"><i style="width:46.2%"></i></span><span class="val">84</span></div>
+<div class="fila"><span class="et">Parla</span><span class="pista"><i style="width:44.5%"></i></span><span class="val">81</span></div>
+<div class="fila"><span class="et">Griñón</span><span class="pista"><i style="width:33.0%"></i></span><span class="val">60</span></div>
+</div>
+<p class="pie-grafico">Mayores de 64 por cada 100 menores de 15. Diócesis: 127.</p></div>
+</div>
+<div class="dos ancha-der">
+<div>
+<h3>Lo que muestran los datos</h3>
+<ul>
+<li>La diócesis ha ganado un 4,9 % de habitantes en cuatro años. El arciprestazgo que más crece es
+Villaviciosa de Odón (+9,4 %); el único que pierde población,
+Fuenlabrada (−1,5 %).</li>
+<li>El envejecimiento es muy desigual: en Alcorcón hay 182
+mayores por cada 100 niños; en Griñón, 60.</li>
+<li>Uno de cada cinco habitantes (20 %) ha nacido en otro país.</li>
+</ul>
+<p class="pie-grafico">Fuente: Instituto Nacional de Estadística (Censo anual de población, 2021-2025). Elaboración propia.</p>
+</div>
+<figure><img src="img/s2-mapa.png" alt="Mapa temático del índice de envejecimiento">
+<figcaption>Mapa temático: índice de envejecimiento por parroquias.</figcaption></figure>
+</div>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>4 / 6</span></footer>
+</section>
+<section class="pag">
+<p class="num-seccion">Sección 3</p>
+<h2>Previsión de desarrollos urbanísticos</h2>
+<p class="entrada">Dónde se van a construir viviendas en la diócesis, cuántas y en el territorio de qué parroquia.</p>
+<div class="cifras tres-datos">
+<div class="dato"><b>35</b><span>desarrollos, promociones y planes recogidos</span></div>
+<div class="dato"><b>49.456</b><span>viviendas previstas</span></div>
+<div class="dato"><b>77 %</b><span>en solo dos arciprestazgos: Villaviciosa de Odón y Móstoles</span></div>
+</div>
+<div class="dos ancha-izq">
+<figure><img src="img/s3-inicio.png" alt="Mapa de los desarrollos urbanísticos">
+<figcaption>Mapa de los desarrollos. Se pueden filtrar por estado.</figcaption></figure>
+<div>
+<h3>Qué ofrece</h3>
+<ul>
+<li><strong>Mapa y tabla</strong> de todos los desarrollos, con su municipio, su arciprestazgo, su parroquia, su estado y sus viviendas.</li>
+<li><strong>Ficha de cada desarrollo</strong> con su descripción y sus fuentes.</li>
+<li><strong>Enlace desde cada parroquia</strong> y cada arciprestazgo a los desarrollos de su territorio.</li>
+</ul>
+<p>Los polígonos son ámbitos oficiales del planeamiento: ninguno se ha dibujado a mano.</p>
+</div>
+</div>
+<div class="dos">
+<div><h3>Viviendas previstas por arciprestazgo</h3>
+<div class="barras" style="--c:#7a1f2b;--et:34mm">
+<div class="fila"><span class="et">Villaviciosa de Odón</span><span class="pista"><i style="width:100.0%"></i></span><span class="val">23.585</span></div>
+<div class="fila"><span class="et">Móstoles</span><span class="pista"><i style="width:61.1%"></i></span><span class="val">14.417</span></div>
+<div class="fila"><span class="et">Alcorcón</span><span class="pista"><i style="width:14.8%"></i></span><span class="val">3.500</span></div>
+<div class="fila"><span class="et">Leganés</span><span class="pista"><i style="width:12.1%"></i></span><span class="val">2.852</span></div>
+<div class="fila"><span class="et">Getafe</span><span class="pista"><i style="width:10.2%"></i></span><span class="val">2.403</span></div>
+<div class="fila"><span class="et">Navalcarnero</span><span class="pista"><i style="width:3.6%"></i></span><span class="val">860</span></div>
+<div class="fila"><span class="et">Valdemoro</span><span class="pista"><i style="width:3.5%"></i></span><span class="val">820</span></div>
+<div class="fila"><span class="et">Griñón</span><span class="pista"><i style="width:1.8%"></i></span><span class="val">415</span></div>
+<div class="fila"><span class="et">Aranjuez</span><span class="pista"><i style="width:1.7%"></i></span><span class="val">400</span></div>
+<div class="fila"><span class="et">Parla</span><span class="pista"><i style="width:0.8%"></i></span><span class="val">184</span></div>
+<div class="fila"><span class="et">Fuenlabrada</span><span class="pista"><i style="width:0.1%"></i></span><span class="val">20</span></div>
+<div class="fila"><span class="et">Chinchón</span><span class="pista"><i style="width:0.0%"></i></span><span class="val">0</span></div>
+<div class="fila"><span class="et">San Martín de Valdeiglesias</span><span class="pista"><i style="width:0.0%"></i></span><span class="val">0</span></div>
+</div></div>
+<div><h3>Viviendas previstas según su estado</h3>
+<div class="cifras columna"><div class="dato"><b>26.975</b><span>Previsión a 2030-2045</span></div><div class="dato"><b>19.018</b><span>En tramitación o en licitación</span></div><div class="dato"><b>3.463</b><span>En obras o en venta</span></div></div>
+<p>No se cuentan las viviendas ya entregadas ni el planeamiento de alcance municipal, que el sitio muestra aparte.</p>
+<h3>Para qué sirve</h3>
+<p>Permite anticipar dónde habrá barrios nuevos y qué parroquias recibirán más población, antes de que lleguen los vecinos.</p>
+</div>
+</div>
+<p class="pie-grafico">Fuentes: notas de prensa de la Comunidad de Madrid y de los ayuntamientos, boletines oficiales, licitaciones
+y prensa, citadas en la ficha de cada desarrollo. Datos del sitio a 14 de noviembre de 2026. Son previsiones y pueden cambiar.</p>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>5 / 6</span></footer>
+</section>
+<section class="pag">
+<p class="num-seccion">Secciones 4 y 5 · en preparación</p>
+<h2>Anuario y Estudios</h2>
+<p class="entrada">Dos secciones ya abiertas en el sitio, todavía sin contenido.</p>
+<div class="dos">
+<div class="caja"><h3>Anuario</h3>
+<p>Recogerá, por parroquias y por arciprestazgos, datos de los sacramentos y de otros aspectos de la actividad de las parroquias.</p>
+<p>Presentados por años, permitirán seguir su evolución y relacionarlos con la población de cada territorio: por ejemplo,
+los bautismos de una parroquia con los nacimientos de su zona.</p>
+<p>Solo se publicarán cifras agregadas, nunca datos de personas concretas.</p></div>
+<div class="caja"><h3>Estudios</h3>
+<p>Reunirá reflexiones y estudios sobre temas concretos de la diócesis, que se irán publicando.</p>
+<p>Cada estudio indicará su fecha, los datos en los que se apoya y sus fuentes.</p></div>
+</div>
+<h2>Resumen de las cinco secciones</h2>
+<table class="resumen">
+<thead><tr><th>Sección</th><th>Contenido</th><th>Estado</th></tr></thead>
+<tbody>
+<tr><td>1. Arciprestazgos y parroquias</td><td>Mapa, buscador de direcciones, 127 fichas y mapas para imprimir</td><td>Publicada</td></tr>
+<tr><td>2. Información demográfica</td><td>Datos del INE en cuatro niveles, tablas comparativas, mapa temático y descarga</td><td>Publicada</td></tr>
+<tr><td>3. Previsión de desarrollos urbanísticos</td><td>35 desarrollos con 49.456 viviendas previstas</td><td>Publicada</td></tr>
+<tr><td>4. Anuario</td><td>Sacramentos y actividad parroquial</td><td>En preparación</td></tr>
+<tr><td>5. Estudios</td><td>Reflexiones y estudios sobre temas concretos</td><td>En preparación</td></tr>
+</tbody></table>
+<h2>Pasos siguientes</h2>
+<ul>
+<li><strong>Anuario:</strong> reunir los datos de sacramentos por parroquia y año (cifras agregadas) y acordar qué datos se publican.</li>
+<li><strong>Estudios:</strong> elegir los primeros temas.</li>
+<li><strong>Mantenimiento:</strong> actualizar los datos demográficos cada año, cuando el INE publique el nuevo censo, e
+incorporar los desarrollos urbanísticos nuevos.</li>
+<li><strong>Correcciones:</strong> recoger las que comuniquen las parroquias sobre sus datos y sus límites.</li>
+</ul>
+
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>6 / 6</span></footer>
+</section>
+<script>
+function ajustar() {
+  for (const p of document.querySelectorAll(".pag")) {
+    p.style.zoom = "";
+    const z = Math.min(1, (document.documentElement.clientWidth - 16) / p.offsetWidth);
+    p.style.zoom = z < 1 ? z : "";
+  }
+}
+addEventListener("resize", ajustar);
+addEventListener("beforeprint", () => document.querySelectorAll(".pag").forEach(p => p.style.zoom = ""));
+addEventListener("afterprint", ajustar);
+ajustar();
+</script>
+</body>
+</html>

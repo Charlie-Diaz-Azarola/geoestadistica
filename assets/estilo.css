@@ -92,6 +92,9 @@ h3 a.ficha-enlace { font-size: .85rem; font-weight: normal; margin-left: 10px; t
 @media (max-width: 760px) { .portada { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .portada { grid-template-columns: 1fr; } }
 .en-construccion { color: var(--suave); font-style: italic; }
+.presentacion-enlace { margin: 0 0 20px; padding: 12px 16px; background: var(--tarjeta); border: 1px solid var(--linea);
+  border-left: 5px solid var(--acento); border-radius: 6px; }
+.presentacion-enlace a { font-weight: bold; }
 a.tarjeta-seccion { display: block; background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 8px; overflow: hidden; color: var(--texto); text-decoration: none; }
 a.tarjeta-seccion:hover, a.tarjeta-seccion:focus { border-color: var(--acento); }
 a.tarjeta-seccion img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--linea); }
