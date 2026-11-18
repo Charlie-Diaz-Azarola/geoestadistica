@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dejar un comentario · Geoestadística de la Diócesis de Getafe</title>
+<meta name="description" content="Formulario para dejar una opinión, una sugerencia o el aviso de un dato erróneo sobre el sitio Geoestadística de la Diócesis de Getafe">
+<link rel="stylesheet" href="../assets/estilo.css?v=61c1df16">
+</head>
+<body>
+<header><div class="ancho"><a href="../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Dejar un comentario</p></div></header>
+<main class="ancho">
+<nav class="miga"><a href="../index.html">Geoestadística</a> › Dejar un comentario</nav>
+<article class="ficha">
+<h2>Dejar un comentario</h2>
+<p>Puede escribirnos una opinión sobre este sitio, una sugerencia para mejorarlo o el aviso de que algún dato publicado en
+él es erróneo. Si se trata de un dato, le agradeceremos que indique en qué página está y, si la conoce, cuál es la cifra
+correcta y su fuente.</p>
+<form class="comentario" id="form-comentario" novalidate>
+<div class="campo">
+<label for="c-quien">Quién escribe</label>
+<span class="ayuda" id="c-quien-ayuda">Cualquier dato que quiera dejar para identificarse: nombre y apellidos, el cargo que
+ocupa o cualquier otra cosa. Es voluntario.</span>
+<input type="text" id="c-quien" name="quien" maxlength="500" autocomplete="name" aria-describedby="c-quien-ayuda">
+</div>
+<div class="campo">
+<label for="c-contacto">Si usted quiere recibir respuesta, deje algún dato de contacto</label>
+<span class="ayuda" id="c-contacto-ayuda">(Teléfono, dirección de correo electrónico…) Es voluntario.</span>
+<input type="text" id="c-contacto" name="contacto" maxlength="500" aria-describedby="c-contacto-ayuda">
+</div>
+<div class="campo">
+<label for="c-texto">Comentario</label>
+<span class="ayuda" id="c-texto-ayuda">Escriba aquí su comentario, con la extensión que necesite.</span>
+<textarea id="c-texto" name="comentario" maxlength="20000" rows="12" required aria-describedby="c-texto-ayuda"></textarea>
+</div>
+<div class="trampa" aria-hidden="true"><label for="c-web">No rellene este campo</label>
+<input type="text" id="c-web" name="web" tabindex="-1" autocomplete="off"></div>
+<button type="submit" class="boton" id="c-enviar">Enviar el comentario</button>
+<p class="comentario-estado" id="c-estado" role="status" aria-live="polite"></p>
+</form>
+<p class="nota">Lo que escriba en este formulario no se publica en el sitio. Se guarda en una hoja de cálculo de Google, privada,
+y solo se usa para leer los comentarios y, si deja un dato de contacto, para responderle. Si quiere que se borre un
+comentario que ha enviado, basta con pedirlo en otro comentario. Más información en el
+<a href="../aviso-legal/index.html">Aviso legal y privacidad</a>.</p>
+</article>
+<script>
+(function () {
+  var URL_ENVIO = "https://script.google.com/macros/s/AKfycbzamwovcVDHavGNJvBbc1qFzpNOmRc9_TAhT-bdBJMu7YKXRb2KLPtfC3GM7WXVzms8QA/exec";
+  var form = document.getElementById('form-comentario');
+  var boton = document.getElementById('c-enviar');
+  var estado = document.getElementById('c-estado');
+  var texto = document.getElementById('c-texto');
+  function aviso(msg, clase) { estado.textContent = msg; estado.className = 'comentario-estado ' + (clase || ''); }
+  if (!URL_ENVIO) {
+    boton.disabled = true;
+    aviso('El formulario todavía no está disponible.', 'error');
+    return;
+  }
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (!texto.value.trim()) {
+      aviso('Escriba el comentario antes de enviarlo.', 'error');
+      texto.focus();
+      return;
+    }
+    boton.disabled = true;
+    aviso('Enviando…');
+    var datos = new URLSearchParams();
+    ['quien', 'contacto', 'comentario', 'web'].forEach(function (n) { datos.append(n, form.elements[n].value); });
+    fetch(URL_ENVIO, { method: 'POST', mode: 'no-cors', body: datos })
+      .then(function () {
+        form.reset();
+        aviso('Gracias. Su comentario se ha enviado correctamente.', 'ok');
+      })
+      .catch(function () {
+        aviso('No se ha podido enviar el comentario. Compruebe la conexión a internet e inténtelo de nuevo.', 'error');
+      })
+      .then(function () { boton.disabled = false; });
+  });
+})();
+</script>
+</main>
+<footer><div class="ancho">Geoestadística de la Diócesis de Getafe · <a href="../verificar-los-datos/index.html">Cómo verificar los datos</a> · <a href="../aviso-legal/index.html">Aviso legal y privacidad</a> · <a href="../comentarios/index.html">Dejar un comentario</a></div></footer>
+</body>
+</html>

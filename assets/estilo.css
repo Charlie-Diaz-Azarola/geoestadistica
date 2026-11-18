@@ -100,6 +100,25 @@ h3 a.ficha-enlace { font-size: .85rem; font-weight: normal; margin-left: 10px; t
 .aviso-novedades h2 { margin: 0 0 6px; font-size: 1.15rem; color: var(--acento); }
 .aviso-novedades p, .aviso-novedades ul { margin: 6px 0; }
 .aviso-novedades li { margin: 4px 0; }
+.comentarios-portada { margin: 0 0 20px; padding: 12px 16px; background: var(--tarjeta); border: 1px solid var(--linea);
+  border-left: 5px solid var(--acento); border-radius: 6px; }
+.comentarios-portada h2 { margin: 0 0 6px; font-size: 1.15rem; color: var(--acento); }
+.comentarios-portada p { margin: 6px 0; }
+.comentarios-portada a { font-weight: bold; }
+form.comentario { margin: 16px 0 0; }
+form.comentario .campo { margin: 0 0 18px; }
+form.comentario label { display: block; font-weight: bold; margin-bottom: 2px; }
+form.comentario .ayuda { display: block; font-size: .9rem; color: var(--suave); margin-bottom: 6px; }
+form.comentario input[type=text], form.comentario textarea { width: 100%; font: inherit; font-size: 1rem; padding: 8px 10px;
+  border: 1px solid var(--linea); border-radius: 6px; background: var(--fondo); color: var(--texto); }
+form.comentario input[type=text]:focus, form.comentario textarea:focus { outline: 2px solid var(--acento); outline-offset: 1px; }
+form.comentario textarea { min-height: 260px; resize: vertical; line-height: 1.45; }
+form.comentario .trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+form.comentario button { font: inherit; border: 0; cursor: pointer; }
+form.comentario button:disabled { opacity: .55; cursor: default; }
+.comentario-estado { margin: 12px 0 0; min-height: 1.5em; }
+.comentario-estado.ok { color: var(--acento); font-weight: bold; }
+.comentario-estado.error { color: var(--alerta); }
 a.tarjeta-seccion { display: block; background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 8px; overflow: hidden; color: var(--texto); text-decoration: none; }
 a.tarjeta-seccion:hover, a.tarjeta-seccion:focus { border-color: var(--acento); }
 a.tarjeta-seccion img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--linea); }
