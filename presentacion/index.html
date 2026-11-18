@@ -46,8 +46,10 @@ a { color: #7a1f2b; text-decoration: none; }
 .columna .dato { display: flex; align-items: baseline; gap: 3mm; }
 .columna .dato b { font-size: 13pt; min-width: 19mm; text-align: right; }
 figure { margin: 0 0 3mm; }
-figure.estrecha { width: 116mm; margin: 3mm auto; }
-figure.estrecha figcaption { text-align: center; }
+.dos.portada-1 { grid-template-columns: 1fr 72mm; }
+.portada-1 .fecha { text-align: left; margin-top: 5mm; }
+ol.secciones { margin: 0 0 3mm; padding-left: 6mm; }
+ol.secciones small { color: #6b6259; }
 figure img { display: block; width: 100%; height: auto; border: .3mm solid #d8d0c4; border-radius: 1.5mm; }
 figcaption, .pie-grafico { font-size: 8.3pt; color: #6b6259; font-style: italic; margin-top: 1.2mm; }
 .dos { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-bottom: 3mm; align-items: start; }
@@ -101,13 +103,27 @@ de la diócesis</p>
 <div class="dato"><b>1.729.840</b><span>habitantes (2025)</span></div>
 <div class="dato"><b>2.303 km²</b><span>de territorio</span></div>
 </div>
+<div class="dos portada-1">
+<div>
 <h2>Qué es</h2>
 <p>Un sitio web público, de consulta libre y gratuita, que reúne en un solo lugar la información territorial y
 estadística de la diócesis: qué parroquias hay y cuál es el territorio de cada una, quiénes viven en él y cómo se
 espera que crezca. Se presenta como una propuesta de servicio para información del clero y de los feligreses.</p>
-<figure class="estrecha"><img src="img/portada.png" alt="Portada del sitio"><figcaption>Portada del sitio, con sus cinco secciones.</figcaption></figure>
+<h2>Cinco secciones</h2>
+<ol class="secciones">
+<li>Arciprestazgos y parroquias</li>
+<li>Información demográfica</li>
+<li>Previsión de desarrollos urbanísticos</li>
+<li>Anuario <small>(en preparación)</small></li>
+<li>Estudios <small>(en preparación)</small></li>
+</ol>
+<p>La portada da paso a esta presentación, invita a dejar comentarios sobre el sitio, explica la estrella que permite
+verificar los datos y avisa de las novedades.</p>
 <p class="fecha">Noviembre de 2026</p>
-<footer><span>Geoestadística de la Diócesis de Getafe</span><span>1 / 6</span></footer>
+</div>
+<figure><img src="img/portada.png" alt="Portada del sitio"><figcaption>Portada del sitio.</figcaption></figure>
+</div>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>1 / 7</span></footer>
 </section>
 <section class="pag">
 <h2>Objetivos</h2>
@@ -140,13 +156,14 @@ y consulte los datos de su zona.</p></div>
 <div><h3>Publicación</h3><ul>
 <li>Mapas interactivos, fichas, tablas y gráficos.</li>
 <li>Datos descargables.</li>
-<li>Una página explica el procedimiento y las fuentes.</li></ul></div>
+<li>Una página explica el procedimiento y las fuentes.</li>
+<li>Una estrella amarilla junto a cada dato demográfico lleva a su fuente original.</li></ul></div>
 </div>
 <h2>Criterios de trabajo</h2>
 <div class="dos">
 <ul>
 <li><strong>Solo cifras agregadas.</strong> No se publica ningún dato personal.</li>
-<li><strong>Cada dato, con su fuente y su fecha.</strong> Todo se puede comprobar en el original.</li>
+<li><strong>Cada dato, con su fuente y su fecha.</strong> Todo se puede comprobar en el original, y el sitio indica cómo hacerlo.</li>
 <li><strong>Sin cifras inventadas.</strong> Si un dato falta, se deja vacío y se dice por qué.</li>
 </ul>
 <ul>
@@ -158,7 +175,7 @@ cuando cambian los límites o cuando el INE publica datos nuevos es rápido.</li
 <p class="aviso"><strong>Alcance de los datos.</strong> Los datos demográficos de las parroquias son estimaciones:
 sirven para hacerse una buena idea, no son cifras exactas. Los de arciprestazgos y de la diócesis coinciden con las
 cifras oficiales de sus municipios. Los datos son de las personas empadronadas en el territorio, no de los feligreses.</p>
-<footer><span>Geoestadística de la Diócesis de Getafe</span><span>2 / 6</span></footer>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>2 / 7</span></footer>
 </section>
 <section class="pag">
 <p class="num-seccion">Sección 1</p>
@@ -202,7 +219,7 @@ para imprimir en A3.</figcaption></figure>
 </div>
 <p class="pie-grafico">Extensión en km² (barra) y número de parroquias. Territorios según la delimitación vigente
 a 14 de noviembre de 2026.</p>
-<footer><span>Geoestadística de la Diócesis de Getafe</span><span>3 / 6</span></footer>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>3 / 7</span></footer>
 </section>
 <section class="pag">
 <p class="num-seccion">Sección 2</p>
@@ -274,7 +291,54 @@ mayores por cada 100 niños; en Griñón, 60.</li>
 <figure><img src="img/s2-mapa.png" alt="Mapa temático del índice de envejecimiento">
 <figcaption>Mapa temático: índice de envejecimiento por parroquias.</figcaption></figure>
 </div>
-<footer><span>Geoestadística de la Diócesis de Getafe</span><span>4 / 6</span></footer>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>4 / 7</span></footer>
+</section>
+<section class="pag">
+<p class="num-seccion">Sección 2 · Verificador de datos</p>
+<h2>Datos verificables</h2>
+<p class="entrada">Cualquier persona puede comprobar en la fuente original de dónde sale cada dato demográfico del sitio.</p>
+<div class="dos ancha-izq">
+<figure><img src="img/vf-globo.png" alt="Globo del verificador abierto junto al número de habitantes">
+<figcaption>Globo de los habitantes del arciprestazgo de Getafe.</figcaption></figure>
+<div>
+<h3>La estrella amarilla</h3>
+<p>Junto a los datos de «Información demográfica» (resumen, temas de las fichas y columnas de las tablas comparativas)
+hay una <strong>estrella amarilla de ocho puntas</strong>. Al pulsarla se abre un globo con:</p>
+<ul>
+<li><strong>Fuente:</strong> el organismo y la tabla exacta, con el enlace para abrirla.</li>
+<li><strong>Qué marcar</strong> en la página de la fuente para ver ese mismo dato.</li>
+<li><strong>Contraste:</strong> si otro organismo publica el dato, su cifra y cuánto difiere.</li>
+</ul>
+<p>Las fuentes son el INE, la Comunidad de Madrid y el Boletín Oficial del Estado.</p>
+</div>
+</div>
+<div class="dos ancha-der">
+<div>
+<h3>Dónde se explica</h3>
+<ul>
+<li><strong>Al principio de «Información demográfica»,</strong> con instrucciones para usar las tablas del INE.</li>
+<li><strong>En la página «Cómo verificar los datos»,</strong> enlazada desde el pie de todas las páginas. Explica las dos
+cifras oficiales de habitantes (el Censo anual, que usa el sitio, y el Padrón municipal) y qué no se puede contrastar:
+los datos de cada parroquia son estimaciones del sitio.</li>
+</ul>
+</div>
+<figure><img src="img/vf-cuadro.png" alt="Recuadro «Datos verificables» de la sección «Información demográfica»">
+<figcaption>Recuadro «Datos verificables», al principio de la sección «Información demográfica».</figcaption></figure>
+</div>
+<h2>Auditoría antes de cada publicación</h2>
+<p>Antes de publicar una actualización, un programa de comprobación vuelve a descargar las fuentes y las compara con lo
+que se va a publicar: los habitantes de cada municipio, con el Censo anual, el Padrón y el Banco de Datos Municipal de la
+Comunidad de Madrid; los nacimientos, defunciones y matrimonios, con la Comunidad de Madrid; la edad media, el tamaño de
+los hogares y la renta, con el dato municipal del INE; y todos los enlaces de los globos. Avisa también cuando hay datos
+más recientes. El resultado se publica en la página «Cómo verificar los datos».</p>
+<h3>Última comprobación: 18 de noviembre de 2026</h3>
+<div class="cifras" style="grid-template-columns: repeat(4, 1fr)">
+<div class="dato"><b>48</b><span>municipios contrastados</span></div>
+<div class="dato"><b>0</b><span>discrepancias con las fuentes</span></div>
+<div class="dato"><b>71</b><span>enlaces comprobados, todos en funcionamiento</span></div>
+<div class="dato"><b>9</b><span>tablas del INE con datos nuevos, para la próxima actualización</span></div>
+</div>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>5 / 7</span></footer>
 </section>
 <section class="pag">
 <p class="num-seccion">Sección 3</p>
@@ -324,7 +388,7 @@ mayores por cada 100 niños; en Griñón, 60.</li>
 </div>
 <p class="pie-grafico">Fuentes: notas de prensa de la Comunidad de Madrid y de los ayuntamientos, boletines oficiales, licitaciones
 y prensa, citadas en la ficha de cada desarrollo. Datos del sitio a 14 de noviembre de 2026. Son previsiones y pueden cambiar.</p>
-<footer><span>Geoestadística de la Diócesis de Getafe</span><span>5 / 6</span></footer>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>6 / 7</span></footer>
 </section>
 <section class="pag">
 <p class="num-seccion">Secciones 4 y 5 · en preparación</p>
@@ -345,7 +409,7 @@ los bautismos de una parroquia con los nacimientos de su zona.</p>
 <thead><tr><th>Sección</th><th>Contenido</th><th>Estado</th></tr></thead>
 <tbody>
 <tr><td>1. Arciprestazgos y parroquias</td><td>Mapa, buscador de direcciones, 127 fichas y mapas para imprimir</td><td>Publicada</td></tr>
-<tr><td>2. Información demográfica</td><td>Datos del INE en cuatro niveles, tablas comparativas, mapa temático y descarga</td><td>Publicada</td></tr>
+<tr><td>2. Información demográfica</td><td>Datos del INE en cuatro niveles, tablas comparativas, mapa temático, descarga y verificador de datos</td><td>Publicada</td></tr>
 <tr><td>3. Previsión de desarrollos urbanísticos</td><td>35 desarrollos con 49.456 viviendas previstas</td><td>Publicada</td></tr>
 <tr><td>4. Anuario</td><td>Sacramentos y actividad parroquial</td><td>En preparación</td></tr>
 <tr><td>5. Estudios</td><td>Reflexiones y estudios sobre temas concretos</td><td>En preparación</td></tr>
@@ -359,7 +423,7 @@ incorporar los desarrollos urbanísticos nuevos.</li>
 <li><strong>Correcciones:</strong> recoger las que comuniquen las parroquias sobre sus datos y sus límites.</li>
 </ul>
 
-<footer><span>Geoestadística de la Diócesis de Getafe</span><span>6 / 6</span></footer>
+<footer><span>Geoestadística de la Diócesis de Getafe</span><span>7 / 7</span></footer>
 </section>
 <script>
 function ajustar() {
