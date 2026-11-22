@@ -97,7 +97,7 @@ h3 a.ficha-enlace { font-size: .85rem; font-weight: normal; margin-left: 10px; t
 .titulo-secciones { margin: 32px 0 18px; text-align: center; font-size: 1.6rem; color: var(--acento); }
 @media (max-width: 600px) { .portada { grid-template-columns: 1fr; } }
 .en-construccion { color: var(--suave); font-style: italic; }
-/* Cuadros de la portada (presentación, comentarios, verificador y novedades): todos con el mismo amarillo */
+/* Cuadros de la portada (presentación, comentarios y novedades): todos con el mismo amarillo */
 .cuadro-portada { margin: 0 0 20px; padding: 12px 16px; background: var(--tarjeta); border: 1px solid #d9a400;
   border-left: 5px solid #d9a400; border-radius: 6px; }
 .presentacion-enlace a { font-weight: bold; }
@@ -324,9 +324,6 @@ ul.vf-lista li { margin: 4px 0; }
 .vf-portada ol { margin: 8px 0; padding-left: 22px; }
 .vf-portada ol li { margin: 6px 0; }
 @media (max-width: 500px) { .vf-portada { grid-template-columns: 1fr; } }
-.vf-breve { display: flex; align-items: center; gap: 14px; }
-.vf-breve .vf-grande svg { width: 36px; height: 36px; display: block; fill: var(--vf-amarillo); stroke: var(--vf-borde); stroke-width: 1; stroke-linejoin: round; }
-.vf-breve p { margin: 0; }
 .vf-ejemplo { white-space: nowrap; }
 .dm-tabla th a.vf { margin-left: 2px; width: 22px; height: 22px; }
 .dm-tabla th a.vf .vf-svg { width: 15px; height: 15px; }
