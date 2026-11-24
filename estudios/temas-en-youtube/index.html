@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Temas de lo más visto en YouTube · Estudios · Geoestadística de la Diócesis de Getafe</title>
-<meta name="description" content="De qué tratan los vídeos más vistos en España: los temas más presentes en los últimos 60 minutos y en el último día, la última semana y el último mes, con datos de YouTube que se actualizan cada hora.">
-<link rel="stylesheet" href="../../assets/estilo.css?v=96441a8c">
+<meta name="description" content="De qué tratan los vídeos más vistos en España: los temas más presentes en la última consulta y en el último día, la última semana y las últimas cuatro semanas, con datos de YouTube que se actualizan cada hora.">
+<link rel="stylesheet" href="../../assets/estilo.css?v=d889a4bf">
 </head>
 <body>
 <header><div class="ancho"><a href="../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Estudios</p></div></header>
@@ -13,25 +13,36 @@
 <nav class="miga"><a href="../../index.html">Geoestadística</a> › <a href="../index.html">Estudios</a> › Temas de lo más visto en YouTube</nav>
 <article class="ficha dm">
 <h2>Temas de lo más visto en YouTube en España</h2>
-<p>De qué tratan los vídeos más vistos en España: los temas más presentes en los últimos 60 minutos y en el último día, la última semana y el último mes, con datos de YouTube que se actualizan cada hora.</p>
+<p>De qué tratan los vídeos más vistos en España: los temas más presentes en la última consulta y en el último día, la última semana y las últimas cuatro semanas, con datos de YouTube que se actualizan cada hora.</p>
 <p class="et-estado" id="et-estado" role="status" aria-live="polite">Cargando los datos…</p>
 <div id="et-panel" hidden>
 <div class="et-controles">
 <div class="filtro" role="group" aria-label="Periodo"><span>Periodo</span>
-<button type="button" data-g="periodo" data-v="ahora" aria-pressed="true">Últimos 60 minutos</button>
+<button type="button" data-g="periodo" data-v="ahora" aria-pressed="true">Última consulta</button>
 <button type="button" data-g="periodo" data-v="dia" aria-pressed="false">Último día</button>
 <button type="button" data-g="periodo" data-v="semana" aria-pressed="false">Última semana</button>
-<button type="button" data-g="periodo" data-v="mes" aria-pressed="false">Último mes</button></div>
+<button type="button" data-g="periodo" data-v="mes" aria-pressed="false">Últimas cuatro semanas</button></div>
 <div class="filtro" role="group" aria-label="Lista"><span>Lista</span>
 <button type="button" data-g="lista" data-v="Populares" aria-pressed="true">Populares</button>
 <button type="button" data-g="lista" data-v="Recientes" aria-pressed="false">Recientes (últimas 24 horas)</button></div>
-<div class="filtro" role="group" aria-label="Medida"><span>Medida</span>
-<button type="button" data-g="medida" data-v="videos" aria-pressed="true">Vídeos</button>
-<button type="button" data-g="medida" data-v="ganadas" aria-pressed="false">Visualizaciones ganadas</button></div>
+<div class="filtro" role="group" aria-label="Clasificación"><span>Clasificación</span>
+<button type="button" data-g="clas" data-v="estudio" aria-pressed="true">Temas del estudio</button>
+<button type="button" data-g="clas" data-v="youtube" aria-pressed="false">Temas de YouTube</button></div>
 </div>
 <p class="et-cab" id="et-cab"></p>
 <div class="dm-barras et-barras" id="et-barras"></div>
-<h3>Evolución en el último mes</h3>
+<h3>Buscar una palabra</h3>
+<p>Escriba una palabra o una frase y verá cuántos de los vídeos de la última consulta la llevan en el título. Se
+aplica el mismo criterio que en el diccionario de temas: no se distinguen mayúsculas ni tildes, y un asterisco al final
+admite cualquier terminación (<code>catolic*</code> incluye «católico» y «católica»). Solo se miran los títulos, no el
+contenido de los vídeos. Lo que escriba no se guarda.</p>
+<form class="et-buscar" id="et-buscar" role="search">
+<label for="et-q">Palabra o frase</label>
+<input id="et-q" type="search" maxlength="40" autocomplete="off" required>
+<button type="submit">Buscar</button>
+</form>
+<p class="et-res" id="et-res" role="status" aria-live="polite"></p>
+<h3>Evolución en las últimas cuatro semanas</h3>
 <p class="et-cab" id="et-cab-lineas"></p>
 <div id="et-lineas"></div>
 </div>
@@ -51,23 +62,25 @@ búsquedas orientadas a España y al español (método <code>search.list</code>,
 ninguna coincide, se le asigna el tema que corresponde a la categoría que el propio canal eligió en YouTube; si tampoco
 hay ninguno, queda «Sin tema». El mismo título da siempre el mismo resultado. Como un vídeo puede tener más de un tema,
 la suma de los temas puede superar el total de vídeos.</p>
-<h4>Las dos medidas</h4>
-<ul>
-<li><strong>Vídeos:</strong> cuántos vídeos de cada tema hay en la lista. En «Últimos 60 minutos», los de la última consulta, que se hace cada hora; en el
-último día, la última semana y el último mes, se suman los vídeos distintos de cada día, de modo que un vídeo que estuvo
-en la lista tres días cuenta tres veces. Mide la <em>presencia</em> del tema.</li>
-<li><strong>Visualizaciones ganadas:</strong> cuántas visualizaciones sumaron los vídeos de cada tema mientras estuvieron
-en la lista. En «Últimos 60 minutos», las ganadas desde la consulta anterior; en los demás periodos, las ganadas cada día entre la primera y la
-última consulta de ese día. Mide la <em>atención</em> que recibió el tema. Las visualizaciones anteriores a que un vídeo
-entrase en la lista no se cuentan.</li>
-</ul>
+<p>Con el botón «Temas de YouTube» se ve otra clasificación: la que hace el propio YouTube, que asigna a cada vídeo uno o
+varios temas generales tomados de artículos de Wikipedia (campo <code>topicCategories</code> de la API), como «Música»,
+«Videojuegos» o «Religión». YouTube no explica cómo los asigna; a menudo da a la vez un tema general y otro más concreto
+(«Música» y «Música pop»), y algunos vídeos no tienen ninguno. Sirve para contrastar la clasificación del estudio.</p>
+<h4>Qué se cuenta</h4>
+<p>Cuántos vídeos de cada tema hay en la lista: es decir, la <em>presencia</em> de cada tema entre lo más visto. En
+«Última consulta», los de la consulta más reciente, que se hace cada hora; en el último día, la última semana y las
+últimas cuatro semanas, se suman los vídeos distintos de cada día, de modo que un vídeo que estuvo en la lista tres
+días cuenta tres veces.</p>
+<p>No se muestran visualizaciones ni cifras calculadas a partir de ellas, y los datos se conservan 30 días como
+máximo, conforme a las <a href="https://developers.google.com/youtube/terms/developer-policies">normas de la API de YouTube</a>
+para desarrolladores. Por eso el periodo más largo es de cuatro semanas.</p>
 <h4>Límites</h4>
 <ul>
 <li>Las listas reflejan lo más visto en YouTube, no todo lo que se ve en YouTube ni en otras redes sociales.</li>
 <li>Las palabras clave se aplican de forma automática: algunos vídeos quedarán mal clasificados. El diccionario se
 revisa periódicamente con los vídeos que quedan «Sin tema» o mal asignados.</li>
-<li>Solo se guardan datos públicos de los vídeos (título, canal, categoría y número de visualizaciones). Esta página
-muestra únicamente cifras agregadas por tema.</li>
+<li>Solo se guardan, durante 30 días como máximo, datos públicos de los vídeos (título, canal, categoría y fecha de
+publicación). Esta página muestra únicamente cuántos vídeos hay de cada tema.</li>
 </ul>
 </div>
 <h3>Diccionario de temas</h3>
@@ -83,8 +96,8 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
   function aviso(t, err) { estado.textContent = t; estado.className = 'et-estado' + (err ? ' error' : ''); estado.hidden = false; }
   if (!URL) { aviso('Los datos de este estudio todavía no están disponibles.', true); return; }
 
-  var D = null, sel = { periodo: 'ahora', lista: 'Populares', medida: 'videos' };
-  var NOMBRES = { ahora: 'últimos 60 minutos', dia: 'último día', semana: 'última semana', mes: 'último mes' };
+  var D = null, sel = { periodo: 'ahora', lista: 'Populares', clas: 'estudio' };
+  var NOMBRES = { ahora: 'última consulta', dia: 'último día', semana: 'última semana', mes: 'últimas cuatro semanas' };
   function n(x) { return Number(x || 0).toLocaleString('es-ES'); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function fecha(s) { // AAAA-MM-DD → 24 nov. 2026
@@ -95,13 +108,16 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
     return fecha(s.substring(0, 10)) + ', ' + s.substring(11, 16) + ' h';
   }
 
-  // Temas del periodo elegido: [{tema, videos, ganadas}] y total de vídeos
+  // Temas del periodo elegido: [{tema, videos}] y total de vídeos
+  // Datos de la clasificación elegida: la del estudio está en D; la de YouTube, en D.youtube y D.ahora.YouTube
+  function fuenteClas() { return sel.clas === 'youtube' ? (D.youtube || {}) : D; }
   function temasDe() {
     if (sel.periodo === 'ahora') {
-      var a = D.ahora && D.ahora[sel.lista];
+      var base = sel.clas === 'youtube' ? (D.ahora && D.ahora.YouTube) : D.ahora;
+      var a = base && base[sel.lista];
       return a ? { temas: a.temas, total: a.total, texto: 'Consulta del ' + hora(D.ahora.hora) } : null;
     }
-    var p = D[sel.periodo];
+    var p = fuenteClas()[sel.periodo];
     if (!p) return null;
     var dias = Math.round((Date.parse(p.hasta) - Date.parse(p.desde)) / 864e5) + 1;
     var texto = p.desde === p.hasta ? 'Día ' + fecha(p.hasta) : 'Del ' + fecha(p.desde) + ' al ' + fecha(p.hasta);
@@ -112,25 +128,21 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
     var r = temasDe(), caja = document.getElementById('et-barras'), cab = document.getElementById('et-cab');
     if (!r || !r.temas.length) {
       caja.innerHTML = '';
-      cab.textContent = sel.periodo === 'ahora' ? 'Todavía no hay ninguna consulta.'
-        : 'Todavía no hay datos del ' + NOMBRES[sel.periodo] + ': el primer resumen se hace al terminar el primer día completo.';
+      cab.textContent = sel.periodo === 'ahora'
+        ? (sel.clas === 'youtube' ? 'Los temas de YouTube aparecerán después de la próxima consulta.' : 'Todavía no hay ninguna consulta.')
+        : 'Todavía no hay datos de «' + NOMBRES[sel.periodo] + '»: el primer resumen se hace al terminar el primer día completo.';
       return;
     }
-    var m = sel.medida;
+    var m = 'videos';
     var filas = r.temas.slice().sort(function (a, b) {
       if ((a.tema === 'Sin tema') !== (b.tema === 'Sin tema')) return a.tema === 'Sin tema' ? 1 : -1;
       return b[m] - a[m] || b.videos - a.videos;
     });
     var max = Math.max.apply(null, filas.map(function (f) { return f[m]; })) || 1;
     var suma = filas.reduce(function (s, f) { return s + (f.tema === 'Sin tema' ? 0 : f[m]); }, 0) || 1;
-    var unidad = m === 'videos' ? (sel.periodo === 'ahora' ? 'vídeos' : 'vídeos·día') : 'visualizaciones';
+    var unidad = sel.periodo === 'ahora' ? 'vídeos' : 'vídeos·día';
     cab.textContent = r.texto + (r.total ? ' · ' + n(r.total) + ' vídeos en la lista' : '') +
-      (m === 'ganadas' && sel.periodo === 'ahora' ? ' · visualizaciones ganadas en la última hora' : '') +
-      (m === 'videos' && sel.periodo !== 'ahora' ? ' · vídeos·día: vídeos distintos de cada día, sumados' : '');
-    if (m === 'ganadas' && !filas.some(function (f) { return f.ganadas > 0; })) {
-      caja.innerHTML = '<p class="nota">Todavía no hay visualizaciones ganadas: hacen falta al menos dos consultas.</p>';
-      return;
-    }
+      (sel.periodo !== 'ahora' ? ' · vídeos·día: vídeos distintos de cada día, sumados' : '');
     caja.innerHTML = filas.map(function (f) {
       var v = f[m], pct = f.tema === 'Sin tema' ? '' : (100 * v / suma).toLocaleString('es-ES', { maximumFractionDigits: 1 }) + ' %';
       var tit = f.tema + ': ' + n(v) + ' ' + unidad + (pct ? ' (' + pct + ' del total de los temas)' : '');
@@ -141,11 +153,10 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
     }).join('');
   }
 
-  // Evolución diaria de los cinco temas con más presencia en el último mes (de la lista elegida).
-  // El color sigue al tema: los cinco se eligen por vídeos, sea cual sea la medida, para que no cambien al cambiarla.
+  // Evolución diaria de los cinco temas con más presencia en las últimas cuatro semanas (de la lista elegida).
   function lineas() {
     var caja = document.getElementById('et-lineas'), cab = document.getElementById('et-cab-lineas');
-    var serie = (D.serie || []).filter(function (s) { return s.lista === sel.lista && s.tema !== 'Sin tema'; });
+    var serie = (fuenteClas().serie || []).filter(function (s) { return s.lista === sel.lista && s.tema !== 'Sin tema'; });
     var dias = Array.from(new Set(serie.map(function (s) { return s.fecha; }))).sort();
     if (dias.length < 2) {
       caja.innerHTML = '';
@@ -155,7 +166,7 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
     var tot = {};
     serie.forEach(function (s) { tot[s.tema] = (tot[s.tema] || 0) + s.videos; });
     var top = Object.keys(tot).sort(function (a, b) { return tot[b] - tot[a]; }).slice(0, 5);
-    var m = sel.medida, val = {};
+    var m = 'videos', val = {};
     top.forEach(function (t) { val[t] = dias.map(function () { return 0; }); });
     serie.forEach(function (s) { if (val[s.tema]) val[s.tema][dias.indexOf(s.fecha)] = s[m]; });
     var max = 0;
@@ -187,15 +198,15 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
       svg.push('<path style="stroke:' + c + '" d="' + val[t].map(function (v, d) { return (d ? 'L' : 'M') + x(d).toFixed(1) + ' ' + y(v).toFixed(1); }).join('') + '"/>');
       val[t].forEach(function (v, d) {
         svg.push('<circle r="4" style="fill:' + c + '" cx="' + x(d).toFixed(1) + '" cy="' + y(v).toFixed(1) + '"><title>' +
-          esc(t + ', ' + fecha(dias[d]) + ': ' + n(v) + (m === 'videos' ? ' vídeos' : ' visualizaciones ganadas')) + '</title></circle>');
+          esc(t + ', ' + fecha(dias[d]) + ': ' + n(v) + ' vídeos') + '</title></circle>');
       });
     });
     fin.forEach(function (f) {
       svg.push('<text class="tx" x="' + (W - R + 8) + '" y="' + (f.y + 4).toFixed(1) + '">' + esc(f.t) + '</text>');
     });
     svg.push('</svg>');
-    cab.textContent = (m === 'videos' ? 'Vídeos de cada tema en la lista, por día' : 'Visualizaciones ganadas por los vídeos de cada tema, por día') +
-      ' · lista «' + sel.lista + '» · los cinco temas con más vídeos en el último mes';
+    cab.textContent = 'Vídeos de cada tema en la lista, por día · lista «' + sel.lista + '» · ' +
+      (sel.clas === 'youtube' ? 'temas de YouTube' : 'temas del estudio') + ' · los cinco temas con más vídeos en las últimas cuatro semanas';
     caja.innerHTML = '<div class="et-leyenda">' + top.map(function (t, i) {
       return '<span><i style="background:var(--dm-' + (i + 1) + ')"></i>' + esc(t) + '</span>';
     }).join('') + '</div>' + svg.join('');
@@ -210,6 +221,45 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
   }
 
   function dibujar() { barras(); lineas(); }
+
+  // Buscador de palabras: el servicio responde con cuántos títulos de la última consulta contienen la búsqueda
+  var numBusqueda = 0;
+  function pct(a, b) { return b ? (100 * a / b).toLocaleString('es-ES', { maximumFractionDigits: 1 }) + ' %' : '0 %'; }
+  function respuestaBusqueda(r, q) {
+    if (!r || r.error) {
+      var msg = {
+        busqueda_no_valida: 'Escriba al menos dos letras o números.',
+        demasiadas_busquedas: 'Hay muchas búsquedas en este momento. Inténtelo de nuevo dentro de un minuto.',
+        sin_datos: 'El buscador estará disponible después de la próxima consulta a YouTube.'
+      }[r && r.error] || 'No se ha podido hacer la búsqueda. Inténtelo de nuevo más tarde.';
+      return { texto: msg, error: true };
+    }
+    var t = r.Todas, p = r.Populares, c = r.Recientes;
+    var base = ' de los ' + n(t.total) + ' vídeos de la consulta del ' + hora(r.hora);
+    if (!t.coinciden) return { texto: '«' + q + '» no aparece en el título de ninguno' + base + '.' };
+    return { texto: '«' + q + '» aparece en el título de ' + n(t.coinciden) + base + ' (' + pct(t.coinciden, t.total) + '): ' +
+      n(p.coinciden) + ' de ' + n(p.total) + ' en Populares (' + pct(p.coinciden, p.total) + ') y ' +
+      n(c.coinciden) + ' de ' + n(c.total) + ' en Recientes (' + pct(c.coinciden, c.total) + ').' };
+  }
+  document.getElementById('et-buscar').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var q = document.getElementById('et-q').value.trim().slice(0, 40);
+    var res = document.getElementById('et-res'), boton = this.querySelector('button');
+    if (!q) return;
+    var nombre = '__etBuscar' + (++numBusqueda), sc = document.createElement('script');
+    function fin(r) {
+      clearTimeout(reloj); delete window[nombre]; if (sc.parentNode) sc.parentNode.removeChild(sc);
+      boton.disabled = false;
+      var o = respuestaBusqueda(r, q);
+      res.textContent = o.texto; res.className = 'et-res' + (o.error ? ' error' : '');
+    }
+    var reloj = setTimeout(function () { fin(null); }, 15000);
+    window[nombre] = fin;
+    boton.disabled = true; res.className = 'et-res'; res.textContent = 'Buscando…';
+    sc.src = URL + (URL.indexOf('?') < 0 ? '?' : '&') + 'q=' + encodeURIComponent(q) + '&callback=' + nombre;
+    sc.onerror = function () { fin(null); };
+    document.head.appendChild(sc);
+  });
 
   document.querySelectorAll('.et-controles button').forEach(function (b) {
     b.addEventListener('click', function () {

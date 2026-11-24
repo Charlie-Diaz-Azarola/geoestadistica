@@ -351,3 +351,13 @@ table.et-dicc { width: 100%; border-collapse: collapse; font-size: .9rem; margin
 table.et-dicc th, table.et-dicc td { text-align: left; vertical-align: top; padding: 6px 8px; border-bottom: 1px solid var(--linea); }
 table.et-dicc th { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--suave); font-weight: normal; }
 table.et-dicc td:first-child { white-space: nowrap; font-weight: bold; }
+.et-buscar { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: end; margin: 10px 0 6px; }
+.et-buscar label { display: block; width: 100%; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--suave); }
+.et-buscar input { flex: 1 1 14em; max-width: 24em; font: inherit; font-size: 1rem; padding: 8px 10px; border: 1px solid var(--linea);
+  border-radius: 6px; background: var(--fondo); color: var(--texto); }
+.et-buscar input:focus { outline: 2px solid var(--acento); outline-offset: 1px; }
+.et-buscar button { font: inherit; font-size: 1rem; padding: 8px 16px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--acento); background: var(--acento); color: var(--fondo); }
+.et-buscar button[disabled] { opacity: .6; cursor: progress; }
+.et-res { margin: 6px 0 4px; min-height: 1.5em; }
+.et-res.error { color: var(--alerta); }
