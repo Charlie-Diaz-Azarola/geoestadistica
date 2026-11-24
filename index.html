@@ -6,7 +6,17 @@
 <title>Diócesis de Getafe - Geoestadística</title>
 <meta name="description" content="Geoestadística de la Diócesis de Getafe: arciprestazgos y parroquias, información demográfica, previsión de desarrollos urbanísticos, anuario y estudios">
 <link rel="stylesheet" href="assets/estilo.css?v=96441a8c">
-<script>if (location.hostname === "charlie-diaz-azarola.github.io") fetch("https://script.google.com/macros/s/AKfycbxb62kwRvWRCjveEKqzOK7DVEMJz_uzRdi6P7O9RhNFWONRctCxiYrL_WBxgz007IYbyA/exec?action=increment", {mode: 'no-cors'}).catch(function () {});</script>
+<script>(function () {
+  if (location.hostname !== "charlie-diaz-azarola.github.io") return;
+  var marca = "geoestadistica-sin-contar", p = new URLSearchParams(location.search);
+  try {
+    if (p.has('sincontar')) localStorage.setItem(marca, '1');
+    if (p.has('contar')) localStorage.removeItem(marca);
+    if (p.has('sincontar') || p.has('contar')) history.replaceState(null, '', location.pathname + location.hash);
+    if (localStorage.getItem(marca)) return;
+  } catch (err) {}
+  fetch("https://script.google.com/macros/s/AKfycbxb62kwRvWRCjveEKqzOK7DVEMJz_uzRdi6P7O9RhNFWONRctCxiYrL_WBxgz007IYbyA/exec?action=increment", {mode: 'no-cors'}).catch(function () {});
+})();</script>
 </head>
 <body>
 <header><div class="ancho"><a href="index.html"><h1>Diócesis de Getafe - Geoestadística</h1></a></div></header>
