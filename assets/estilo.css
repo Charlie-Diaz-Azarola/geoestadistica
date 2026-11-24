@@ -329,3 +329,25 @@ ul.vf-lista li { margin: 4px 0; }
 .dm-tabla th a.vf .vf-svg { width: 15px; height: 15px; }
 details.dm-tema > summary .dm-tit a.vf { margin-left: 6px; }
 .vf-en-linea { display: inline-block; vertical-align: -3px; }
+
+.et-controles { display: grid; gap: 10px; margin: 16px 0 6px; }
+.et-controles .filtro { margin: 0; align-items: center; }
+.et-controles .filtro > span { font-size: .85rem; color: var(--suave); min-width: 5.5em; }
+.et-estado { margin: 10px 0; color: var(--suave); font-size: .95rem; }
+.et-estado.error { color: var(--alerta); }
+.et-cab { margin: 14px 0 4px; font-size: .95rem; color: var(--suave); }
+.et-barras .dm-fila.et-sin .dm-barra { background: var(--suave); opacity: .55; }
+.et-leyenda { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .85rem; color: var(--suave); margin: 4px 0; }
+.et-leyenda i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; margin-right: 6px; vertical-align: 3px; }
+svg.et-lineas { display: block; width: 100%; height: auto; margin: 6px 0; font-family: inherit; }
+svg.et-lineas .tx { fill: var(--texto); font-size: 11px; font-variant-numeric: tabular-nums; }
+svg.et-lineas .ts { fill: var(--suave); font-size: 11px; }
+svg.et-lineas .reja { stroke: var(--linea); stroke-width: 1; }
+svg.et-lineas .eje { stroke: var(--suave); stroke-width: 1; }
+svg.et-lineas path { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+svg.et-lineas circle { stroke: var(--tarjeta); stroke-width: 2; }
+.et-metodo h4 { margin: 16px 0 4px; font-size: 1.05rem; }
+table.et-dicc { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 8px 0; }
+table.et-dicc th, table.et-dicc td { text-align: left; vertical-align: top; padding: 6px 8px; border-bottom: 1px solid var(--linea); }
+table.et-dicc th { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--suave); font-weight: normal; }
+table.et-dicc td:first-child { white-space: nowrap; font-weight: bold; }

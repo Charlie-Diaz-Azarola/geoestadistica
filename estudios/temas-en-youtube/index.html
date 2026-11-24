@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Temas de lo más visto en YouTube · Estudios · Geoestadística de la Diócesis de Getafe</title>
+<meta name="description" content="De qué tratan los vídeos más vistos en España: los temas más presentes ahora mismo y en el último día, la última semana y el último mes, con datos de YouTube que se actualizan cada hora.">
+<link rel="stylesheet" href="../../assets/estilo.css?v=96441a8c">
+</head>
+<body>
+<header><div class="ancho"><a href="../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Estudios</p></div></header>
+<main class="ancho">
+<nav class="miga"><a href="../../index.html">Geoestadística</a> › <a href="../index.html">Estudios</a> › Temas de lo más visto en YouTube</nav>
+<article class="ficha dm">
+<h2>Temas de lo más visto en YouTube en España</h2>
+<p>De qué tratan los vídeos más vistos en España: los temas más presentes ahora mismo y en el último día, la última semana y el último mes, con datos de YouTube que se actualizan cada hora.</p>
+<p class="et-estado" id="et-estado" role="status" aria-live="polite">Cargando los datos…</p>
+<div id="et-panel" hidden>
+<div class="et-controles">
+<div class="filtro" role="group" aria-label="Periodo"><span>Periodo</span>
+<button type="button" data-g="periodo" data-v="ahora" aria-pressed="true">Ahora</button>
+<button type="button" data-g="periodo" data-v="dia" aria-pressed="false">Último día</button>
+<button type="button" data-g="periodo" data-v="semana" aria-pressed="false">Última semana</button>
+<button type="button" data-g="periodo" data-v="mes" aria-pressed="false">Último mes</button></div>
+<div class="filtro" role="group" aria-label="Lista"><span>Lista</span>
+<button type="button" data-g="lista" data-v="Populares" aria-pressed="true">Populares</button>
+<button type="button" data-g="lista" data-v="Recientes" aria-pressed="false">Recientes (últimas 24 horas)</button></div>
+<div class="filtro" role="group" aria-label="Medida"><span>Medida</span>
+<button type="button" data-g="medida" data-v="videos" aria-pressed="true">Vídeos</button>
+<button type="button" data-g="medida" data-v="ganadas" aria-pressed="false">Visualizaciones ganadas</button></div>
+</div>
+<p class="et-cab" id="et-cab"></p>
+<div class="dm-barras et-barras" id="et-barras"></div>
+<h3>Evolución en el último mes</h3>
+<p class="et-cab" id="et-cab-lineas"></p>
+<div id="et-lineas"></div>
+</div>
+<h3>Método y fuentes</h3>
+<div class="et-metodo">
+<h4>Qué se mide</h4>
+<p>Cada hora se consultan dos listas de la <a href="https://developers.google.com/youtube/v3">API de datos de YouTube</a>
+(versión 3), de Google:</p>
+<ul>
+<li><strong>Populares:</strong> la lista de vídeos más populares en España que elabora YouTube (método <code>videos.list</code>,
+lista <code>mostPopular</code>, región ES), hasta 200 vídeos. YouTube no publica cómo la elabora; desde julio de 2025 ya no
+coincide con la antigua página «Tendencias», que YouTube retiró.</li>
+<li><strong>Recientes:</strong> los 50 vídeos con más visualizaciones entre los publicados en las 24 horas anteriores, en
+búsquedas orientadas a España y al español (método <code>search.list</code>, ordenado por visualizaciones).</li>
+</ul>
+<p>A cada vídeo se le asignan uno o varios temas buscando en su título las palabras clave del diccionario de abajo. Si
+ninguna coincide, se le asigna el tema que corresponde a la categoría que el propio canal eligió en YouTube; si tampoco
+hay ninguno, queda «Sin tema». El mismo título da siempre el mismo resultado. Como un vídeo puede tener más de un tema,
+la suma de los temas puede superar el total de vídeos.</p>
+<h4>Las dos medidas</h4>
+<ul>
+<li><strong>Vídeos:</strong> cuántos vídeos de cada tema hay en la lista. En «Ahora», los de la última consulta; en el
+último día, la última semana y el último mes, se suman los vídeos distintos de cada día, de modo que un vídeo que estuvo
+en la lista tres días cuenta tres veces. Mide la <em>presencia</em> del tema.</li>
+<li><strong>Visualizaciones ganadas:</strong> cuántas visualizaciones sumaron los vídeos de cada tema mientras estuvieron
+en la lista. En «Ahora», las de la última hora; en los demás periodos, las ganadas cada día entre la primera y la
+última consulta de ese día. Mide la <em>atención</em> que recibió el tema. Las visualizaciones anteriores a que un vídeo
+entrase en la lista no se cuentan.</li>
+</ul>
+<h4>Límites</h4>
+<ul>
+<li>Las listas reflejan lo más visto en YouTube, no todo lo que se ve en YouTube ni en otras redes sociales.</li>
+<li>Las palabras clave se aplican de forma automática: algunos vídeos quedarán mal clasificados. El diccionario se
+revisa periódicamente con los vídeos que quedan «Sin tema» o mal asignados.</li>
+<li>Solo se guardan datos públicos de los vídeos (título, canal, categoría y número de visualizaciones). Esta página
+muestra únicamente cifras agregadas por tema.</li>
+</ul>
+</div>
+<h3>Diccionario de temas</h3>
+<p>Palabras clave que se buscan en el título (sin distinguir mayúsculas ni tildes; un asterisco indica que vale
+cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de YouTube que se usan cuando no coincide ninguna.</p>
+<div id="et-dicc"><p class="nota">El diccionario se muestra cuando se cargan los datos.</p></div>
+<p class="nota" id="et-act"></p>
+</article>
+<script>
+(function () {
+  var URL = "https://script.google.com/macros/s/AKfycbxHT0Hgx3qBrISqQ0mcPJCIQbTuf3IO_kkpEwZe4ccQxx93XwTgyrhRnyHsNFBVTPuZ/exec";
+  var estado = document.getElementById('et-estado');
+  function aviso(t, err) { estado.textContent = t; estado.className = 'et-estado' + (err ? ' error' : ''); estado.hidden = false; }
+  if (!URL) { aviso('Los datos de este estudio todavía no están disponibles.', true); return; }
+
+  var D = null, sel = { periodo: 'ahora', lista: 'Populares', medida: 'videos' };
+  var NOMBRES = { ahora: 'ahora', dia: 'último día', semana: 'última semana', mes: 'último mes' };
+  function n(x) { return Number(x || 0).toLocaleString('es-ES'); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function fecha(s) { // AAAA-MM-DD → 24 nov. 2026
+    var p = String(s).split('-');
+    return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2], 12)).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+  }
+  function hora(s) { // AAAA-MM-DDTHH:MM
+    return fecha(s.substring(0, 10)) + ', ' + s.substring(11, 16) + ' h';
+  }
+
+  // Temas del periodo elegido: [{tema, videos, ganadas}] y total de vídeos
+  function temasDe() {
+    if (sel.periodo === 'ahora') {
+      var a = D.ahora && D.ahora[sel.lista];
+      return a ? { temas: a.temas, total: a.total, texto: 'Consulta del ' + hora(D.ahora.hora) } : null;
+    }
+    var p = D[sel.periodo];
+    if (!p) return null;
+    var dias = Math.round((Date.parse(p.hasta) - Date.parse(p.desde)) / 864e5) + 1;
+    var texto = p.desde === p.hasta ? 'Día ' + fecha(p.hasta) : 'Del ' + fecha(p.desde) + ' al ' + fecha(p.hasta);
+    return { temas: p[sel.lista] || [], total: null, texto: texto, dias: dias };
+  }
+
+  function barras() {
+    var r = temasDe(), caja = document.getElementById('et-barras'), cab = document.getElementById('et-cab');
+    if (!r || !r.temas.length) {
+      caja.innerHTML = '';
+      cab.textContent = sel.periodo === 'ahora' ? 'Todavía no hay ninguna consulta.'
+        : 'Todavía no hay datos del ' + NOMBRES[sel.periodo] + ': el primer resumen se hace al terminar el primer día completo.';
+      return;
+    }
+    var m = sel.medida;
+    var filas = r.temas.slice().sort(function (a, b) {
+      if ((a.tema === 'Sin tema') !== (b.tema === 'Sin tema')) return a.tema === 'Sin tema' ? 1 : -1;
+      return b[m] - a[m] || b.videos - a.videos;
+    });
+    var max = Math.max.apply(null, filas.map(function (f) { return f[m]; })) || 1;
+    var suma = filas.reduce(function (s, f) { return s + (f.tema === 'Sin tema' ? 0 : f[m]); }, 0) || 1;
+    var unidad = m === 'videos' ? (sel.periodo === 'ahora' ? 'vídeos' : 'vídeos·día') : 'visualizaciones';
+    cab.textContent = r.texto + (r.total ? ' · ' + n(r.total) + ' vídeos en la lista' : '') +
+      (m === 'ganadas' && sel.periodo === 'ahora' ? ' · visualizaciones ganadas en la última hora' : '') +
+      (m === 'videos' && sel.periodo !== 'ahora' ? ' · vídeos·día: vídeos distintos de cada día, sumados' : '');
+    if (m === 'ganadas' && !filas.some(function (f) { return f.ganadas > 0; })) {
+      caja.innerHTML = '<p class="nota">Todavía no hay visualizaciones ganadas: hacen falta al menos dos consultas.</p>';
+      return;
+    }
+    caja.innerHTML = filas.map(function (f) {
+      var v = f[m], pct = f.tema === 'Sin tema' ? '' : (100 * v / suma).toLocaleString('es-ES', { maximumFractionDigits: 1 }) + ' %';
+      var tit = f.tema + ': ' + n(v) + ' ' + unidad + (pct ? ' (' + pct + ' del total de los temas)' : '');
+      return '<div class="dm-fila' + (f.tema === 'Sin tema' ? ' et-sin' : '') + '" title="' + esc(tit) + '">' +
+        '<span class="dm-et">' + esc(f.tema) + '</span>' +
+        '<span class="dm-pista"><span class="dm-barra" style="width:' + (100 * v / max).toFixed(2) + '%"></span></span>' +
+        '<span class="dm-val">' + n(v) + (pct ? '<small>' + pct + '</small>' : '') + '</span></div>';
+    }).join('');
+  }
+
+  // Evolución diaria de los cinco temas con más presencia en el último mes (de la lista elegida).
+  // El color sigue al tema: los cinco se eligen por vídeos, sea cual sea la medida, para que no cambien al cambiarla.
+  function lineas() {
+    var caja = document.getElementById('et-lineas'), cab = document.getElementById('et-cab-lineas');
+    var serie = (D.serie || []).filter(function (s) { return s.lista === sel.lista && s.tema !== 'Sin tema'; });
+    var dias = Array.from(new Set(serie.map(function (s) { return s.fecha; }))).sort();
+    if (dias.length < 2) {
+      caja.innerHTML = '';
+      cab.textContent = 'El gráfico aparecerá cuando haya al menos dos días completos de datos.';
+      return;
+    }
+    var tot = {};
+    serie.forEach(function (s) { tot[s.tema] = (tot[s.tema] || 0) + s.videos; });
+    var top = Object.keys(tot).sort(function (a, b) { return tot[b] - tot[a]; }).slice(0, 5);
+    var m = sel.medida, val = {};
+    top.forEach(function (t) { val[t] = dias.map(function () { return 0; }); });
+    serie.forEach(function (s) { if (val[s.tema]) val[s.tema][dias.indexOf(s.fecha)] = s[m]; });
+    var max = 0;
+    top.forEach(function (t) { val[t].forEach(function (v) { max = Math.max(max, v); }); });
+    // Escala con valores redondos: 1, 2, 2,5 o 5 por una potencia de 10, en cuatro tramos
+    var bruto = (max || 1) / 4, pot = Math.pow(10, Math.floor(Math.log10(bruto)));
+    var tramo = [1, 2, 2.5, 5, 10].map(function (k) { return k * pot; }).filter(function (k) { return k >= bruto; })[0];
+    max = tramo * 4;
+    var W = 680, H = 260, L = 64, R = 172, T = 12, B = 28, aw = W - L - R, ah = H - T - B;
+    function x(i) { return L + (dias.length === 1 ? aw / 2 : aw * i / (dias.length - 1)); }
+    function y(v) { return T + ah - ah * v / max; }
+    var svg = ['<svg class="et-lineas" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Evolución diaria de los cinco temas principales">'];
+    for (var k = 0; k <= 4; k++) {
+      var vv = max * k / 4, yy = y(vv).toFixed(1);
+      svg.push('<line class="reja" x1="' + L + '" x2="' + (W - R) + '" y1="' + yy + '" y2="' + yy + '"/>' +
+        '<text class="ts" x="' + (L - 6) + '" y="' + (+yy + 4) + '" text-anchor="end">' + n(vv) + '</text>');
+    }
+    svg.push('<line class="eje" x1="' + L + '" x2="' + (W - R) + '" y1="' + (T + ah) + '" y2="' + (T + ah) + '"/>');
+    var paso = Math.max(1, Math.ceil(dias.length / 6));
+    dias.forEach(function (d, i) {
+      if (i % paso === 0 || i === dias.length - 1)
+        svg.push('<text class="ts" x="' + x(i).toFixed(1) + '" y="' + (H - 8) + '" text-anchor="middle">' + esc(fecha(d).replace(/ \d{4}$/, '')) + '</text>');
+    });
+    // Etiquetas directas al final de cada línea, separadas para que no se monten
+    var fin = top.map(function (t, i) { return { t: t, i: i, y: y(val[t][dias.length - 1]) }; }).sort(function (a, b) { return a.y - b.y; });
+    for (var j = 1; j < fin.length; j++) if (fin[j].y - fin[j - 1].y < 13) fin[j].y = fin[j - 1].y + 13;
+    top.forEach(function (t, i) {
+      var c = 'var(--dm-' + (i + 1) + ')';
+      svg.push('<path style="stroke:' + c + '" d="' + val[t].map(function (v, d) { return (d ? 'L' : 'M') + x(d).toFixed(1) + ' ' + y(v).toFixed(1); }).join('') + '"/>');
+      val[t].forEach(function (v, d) {
+        svg.push('<circle r="4" style="fill:' + c + '" cx="' + x(d).toFixed(1) + '" cy="' + y(v).toFixed(1) + '"><title>' +
+          esc(t + ', ' + fecha(dias[d]) + ': ' + n(v) + (m === 'videos' ? ' vídeos' : ' visualizaciones ganadas')) + '</title></circle>');
+      });
+    });
+    fin.forEach(function (f) {
+      svg.push('<text class="tx" x="' + (W - R + 8) + '" y="' + (f.y + 4).toFixed(1) + '">' + esc(f.t) + '</text>');
+    });
+    svg.push('</svg>');
+    cab.textContent = (m === 'videos' ? 'Vídeos de cada tema en la lista, por día' : 'Visualizaciones ganadas por los vídeos de cada tema, por día') +
+      ' · lista «' + sel.lista + '» · los cinco temas con más vídeos en el último mes';
+    caja.innerHTML = '<div class="et-leyenda">' + top.map(function (t, i) {
+      return '<span><i style="background:var(--dm-' + (i + 1) + ')"></i>' + esc(t) + '</span>';
+    }).join('') + '</div>' + svg.join('');
+  }
+
+  function diccionario() {
+    if (!D.diccionario) return;
+    document.getElementById('et-dicc').innerHTML = '<table class="et-dicc"><thead><tr><th>Tema</th><th>Palabras clave</th><th>Categorías de YouTube</th></tr></thead><tbody>' +
+      D.diccionario.map(function (t) {
+        return '<tr><td>' + esc(t.tema) + '</td><td>' + esc(t.claves.join(', ')) + '</td><td>' + esc(t.categorias.join(', ')) + '</td></tr>';
+      }).join('') + '</tbody></table>';
+  }
+
+  function dibujar() { barras(); lineas(); }
+
+  document.querySelectorAll('.et-controles button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var g = b.getAttribute('data-g');
+      sel[g] = b.getAttribute('data-v');
+      document.querySelectorAll('.et-controles button[data-g="' + g + '"]').forEach(function (o) {
+        o.setAttribute('aria-pressed', String(o === b));
+      });
+      dibujar();
+    });
+  });
+
+  // Carga por JSONP (el Apps Script envuelve la respuesta en la función indicada en «callback»)
+  var reloj = setTimeout(function () { aviso('No se han podido cargar los datos del estudio. Inténtelo de nuevo más tarde.', true); }, 20000);
+  window.__estudioTemas = function (datos) {
+    clearTimeout(reloj);
+    D = datos;
+    if (!D || !D.ahora) { aviso('El estudio todavía no tiene datos.', true); return; }
+    estado.hidden = true;
+    document.getElementById('et-panel').hidden = false;
+    document.getElementById('et-act').textContent = 'Última consulta a YouTube: ' + hora(D.ahora.hora) +
+      '. Fuente: ' + D.fuente + '.';
+    diccionario();
+    dibujar();
+  };
+  var s = document.createElement('script');
+  s.src = URL + (URL.indexOf('?') < 0 ? '?' : '&') + 'callback=__estudioTemas';
+  s.onerror = function () { clearTimeout(reloj); aviso('No se han podido cargar los datos del estudio. Inténtelo de nuevo más tarde.', true); };
+  document.head.appendChild(s);
+})();
+</script>
+</main>
+<footer><div class="ancho">Geoestadística de la Diócesis de Getafe · <a href="../../verificar-los-datos/index.html">Cómo verificar los datos</a> · <a href="../../aviso-legal/index.html">Aviso legal y privacidad</a> · <a href="../../comentarios/index.html">Dejar un comentario</a></div></footer>
+</body>
+</html>
