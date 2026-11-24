@@ -1,0 +1,177 @@
+estudio,fecha,pregunta,titulo_pregunta,respuesta,casos,porcentaje
+2443,2002-01,P10,Creencia en Dios,Creo firmemente en Dios,1037,41.7
+2443,2002-01,P10,Creencia en Dios,Más bien creo en Dios,776,31.2
+2443,2002-01,P10,Creencia en Dios,Dudo ante la existencia de Dios,292,11.7
+2443,2002-01,P10,Creencia en Dios,Más bien no creo en Dios,134,5.4
+2443,2002-01,P10,Creencia en Dios,"No creo, en absoluto",229,9.2
+2443,2002-01,P10,Creencia en Dios,N.C.,19,0.8
+2443,2002-01,P10,Creencia en Dios,(N),2487,100
+2443,2002-01,P17,Opinión sobre si hay vida después de la muerte,Está seguro de ello,411,16.5
+2443,2002-01,P17,Opinión sobre si hay vida después de la muerte,Más bien cree que sí,576,23.2
+2443,2002-01,P17,Opinión sobre si hay vida después de la muerte,No está seguro,541,21.8
+2443,2002-01,P17,Opinión sobre si hay vida después de la muerte,Más bien cree que no,465,18.7
+2443,2002-01,P17,Opinión sobre si hay vida después de la muerte,Seguro que no,459,18.5
+2443,2002-01,P17,Opinión sobre si hay vida después de la muerte,N.C.,35,1.4
+2443,2002-01,P17,Opinión sobre si hay vida después de la muerte,(N),2487,100
+2443,2002-01,P24,Religiosidad de la persona entrevistada,Católico,1983,79.7
+2443,2002-01,P24,Religiosidad de la persona entrevistada,Creyente de otra religión,35,1.4
+2443,2002-01,P24,Religiosidad de la persona entrevistada,No creyente,287,11.5
+2443,2002-01,P24,Religiosidad de la persona entrevistada,Ateo,148,6
+2443,2002-01,P24,Religiosidad de la persona entrevistada,N.C.,34,1.4
+2443,2002-01,P24,Religiosidad de la persona entrevistada,(N),2487,100
+2443,2002-01,P24A,Confesión religiosa que se profesa (creyentes de otra religión),Evangélicos,10,28.6
+2443,2002-01,P24A,Confesión religiosa que se profesa (creyentes de otra religión),Testigos de Jehová,9,25.7
+2443,2002-01,P24A,Confesión religiosa que se profesa (creyentes de otra religión),Musulmanes,1,2.9
+2443,2002-01,P24A,Confesión religiosa que se profesa (creyentes de otra religión),Otras religiones,9,25.7
+2443,2002-01,P24A,Confesión religiosa que se profesa (creyentes de otra religión),N.C.,6,17.1
+2443,2002-01,P24A,Confesión religiosa que se profesa (creyentes de otra religión),(N),35,100
+2443,2002-01,P24B,Frecuencia de asistencia a oficios religiosos (católicos y creyentes de otra religión),Varias veces a la semana,94,4.7
+2443,2002-01,P24B,Frecuencia de asistencia a oficios religiosos (católicos y creyentes de otra religión),Una vez a la semana,394,19.5
+2443,2002-01,P24B,Frecuencia de asistencia a oficios religiosos (católicos y creyentes de otra religión),Dos o tres veces al mes,164,8.1
+2443,2002-01,P24B,Frecuencia de asistencia a oficios religiosos (católicos y creyentes de otra religión),Una vez al mes,136,6.7
+2443,2002-01,P24B,Frecuencia de asistencia a oficios religiosos (católicos y creyentes de otra religión),Varias veces al año,508,25.2
+2443,2002-01,P24B,Frecuencia de asistencia a oficios religiosos (católicos y creyentes de otra religión),Nunca,517,25.6
+2443,2002-01,P24B,Frecuencia de asistencia a oficios religiosos (católicos y creyentes de otra religión),N.C.,205,10.2
+2443,2002-01,P24B,Frecuencia de asistencia a oficios religiosos (católicos y creyentes de otra religión),(N),2018,100
+2443,2002-01,P26,Opinión acerca del bautismo de los niños al nacer,Un deber,856,34.4
+2443,2002-01,P26,Opinión acerca del bautismo de los niños al nacer,Una costumbre,1145,46
+2443,2002-01,P26,Opinión acerca del bautismo de los niños al nacer,Algo conveniente,293,11.8
+2443,2002-01,P26,Opinión acerca del bautismo de los niños al nacer,Algo sin sentido,146,5.9
+2443,2002-01,P26,Opinión acerca del bautismo de los niños al nacer,N.S.,29,1.2
+2443,2002-01,P26,Opinión acerca del bautismo de los niños al nacer,N.C.,18,0.7
+2443,2002-01,P26,Opinión acerca del bautismo de los niños al nacer,(N),2487,100
+2443,2002-01,P9,Importancia que la religión tendrá dentro de diez años,Más,166,6.7
+2443,2002-01,P9,Importancia que la religión tendrá dentro de diez años,Igual,296,11.9
+2443,2002-01,P9,Importancia que la religión tendrá dentro de diez años,Menos,1615,64.9
+2443,2002-01,P9,Importancia que la religión tendrá dentro de diez años,N.S.,396,15.9
+2443,2002-01,P9,Importancia que la religión tendrá dentro de diez años,N.C.,14,0.6
+2443,2002-01,P9,Importancia que la religión tendrá dentro de diez años,(N),2487,100
+2752,2008-02,P4,Religiosidad de la persona entrevistada (españoles),Católico practicante,492,27.7
+2752,2008-02,P4,Religiosidad de la persona entrevistada (españoles),Católico no practicante,812,45.8
+2752,2008-02,P4,Religiosidad de la persona entrevistada (españoles),No creyente,258,14.5
+2752,2008-02,P4,Religiosidad de la persona entrevistada (españoles),Indiferente,171,9.6
+2752,2008-02,P4,Religiosidad de la persona entrevistada (españoles),Otra religión,28,1.6
+2752,2008-02,P4,Religiosidad de la persona entrevistada (españoles),N.C.,13,0.7
+2752,2008-02,P4,Religiosidad de la persona entrevistada (españoles),(N),1774,100
+2752,2008-02,P5,Posicionamiento respecto a la creencia en Dios,No creo en Dios,293,14.9
+2752,2008-02,P5,Posicionamiento respecto a la creencia en Dios,No sé si Dios existe y no creo que haya que saberlo,122,6.2
+2752,2008-02,P5,Posicionamiento respecto a la creencia en Dios,"No creo en un Dios personal, pero sí en un Poder superior de algún tipo",274,13.9
+2752,2008-02,P5,Posicionamiento respecto a la creencia en Dios,"Me encuentro a mí mismo/a creyendo en Dios algunas veces, pero otras no",174,8.8
+2752,2008-02,P5,Posicionamiento respecto a la creencia en Dios,"Aunque tengo dudas, siento que creo en Dios",326,16.5
+2752,2008-02,P5,Posicionamiento respecto a la creencia en Dios,Sé que Dios existe verdaderamente y no tengo ninguna duda al respecto,747,37.9
+2752,2008-02,P5,Posicionamiento respecto a la creencia en Dios,N.S.,28,1.4
+2752,2008-02,P5,Posicionamiento respecto a la creencia en Dios,N.C.,9,0.5
+2752,2008-02,P5,Posicionamiento respecto a la creencia en Dios,(N),1973,100
+2752,2008-02,P9,Frecuencia de asistencia a oficios religiosos (españoles),Más de una vez a la semana,84,4.7
+2752,2008-02,P9,Frecuencia de asistencia a oficios religiosos (españoles),Una vez a la semana,269,15.2
+2752,2008-02,P9,Frecuencia de asistencia a oficios religiosos (españoles),Alguna vez al mes,202,11.4
+2752,2008-02,P9,Frecuencia de asistencia a oficios religiosos (españoles),Alguna vez al año,384,21.6
+2752,2008-02,P9,Frecuencia de asistencia a oficios religiosos (españoles),Nunca,829,46.7
+2752,2008-02,P9,Frecuencia de asistencia a oficios religiosos (españoles),N.C.,6,0.3
+2752,2008-02,P9,Frecuencia de asistencia a oficios religiosos (españoles),(N),1774,100
+2752,2008-02,P10,Pertenencia a alguna religión (extranjeros),Sí,171,85.9
+2752,2008-02,P10,Pertenencia a alguna religión (extranjeros),No,28,14.1
+2752,2008-02,P10,Pertenencia a alguna religión (extranjeros),(N),199,100
+2752,2008-02,P11,Confesión religiosa que se profesa (extranjeros que pertenecen a una religión),Católica,96,56.1
+2752,2008-02,P11,Confesión religiosa que se profesa (extranjeros que pertenecen a una religión),"Cristiano, creyente",7,4.1
+2752,2008-02,P11,Confesión religiosa que se profesa (extranjeros que pertenecen a una religión),Musulmana,26,15.2
+2752,2008-02,P11,Confesión religiosa que se profesa (extranjeros que pertenecen a una religión),Testigo de Jehová,3,1.8
+2752,2008-02,P11,Confesión religiosa que se profesa (extranjeros que pertenecen a una religión),Ortodoxa,24,14
+2752,2008-02,P11,Confesión religiosa que se profesa (extranjeros que pertenecen a una religión),Evangélica,9,5.3
+2752,2008-02,P11,Confesión religiosa que se profesa (extranjeros que pertenecen a una religión),"Protestante, presbiteriana",3,1.8
+2752,2008-02,P11,Confesión religiosa que se profesa (extranjeros que pertenecen a una religión),Otra religión,3,1.8
+2752,2008-02,P11,Confesión religiosa que se profesa (extranjeros que pertenecen a una religión),(N),171,100
+2752,2008-02,P15,Frecuencia actual de rezo,Más de una vez a la semana,,29.2
+2752,2008-02,P15,Frecuencia actual de rezo,Una vez a la semana,,8.1
+2752,2008-02,P15,Frecuencia actual de rezo,Alguna vez al mes,,9.9
+2752,2008-02,P15,Frecuencia actual de rezo,Alguna vez al año,,11.9
+2752,2008-02,P15,Frecuencia actual de rezo,Nunca,,39.4
+2752,2008-02,P15,Frecuencia actual de rezo,N.C.,,1.5
+2752,2008-02,P15,Frecuencia actual de rezo,(N),1973,100
+2752,2008-02,P17,Opinión sobre el bautizo de los niños al nacer (españoles),Un deber religioso,738,41.6
+2752,2008-02,P17,Opinión sobre el bautizo de los niños al nacer (españoles),Una costumbre,661,37.3
+2752,2008-02,P17,Opinión sobre el bautizo de los niños al nacer (españoles),"Un acto social conveniente, una celebración familiar",202,11.4
+2752,2008-02,P17,Opinión sobre el bautizo de los niños al nacer (españoles),Algo sin sentido,138,7.8
+2752,2008-02,P17,Opinión sobre el bautizo de los niños al nacer (españoles),N.S.,21,1.2
+2752,2008-02,P17,Opinión sobre el bautizo de los niños al nacer (españoles),N.C.,14,0.8
+2752,2008-02,P17,Opinión sobre el bautizo de los niños al nacer (españoles),(N),1774,100
+2759,2008-04,P9,Creencia en Dios (miembros de confesiones minoritarias),No creo en Dios,15,2.1
+2759,2008-04,P9,Creencia en Dios (miembros de confesiones minoritarias),No sé si Dios existe y no creo que haya que saberlo,8,1.1
+2759,2008-04,P9,Creencia en Dios (miembros de confesiones minoritarias),"No creo en un Dios personal, pero sí en un Poder superior de algún tipo",20,2.7
+2759,2008-04,P9,Creencia en Dios (miembros de confesiones minoritarias),"Me encuentro a mí mismo/a creyendo en Dios algunas veces, pero no otras",4,0.5
+2759,2008-04,P9,Creencia en Dios (miembros de confesiones minoritarias),"Aunque tengo dudas, siento que creo en Dios",12,1.7
+2759,2008-04,P9,Creencia en Dios (miembros de confesiones minoritarias),Sé que Dios existe verdaderamente y no tengo ninguna duda al respecto,674,91.6
+2759,2008-04,P9,Creencia en Dios (miembros de confesiones minoritarias),N.C.,3,0.3
+2759,2008-04,P9,Creencia en Dios (miembros de confesiones minoritarias),(N),736,100
+2759,2008-04,P12,Frecuencia de asistencia al lugar de práctica religiosa,Más de una vez a la semana,571,77.6
+2759,2008-04,P12,Frecuencia de asistencia al lugar de práctica religiosa,Una vez a la semana,85,11.6
+2759,2008-04,P12,Frecuencia de asistencia al lugar de práctica religiosa,Alguna vez al mes,23,3.2
+2759,2008-04,P12,Frecuencia de asistencia al lugar de práctica religiosa,Alguna vez al año,22,3.1
+2759,2008-04,P12,Frecuencia de asistencia al lugar de práctica religiosa,Nunca,25,3.5
+2759,2008-04,P12,Frecuencia de asistencia al lugar de práctica religiosa,N.C.,7,1
+2759,2008-04,P12,Frecuencia de asistencia al lugar de práctica religiosa,(N),736,100
+2759,2008-04,P40,Nacionalidad,La nacionalidad española,369,50.2
+2759,2008-04,P40,Nacionalidad,La nacionalidad española y otra,67,9.2
+2759,2008-04,P40,Nacionalidad,Sólo otra nacionalidad,228,31.1
+2759,2008-04,P40,Nacionalidad,Otra nacionalidad y en trámites de adquirir la española,68,9.3
+2759,2008-04,P40,Nacionalidad,N.C.,0,0.1
+2759,2008-04,P40,Nacionalidad,(N),736,100
+2776,2008-10,P55,Religiosidad de la persona entrevistada,Católico,1733,73.1
+2776,2008-10,P55,Religiosidad de la persona entrevistada,Creyente de otra religión,103,4.4
+2776,2008-10,P55,Religiosidad de la persona entrevistada,No creyente,405,17.1
+2776,2008-10,P55,Religiosidad de la persona entrevistada,Ateo,104,4.4
+2776,2008-10,P55,Religiosidad de la persona entrevistada,N.C.,25,1.1
+2776,2008-10,P55,Religiosidad de la persona entrevistada,(N),2373,100
+2776,2008-10,P55a,Religión de los creyentes de otra religión,Protestante,18,18.5
+2776,2008-10,P55a,Religión de los creyentes de otra religión,Cristiana,2,2.2
+2776,2008-10,P55a,Religión de los creyentes de otra religión,Musulmana,31,31.9
+2776,2008-10,P55a,Religión de los creyentes de otra religión,Budista,3,3.8
+2776,2008-10,P55a,Religión de los creyentes de otra religión,Ortodoxa,16,16.8
+2776,2008-10,P55a,Religión de los creyentes de otra religión,N.S.,4,4.1
+2776,2008-10,P55a,Religión de los creyentes de otra religión,N.C.,22,22.8
+2776,2008-10,P55a,Religión de los creyentes de otra religión,(N),97,100
+2776,2008-10,P17,Frase que describe mejor su creencia o no en Dios,Nunca he creído en Dios,199,8.4
+2776,2008-10,P17,Frase que describe mejor su creencia o no en Dios,"No creo en Dios ahora, pero antes sí creía",337,14.2
+2776,2008-10,P17,Frase que describe mejor su creencia o no en Dios,"Creo en Dios ahora, pero antes no creía",43,1.8
+2776,2008-10,P17,Frase que describe mejor su creencia o no en Dios,Siempre he creído en Dios,1599,67.4
+2776,2008-10,P17,Frase que describe mejor su creencia o no en Dios,Ninguna,4,0.2
+2776,2008-10,P17,Frase que describe mejor su creencia o no en Dios,N.S.,125,5.3
+2776,2008-10,P17,Frase que describe mejor su creencia o no en Dios,N.C.,63,2.7
+2776,2008-10,P17,Frase que describe mejor su creencia o no en Dios,(N),2373,100
+2776,2008-10,P18,Cree en la vida después de la muerte,"Sí, con toda seguridad",,19.9
+2776,2008-10,P18,Cree en la vida después de la muerte,Probablemente sí,,23.6
+2776,2008-10,P18,Cree en la vida después de la muerte,Probablemente no,,16.3
+2776,2008-10,P18,Cree en la vida después de la muerte,"No, con toda seguridad",,30.6
+2776,2008-10,P18,Cree en la vida después de la muerte,N.S.,,9
+2776,2008-10,P18,Cree en la vida después de la muerte,N.C.,,0.6
+2776,2008-10,P18,Cree en la vida después de la muerte,(N),2373,100
+2776,2008-10,P27,Frecuencia con la que reza,Nunca,842,35.5
+2776,2008-10,P27,Frecuencia con la que reza,Menos de una vez al año,92,3.9
+2776,2008-10,P27,Frecuencia con la que reza,Entre una y dos veces al año,85,3.6
+2776,2008-10,P27,Frecuencia con la que reza,Varias veces al año,234,9.9
+2776,2008-10,P27,Frecuencia con la que reza,"Una vez al mes, más o menos",102,4.3
+2776,2008-10,P27,Frecuencia con la que reza,Dos o tres veces al mes,100,4.3
+2776,2008-10,P27,Frecuencia con la que reza,Casi todas las semanas,104,4.4
+2776,2008-10,P27,Frecuencia con la que reza,Todas las semanas,109,4.6
+2776,2008-10,P27,Frecuencia con la que reza,Varias veces a la semana,153,6.5
+2776,2008-10,P27,Frecuencia con la que reza,Una vez al día,362,15.3
+2776,2008-10,P27,Frecuencia con la que reza,Varias veces al día,154,6.5
+2776,2008-10,P27,Frecuencia con la que reza,N.C.,29,1.3
+2776,2008-10,P27,Frecuencia con la que reza,(N),2373,100
+2776,2008-10,P12,Poder que tienen la Iglesia y las organizaciones religiosas,Un poder desmesurado,229,9.7
+2776,2008-10,P12,Poder que tienen la Iglesia y las organizaciones religiosas,Demasiado poder,987,41.6
+2776,2008-10,P12,Poder que tienen la Iglesia y las organizaciones religiosas,Más o menos el adecuado,753,31.8
+2776,2008-10,P12,Poder que tienen la Iglesia y las organizaciones religiosas,Demasiado poco poder,185,7.8
+2776,2008-10,P12,Poder que tienen la Iglesia y las organizaciones religiosas,Un poder insignificante,71,3
+2776,2008-10,P12,Poder que tienen la Iglesia y las organizaciones religiosas,N.S.,125,5.3
+2776,2008-10,P12,Poder que tienen la Iglesia y las organizaciones religiosas,N.C.,19,0.8
+2776,2008-10,P12,Poder que tienen la Iglesia y las organizaciones religiosas,(N),2373,100
+2835,2010-04,P42,Religiosidad de la persona entrevistada (población residente de 18 a 34 años),Católico/a practicante,149,10.3
+2835,2010-04,P42,Religiosidad de la persona entrevistada (población residente de 18 a 34 años),Católico/a no practicante,706,48.6
+2835,2010-04,P42,Religiosidad de la persona entrevistada (población residente de 18 a 34 años),Creyente de otra religión,111,7.6
+2835,2010-04,P42,Religiosidad de la persona entrevistada (población residente de 18 a 34 años),No creyente,160,11
+2835,2010-04,P42,Religiosidad de la persona entrevistada (población residente de 18 a 34 años),Indiferente,139,9.6
+2835,2010-04,P42,Religiosidad de la persona entrevistada (población residente de 18 a 34 años),Ateo/a,114,7.8
+2835,2010-04,P42,Religiosidad de la persona entrevistada (población residente de 18 a 34 años),Agnóstico/a,57,3.9
+2835,2010-04,P42,Religiosidad de la persona entrevistada (población residente de 18 a 34 años),N.C.,17,1.2
+2835,2010-04,P42,Religiosidad de la persona entrevistada (población residente de 18 a 34 años),(N),1453,100
