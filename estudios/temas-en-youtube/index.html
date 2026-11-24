@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Temas de lo más visto en YouTube · Estudios · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="De qué tratan los vídeos más vistos en España: los temas más presentes en la última consulta y en el último día, la última semana y las últimas cuatro semanas, con datos de YouTube que se actualizan cada hora.">
-<link rel="stylesheet" href="../../assets/estilo.css?v=d889a4bf">
+<link rel="stylesheet" href="../../assets/estilo.css?v=7b84adac">
 </head>
 <body>
 <header><div class="ancho"><a href="../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Estudios</p></div></header>
@@ -32,16 +32,17 @@
 <p class="et-cab" id="et-cab"></p>
 <div class="dm-barras et-barras" id="et-barras"></div>
 <h3>Buscar una palabra</h3>
-<p>Escriba una palabra o una frase y verá cuántos de los vídeos de la última consulta la llevan en el título. Se
-aplica el mismo criterio que en el diccionario de temas: no se distinguen mayúsculas ni tildes, y un asterisco al final
-admite cualquier terminación (<code>catolic*</code> incluye «católico» y «católica»). Solo se miran los títulos, no el
-contenido de los vídeos. Lo que escriba no se guarda.</p>
+<p>Escriba una palabra o una frase y verá cuántos vídeos la llevan en el título en cada una de las últimas cuatro
+semanas, contando una sola vez cada vídeo que estuvo en la lista durante esa semana, aunque estuviera varios días. Se aplica el mismo criterio que en el diccionario de temas: no se distinguen mayúsculas ni
+tildes, y un asterisco al final admite cualquier terminación (<code>catolic*</code> incluye «católico» y «católica»).
+Solo se miran los títulos, no el contenido de los vídeos. Lo que escriba no se guarda.</p>
 <form class="et-buscar" id="et-buscar" role="search">
 <label for="et-q">Palabra o frase</label>
 <input id="et-q" type="search" maxlength="40" autocomplete="off" required>
 <button type="submit">Buscar</button>
 </form>
 <p class="et-res" id="et-res" role="status" aria-live="polite"></p>
+<div id="et-res-sem"></div>
 <h3>Evolución en las últimas cuatro semanas</h3>
 <p class="et-cab" id="et-cab-lineas"></p>
 <div id="et-lineas"></div>
@@ -222,7 +223,8 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
 
   function dibujar() { barras(); lineas(); }
 
-  // Buscador de palabras: el servicio responde con cuántos títulos de la última consulta contienen la búsqueda
+  // Buscador de palabras: el servicio responde con cuántos títulos de cada una de las últimas cuatro semanas
+  // contienen la búsqueda
   var numBusqueda = 0;
   function pct(a, b) { return b ? (100 * a / b).toLocaleString('es-ES', { maximumFractionDigits: 1 }) + ' %' : '0 %'; }
   function respuestaBusqueda(r, q) {
@@ -230,21 +232,36 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
       var msg = {
         busqueda_no_valida: 'Escriba al menos dos letras o números.',
         demasiadas_busquedas: 'Hay muchas búsquedas en este momento. Inténtelo de nuevo dentro de un minuto.',
-        sin_datos: 'El buscador estará disponible después de la próxima consulta a YouTube.'
+        sin_datos: 'El buscador estará disponible después del primer resumen diario.'
       }[r && r.error] || 'No se ha podido hacer la búsqueda. Inténtelo de nuevo más tarde.';
       return { texto: msg, error: true };
     }
-    var t = r.Todas, p = r.Populares, c = r.Recientes;
-    var base = ' de los ' + n(t.total) + ' vídeos de la consulta del ' + hora(r.hora);
-    if (!t.coinciden) return { texto: '«' + q + '» no aparece en el título de ninguno' + base + '.' };
-    return { texto: '«' + q + '» aparece en el título de ' + n(t.coinciden) + base + ' (' + pct(t.coinciden, t.total) + '): ' +
-      n(p.coinciden) + ' de ' + n(p.total) + ' en Populares (' + pct(p.coinciden, p.total) + ') y ' +
-      n(c.coinciden) + ' de ' + n(c.total) + ' en Recientes (' + pct(c.coinciden, c.total) + ').' };
+    if (!r.semanas) return { texto: 'El buscador se está actualizando. Inténtelo de nuevo dentro de una hora.', error: true };
+    var hay = r.semanas.some(function (s) { return s.Todas && s.Todas.coinciden; });
+    return { texto: hay ? '' : '«' + q + '» no aparece en el título de ningún vídeo de las últimas cuatro semanas.' };
+  }
+  // Tabla de las últimas cuatro semanas (r.semanas: de la más reciente a la más antigua)
+  function tablaSemanas(r, q) {
+    if (!r || r.error || !r.semanas || !r.semanas.length) return '';
+    var sem = r.semanas;
+    var cap = '<caption>«' + esc(q) + '» en las últimas cuatro semanas: vídeos con la búsqueda en el título, de los vídeos distintos de cada semana</caption>';
+    function celda(o) {
+      return '<td>' + n(o.coinciden) + ' de ' + n(o.total) + '<small>' + pct(o.coinciden, o.total) + '</small></td>';
+    }
+    var filas = sem.map(function (s) {
+      var et = 'Del ' + fecha(s.desde).replace(/ \d{4}$/, '') + ' al ' + fecha(s.hasta);
+      if (s.dias && s.dias < 7) et += '<small>' + s.dias + (s.dias === 1 ? ' día' : ' días') + ' con datos</small>';
+      if (!s.dias || !s.Todas || !s.Todas.total) return '<tr><td>' + et + '</td><td class="et-vacia" colspan="3">Todavía sin datos</td></tr>';
+      return '<tr><td>' + et + '</td>' + celda(s.Todas) + celda(s.Populares) + celda(s.Recientes) + '</tr>';
+    });
+    return '<div class="et-sem-caja"><table class="et-sem">' + cap +
+      '<thead><tr><th scope="col">Semana</th><th scope="col">Las dos listas</th><th scope="col">Populares</th><th scope="col">Recientes</th></tr></thead>' +
+      '<tbody>' + filas.join('') + '</tbody></table></div>';
   }
   document.getElementById('et-buscar').addEventListener('submit', function (ev) {
     ev.preventDefault();
     var q = document.getElementById('et-q').value.trim().slice(0, 40);
-    var res = document.getElementById('et-res'), boton = this.querySelector('button');
+    var res = document.getElementById('et-res'), resSem = document.getElementById('et-res-sem'), boton = this.querySelector('button');
     if (!q) return;
     var nombre = '__etBuscar' + (++numBusqueda), sc = document.createElement('script');
     function fin(r) {
@@ -252,10 +269,11 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
       boton.disabled = false;
       var o = respuestaBusqueda(r, q);
       res.textContent = o.texto; res.className = 'et-res' + (o.error ? ' error' : '');
+      resSem.innerHTML = tablaSemanas(r, q);
     }
-    var reloj = setTimeout(function () { fin(null); }, 15000);
+    var reloj = setTimeout(function () { fin(null); }, 20000);
     window[nombre] = fin;
-    boton.disabled = true; res.className = 'et-res'; res.textContent = 'Buscando…';
+    boton.disabled = true; res.className = 'et-res'; res.textContent = 'Buscando…'; resSem.innerHTML = '';
     sc.src = URL + (URL.indexOf('?') < 0 ? '?' : '&') + 'q=' + encodeURIComponent(q) + '&callback=' + nombre;
     sc.onerror = function () { fin(null); };
     document.head.appendChild(sc);

@@ -361,3 +361,11 @@ table.et-dicc td:first-child { white-space: nowrap; font-weight: bold; }
 .et-buscar button[disabled] { opacity: .6; cursor: progress; }
 .et-res { margin: 6px 0 4px; min-height: 1.5em; }
 .et-res.error { color: var(--alerta); }
+.et-sem-caja { overflow-x: auto; }
+table.et-sem { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 4px 0 8px; font-variant-numeric: tabular-nums; }
+table.et-sem caption { text-align: left; font-size: .95rem; color: var(--suave); padding: 4px 0; }
+table.et-sem th, table.et-sem td { padding: 6px 8px; border-bottom: 1px solid var(--linea); text-align: right; vertical-align: top; }
+table.et-sem th { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--suave); font-weight: normal; }
+table.et-sem th:first-child, table.et-sem td:first-child { text-align: left; white-space: nowrap; }
+table.et-sem td small { display: block; color: var(--suave); font-size: .8rem; }
+table.et-sem td.et-vacia { text-align: left; color: var(--suave); }
