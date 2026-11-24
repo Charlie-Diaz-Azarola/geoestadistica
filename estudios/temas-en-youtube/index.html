@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Temas de lo más visto en YouTube · Estudios · Geoestadística de la Diócesis de Getafe</title>
-<meta name="description" content="De qué tratan los vídeos más vistos en España: los temas más presentes ahora mismo y en el último día, la última semana y el último mes, con datos de YouTube que se actualizan cada hora.">
+<meta name="description" content="De qué tratan los vídeos más vistos en España: los temas más presentes en los últimos 60 minutos y en el último día, la última semana y el último mes, con datos de YouTube que se actualizan cada hora.">
 <link rel="stylesheet" href="../../assets/estilo.css?v=96441a8c">
 </head>
 <body>
@@ -13,12 +13,12 @@
 <nav class="miga"><a href="../../index.html">Geoestadística</a> › <a href="../index.html">Estudios</a> › Temas de lo más visto en YouTube</nav>
 <article class="ficha dm">
 <h2>Temas de lo más visto en YouTube en España</h2>
-<p>De qué tratan los vídeos más vistos en España: los temas más presentes ahora mismo y en el último día, la última semana y el último mes, con datos de YouTube que se actualizan cada hora.</p>
+<p>De qué tratan los vídeos más vistos en España: los temas más presentes en los últimos 60 minutos y en el último día, la última semana y el último mes, con datos de YouTube que se actualizan cada hora.</p>
 <p class="et-estado" id="et-estado" role="status" aria-live="polite">Cargando los datos…</p>
 <div id="et-panel" hidden>
 <div class="et-controles">
 <div class="filtro" role="group" aria-label="Periodo"><span>Periodo</span>
-<button type="button" data-g="periodo" data-v="ahora" aria-pressed="true">Ahora</button>
+<button type="button" data-g="periodo" data-v="ahora" aria-pressed="true">Últimos 60 minutos</button>
 <button type="button" data-g="periodo" data-v="dia" aria-pressed="false">Último día</button>
 <button type="button" data-g="periodo" data-v="semana" aria-pressed="false">Última semana</button>
 <button type="button" data-g="periodo" data-v="mes" aria-pressed="false">Último mes</button></div>
@@ -53,11 +53,11 @@ hay ninguno, queda «Sin tema». El mismo título da siempre el mismo resultado.
 la suma de los temas puede superar el total de vídeos.</p>
 <h4>Las dos medidas</h4>
 <ul>
-<li><strong>Vídeos:</strong> cuántos vídeos de cada tema hay en la lista. En «Ahora», los de la última consulta; en el
+<li><strong>Vídeos:</strong> cuántos vídeos de cada tema hay en la lista. En «Últimos 60 minutos», los de la última consulta, que se hace cada hora; en el
 último día, la última semana y el último mes, se suman los vídeos distintos de cada día, de modo que un vídeo que estuvo
 en la lista tres días cuenta tres veces. Mide la <em>presencia</em> del tema.</li>
 <li><strong>Visualizaciones ganadas:</strong> cuántas visualizaciones sumaron los vídeos de cada tema mientras estuvieron
-en la lista. En «Ahora», las de la última hora; en los demás periodos, las ganadas cada día entre la primera y la
+en la lista. En «Últimos 60 minutos», las ganadas desde la consulta anterior; en los demás periodos, las ganadas cada día entre la primera y la
 última consulta de ese día. Mide la <em>atención</em> que recibió el tema. Las visualizaciones anteriores a que un vídeo
 entrase en la lista no se cuentan.</li>
 </ul>
@@ -84,7 +84,7 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
   if (!URL) { aviso('Los datos de este estudio todavía no están disponibles.', true); return; }
 
   var D = null, sel = { periodo: 'ahora', lista: 'Populares', medida: 'videos' };
-  var NOMBRES = { ahora: 'ahora', dia: 'último día', semana: 'última semana', mes: 'último mes' };
+  var NOMBRES = { ahora: 'últimos 60 minutos', dia: 'último día', semana: 'última semana', mes: 'último mes' };
   function n(x) { return Number(x || 0).toLocaleString('es-ES'); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function fecha(s) { // AAAA-MM-DD → 24 nov. 2026
