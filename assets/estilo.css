@@ -298,6 +298,9 @@ svg.dm-graf .zona { fill: transparent; stroke: none; }
 svg.dm-graf .zona:hover { fill: var(--suave); fill-opacity: .18; }
 svg.dm-graf .corte { stroke: var(--suave); stroke-width: 1; stroke-dasharray: 4 3; }
 svg.dm-graf-ancho { max-width: 760px; }
+svg.dm-graf-movil { display: none; }
+svg.dm-graf-movil .tx, svg.dm-graf-movil .ts { font-size: 12.5px; }
+@media (max-width: 600px) { svg.dm-graf-ancho { display: none; } svg.dm-graf-movil { display: block; } }
 .dm-leyenda-multi { flex-wrap: wrap; gap: 6px 18px; }
 
 a.vf { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; margin: -4px 0 -4px 4px;
@@ -399,4 +402,11 @@ table.et-sem td.et-vacia { text-align: left; color: var(--suave); }
 .er-preg { margin: 14px 0 2px; font-weight: bold; font-size: .95rem; }
 .er-base { color: var(--suave); font-size: .8rem; margin: 0 0 4px; }
 ul.er-indice { columns: 2; column-gap: 28px; padding-left: 18px; }
-@media (max-width: 600px) { ul.er-indice { columns: 1; } .er-destacado .dm-fila { grid-template-columns: minmax(110px, 34%) 1fr minmax(96px, auto); } }
+.er-ficha dd { overflow-wrap: anywhere; }
+@media (max-width: 600px) { ul.er-indice { columns: 1; } .er-destacado { padding: 10px 12px 4px; }
+  .er-destacado .dm-fila { grid-template-columns: 1fr minmax(0, 48%); gap: 3px 10px; padding: 5px 0; }
+  .er-destacado .dm-pista { grid-column: 1 / -1; grid-row: 2; }
+  .er-destacado .dm-val { white-space: normal; }
+  .er-ficha { grid-template-columns: 1fr; gap: 0; }
+  .er-ficha dt { font-size: .8rem; margin-top: 6px; }
+  .er-col svg.dm-graf .tx { font-size: 11px !important; } }
