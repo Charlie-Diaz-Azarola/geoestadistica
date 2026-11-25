@@ -5,7 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dejar un comentario · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="Formulario para dejar una opinión, una sugerencia o el aviso de un dato erróneo sobre el sitio Geoestadística de la Diócesis de Getafe">
-<link rel="stylesheet" href="../assets/estilo.css?v=cf5eae6c">
+<link rel="stylesheet" href="../assets/estilo.css?v=8c867fb0">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Geoestadística de la Diócesis de Getafe">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Dejar un comentario · Geoestadística de la Diócesis de Getafe">
+<meta property="og:description" content="Formulario para dejar una opinión, una sugerencia o el aviso de un dato erróneo sobre el sitio Geoestadística de la Diócesis de Getafe">
+<meta property="og:url" content="https://charlie-diaz-azarola.github.io/geoestadistica/comentarios/">
+<meta property="og:image" content="https://charlie-diaz-azarola.github.io/geoestadistica/assets/miniatura-arciprestazgos.png">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="400">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <header><div class="ancho"><a href="../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Dejar un comentario</p></div></header>
@@ -17,6 +27,171 @@
 él es erróneo. Si se trata de un dato, le agradeceremos que indique en qué página está y, si la conoce, cuál es la cifra
 correcta y su fuente.</p>
 <form class="comentario" id="form-comentario" novalidate>
+<fieldset class="campo" id="c-tipos">
+<legend>Tipo de comentario</legend>
+<label class="opcion"><input type="radio" name="tipo" value="dato"> Dato erróneo</label><label class="opcion"><input type="radio" name="tipo" value="limites"> Límites del territorio de una parroquia</label><label class="opcion"><input type="radio" name="tipo" value="contacto"> Dirección, teléfono o correo de una parroquia</label><label class="opcion"><input type="radio" name="tipo" value="desarrollo"> Desarrollo urbanístico nuevo o erróneo</label><label class="opcion"><input type="radio" name="tipo" value="sugerencia"> Sugerencia de mejora</label><label class="opcion"><input type="radio" name="tipo" value="opinion"> Opinión</label><label class="opcion"><input type="radio" name="tipo" value="privacidad"> Protección de datos (acceso, borrado u otros derechos)</label><label class="opcion"><input type="radio" name="tipo" value="otro"> Otro</label>
+</fieldset>
+<div class="campo">
+<label for="c-parroquia">Parroquia a la que se refiere</label>
+<span class="ayuda" id="c-parroquia-ayuda">Si el comentario se refiere a una parroquia concreta, elíjala en la lista. Si no, déjelo como
+está: no es obligatorio.</span>
+<select id="c-parroquia" name="parroquia" aria-describedby="c-parroquia-ayuda">
+<option value="">General: no se refiere a una parroquia concreta</option>
+<optgroup label="Arciprestazgo de Alcorcón">
+<option value="008">Alcorcón · Inmaculada Concepción de Nuestra Señora</option>
+<option value="001">Alcorcón · Nuestra Señora de la Saleta</option>
+<option value="118">Alcorcón · Sagrado Corazón</option>
+<option value="121">Alcorcón · San Josemaría Escrivá de Balaguer</option>
+<option value="002">Alcorcón · San Juan de Mata</option>
+<option value="135">Alcorcón · San Juan Pablo II</option>
+<option value="003">Alcorcón · San Pedro Bautista</option>
+<option value="004">Alcorcón · San Saturnino</option>
+<option value="005">Alcorcón · Santa María la Blanca</option>
+<option value="006">Alcorcón · Santa Sofía</option>
+<option value="098">Alcorcón · Santo Domingo de la Calzada</option>
+<option value="007">Alcorcón · Virgen del Alba</option>
+</optgroup>
+<optgroup label="Arciprestazgo de Aranjuez">
+<option value="011">Aranjuez · Espíritu Santo</option>
+<option value="012">Aranjuez · Nuestra Señora de las Angustias</option>
+<option value="013">Aranjuez · San Antonio</option>
+<option value="014">Aranjuez · San Pascual</option>
+<option value="122">Aranjuez · San Rafael Arnaiz y San Isidro</option>
+</optgroup>
+<optgroup label="Arciprestazgo de Chinchón">
+<option value="017">Belmonte de Tajo · Nuestra Señora de la Estrella</option>
+<option value="029">Chinchón · Nuestra Señora de la Asunción</option>
+<option value="025">Colmenar de Oreja · Santa María la Mayor</option>
+<option value="088">Valdelaguna · Nuestra Señora de la Asunción</option>
+<option value="091">Villaconejos · San Nicolás de Bari</option>
+</optgroup>
+<optgroup label="Arciprestazgo de Fuenlabrada">
+<option value="031">Fuenlabrada · María Auxiliadora</option>
+<option value="032">Fuenlabrada · Nuestra Señora de Belén</option>
+<option value="033">Fuenlabrada · Nuestra Señora de Fátima</option>
+<option value="102">Fuenlabrada · Nuestra Señora de la Anunciación</option>
+<option value="034">Fuenlabrada · Sagrada Familia</option>
+<option value="110">Fuenlabrada · San Benito Menni</option>
+<option value="035">Fuenlabrada · San Esteban Protomártir</option>
+<option value="036">Fuenlabrada · San Francisco y Santa Clara de Asís</option>
+<option value="037">Fuenlabrada · San José</option>
+<option value="038">Fuenlabrada · San Juan Bautista</option>
+<option value="111">Fuenlabrada · Santa Ana</option>
+</optgroup>
+<optgroup label="Arciprestazgo de Getafe">
+<option value="138">Getafe · Jesús y San Martín</option>
+<option value="039">Getafe · Nuestra Señora de Buenavista</option>
+<option value="040">Getafe · Nuestra Señora de Fátima</option>
+<option value="041">Getafe · Nuestra Señora del Cerro</option>
+<option value="042">Getafe · San Eugenio</option>
+<option value="119">Getafe · San Juan de Dios</option>
+<option value="099">Getafe · San Pablo</option>
+<option value="043">Getafe · San Rafael Arcángel</option>
+<option value="044">Getafe · San Sebastián</option>
+<option value="109">Getafe · Santa Maravillas de Jesús</option>
+<option value="046">Getafe · Santa María de los Ángeles</option>
+<option value="047">Getafe · Santa María Magdalena</option>
+<option value="045">Getafe · Santa Teresa de Jesús</option>
+<option value="076">Perales del Río · Santos Justo y Pastor</option>
+</optgroup>
+<optgroup label="Arciprestazgo de Griñón">
+<option value="015">Arroyomolinos · Asunción de Nuestra Señora</option>
+<option value="016">Batres · Nuestra Señora de la Asunción</option>
+<option value="022">Casarrubuelos · Santiago Apóstol</option>
+<option value="027">Cubas de la Sagra · San Andrés Apóstol</option>
+<option value="048">Griñón · Nuestra Señora de la Asunción</option>
+<option value="101">Humanes de Madrid · San Pedro Apóstol</option>
+<option value="049">Humanes de Madrid · Santo Domingo de Guzmán</option>
+<option value="059">Moraleja de Enmedio · San Millán</option>
+<option value="083">Serranillos del Valle · San Nicolás de Bari</option>
+</optgroup>
+<optgroup label="Arciprestazgo de Leganés">
+<option value="112">Leganés · Corpus Christi</option>
+<option value="104">Leganés · Nuestra Señora de Butarque</option>
+<option value="051">Leganés · Nuestra Señora de la Salud</option>
+<option value="052">Leganés · Nuestra Señora de Zarzaquemada</option>
+<option value="053">Leganés · Nuestra Señora del Carrascal</option>
+<option value="054">Leganés · San Eladio</option>
+<option value="055">Leganés · San Fortunato</option>
+<option value="105">Leganés · San Isidro Labrador</option>
+<option value="056">Leganés · San Nicasio</option>
+<option value="057">Leganés · San Pío V</option>
+<option value="100">Leganés · San Ramón Nonato</option>
+<option value="050">Leganés · San Salvador</option>
+<option value="113">Leganés · Santa Beatriz de Silva</option>
+<option value="114">Leganés · Santa Teresa del Niño Jesús</option>
+<option value="120">Leganés · Verbo Divino</option>
+<option value="058">Leganés · Virgen Madre</option>
+</optgroup>
+<optgroup label="Arciprestazgo de Móstoles">
+<option value="061">Móstoles · Divino Pastor</option>
+<option value="060">Móstoles · Nuestra Señora de la Asunción</option>
+<option value="062">Móstoles · Nuestra Señora de la Consolación</option>
+<option value="064">Móstoles · Nuestra Señora del Rosario y de la Esperanza</option>
+<option value="065">Móstoles · San José Obrero</option>
+<option value="106">Móstoles · San Juan de Ávila</option>
+<option value="063">Móstoles · San Martín de Porres</option>
+<option value="136">Móstoles · San Pablo VI</option>
+<option value="068">Móstoles · San Simón de Rojas</option>
+<option value="066">Móstoles · Santa María de la Alegría</option>
+<option value="067">Móstoles · Virgen del Carmen</option>
+</optgroup>
+<optgroup label="Arciprestazgo de Navalcarnero">
+<option value="009">Aldea del Fresno · San Pedro Apóstol</option>
+<option value="030">El Álamo · Santiago Apóstol</option>
+<option value="069">Navalcarnero · Nuestra Señora de la Asunción</option>
+<option value="084">Sevilla la Nueva · Santiago Apóstol</option>
+<option value="090">Villa del Prado · Santiago Apóstol</option>
+<option value="092">Villamanta · Santa Catalina de Alejandría</option>
+<option value="093">Villamantilla · San Miguel Arcángel</option>
+<option value="095">Villanueva de Perales · Inmaculada Concepción</option>
+</optgroup>
+<optgroup label="Arciprestazgo de Parla">
+<option value="071">Parla · Cristo Liberador</option>
+<option value="072">Parla · Nuestra Señora de la Asunción</option>
+<option value="073">Parla · Nuestra Señora de la Paz</option>
+<option value="103">Parla · San Bernardo</option>
+<option value="125">Parla · San Francisco de Sales</option>
+<option value="074">Parla · Santos Justo y Pastor</option>
+<option value="086">Torrejón de la Calzada · San Cristóbal</option>
+<option value="087">Torrejón de Velasco · San Esteban Protomártir</option>
+</optgroup>
+<optgroup label="Arciprestazgo de San Martín de Valdeiglesias">
+<option value="021">Cadalso de los Vidrios · Nuestra Señora de la Asunción</option>
+<option value="023">Cenicientos · San Esteban Protomártir</option>
+<option value="028">Chapinería · Concepción de Nuestra Señora</option>
+<option value="026">Colmenar del Arroyo · Nuestra Señora de la Asunción</option>
+<option value="070">Navas del Rey · San Eugenio Obispo</option>
+<option value="075">Pelayos de la Presa · Nuestra Señora de la Asunción</option>
+<option value="080">Rozas de Puerto Real · San Juan Bautista</option>
+<option value="082">San Martín de Valdeiglesias · San Martín Obispo</option>
+</optgroup>
+<optgroup label="Arciprestazgo de Valdemoro">
+<option value="024">Ciempozuelos · Santa María Magdalena</option>
+<option value="123">Pinto · San Francisco Javier</option>
+<option value="077">Pinto · San José</option>
+<option value="078">Pinto · Santo Domingo de Silos</option>
+<option value="081">San Martín de la Vega · Natividad de Nuestra Señora</option>
+<option value="085">Titulcia · Santa María Magdalena</option>
+<option value="089">Valdemoro · Nuestra Señora de la Asunción</option>
+<option value="108">Valdemoro · Nuestra Señora del Pilar</option>
+<option value="126">Valdemoro · San Vicente de Paúl</option>
+<option value="115">Valdemoro · Santiago Apóstol</option>
+</optgroup>
+<optgroup label="Arciprestazgo de Villaviciosa de Odón">
+<option value="018">Boadilla del Monte · San Cristóbal</option>
+<option value="116">Boadilla del Monte · Santo Cristo de la Misericordia</option>
+<option value="019">Boadilla del Monte · Santos Apóstoles</option>
+<option value="020">Brunete · Nuestra Señora de la Asunción</option>
+<option value="079">Quijorna · San Juan Evangelista</option>
+<option value="124">Villanueva de la Cañada · San Carlos Borromeo</option>
+<option value="097">Villanueva de la Cañada · Santa María Soledad Torres Acosta</option>
+<option value="094">Villanueva de la Cañada · Santiago Apóstol</option>
+<option value="096">Villaviciosa de Odón · Santiago Apóstol</option>
+<option value="107">Villaviciosa de Odón · Santísima Trinidad</option>
+</optgroup>
+</select>
+</div>
 <div class="campo">
 <label for="c-quien">Quién escribe</label>
 <span class="ayuda" id="c-quien-ayuda">Cualquier dato que quiera dejar para identificarse: nombre y apellidos, el cargo que
@@ -39,9 +214,10 @@ ocupa o cualquier otra cosa. Es voluntario.</span>
 <p class="comentario-estado" id="c-estado" role="status" aria-live="polite"></p>
 </form>
 <p class="nota">Lo que escriba en este formulario no se publica en el sitio. Se guarda en una hoja de cálculo de Google, privada,
-y solo se usa para leer los comentarios y, si deja un dato de contacto, para responderle. Si quiere que se borre un
-comentario que ha enviado, basta con pedirlo en otro comentario. Más información en el
-<a href="../aviso-legal/index.html">Aviso legal y privacidad</a>.</p>
+y solo se usa para leer los comentarios y, si deja un dato de contacto, para responderle. El nombre y el dato de
+contacto se borran 12 meses después de atender el comentario. Responsable: Charlie Díaz Azarola. Para pedir
+el acceso a sus datos o su borrado, envíe un comentario del tipo «Protección de datos». Más información en el
+<a href="../aviso-legal/index.html#proteccion-de-datos">Aviso legal y privacidad</a>.</p>
 </article>
 <script>
 (function () {
@@ -56,8 +232,26 @@ comentario que ha enviado, basta con pedirlo en otro comentario. Más informaci�
     aviso('El formulario todavía no está disponible.', 'error');
     return;
   }
+  // Precarga desde los enlaces de las fichas: ?parroquia=138&tipo=dato
+  var q = new URLSearchParams(location.search);
+  var sel = form.elements.parroquia;
+  if (q.get('parroquia') && sel.querySelector('option[value="' + q.get('parroquia').replace(/[^0-9]/g, '') + '"]'))
+    sel.value = q.get('parroquia').replace(/[^0-9]/g, '');
+  var r0 = q.get('tipo') && form.querySelector('input[name=tipo][value="' + q.get('tipo').replace(/[^a-z]/g, '') + '"]');
+  if (r0) r0.checked = true;
+  // Página desde la que se llega (solo si es de este mismo sitio)
+  var desde = '';
+  try {
+    var ref = new URL(document.referrer);
+    if (ref.origin === location.origin) desde = decodeURIComponent(ref.pathname);
+  } catch (err) {}
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
+    if (!form.querySelector('input[name=tipo]:checked')) {
+      aviso('Elija el tipo de comentario.', 'error');
+      form.querySelector('input[name=tipo]').focus();
+      return;
+    }
     if (!texto.value.trim()) {
       aviso('Escriba el comentario antes de enviarlo.', 'error');
       texto.focus();
@@ -66,15 +260,31 @@ comentario que ha enviado, basta con pedirlo en otro comentario. Más informaci�
     boton.disabled = true;
     aviso('Enviando…');
     var datos = new URLSearchParams();
-    ['quien', 'contacto', 'comentario', 'web'].forEach(function (n) { datos.append(n, form.elements[n].value); });
-    fetch(URL_ENVIO, { method: 'POST', mode: 'no-cors', body: datos })
-      .then(function () {
-        form.reset();
-        aviso('Gracias. Su comentario se ha enviado correctamente.', 'ok');
+    ['tipo', 'parroquia', 'quien', 'contacto', 'comentario', 'web'].forEach(function (n) { datos.append(n, form.elements[n].value); });
+    datos.append('desde', desde);
+    var MENSAJES = {
+      'demasiados envíos': 'En este momento se están recibiendo muchos comentarios y no se ha podido guardar el suyo. Inténtelo de nuevo dentro de una hora.',
+      'comentario vacío': 'Escriba el comentario antes de enviarlo.'
+    };
+    var ERROR_GENERAL = 'No se ha podido guardar el comentario. Inténtelo de nuevo más tarde.';
+    fetch(URL_ENVIO, { method: 'POST', body: datos })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json().catch(function () { return { ok: false }; });
+      }, function () {
+        return { ok: false, red: true };
       })
-      .catch(function () {
-        aviso('No se ha podido enviar el comentario. Compruebe la conexión a internet e inténtelo de nuevo.', 'error');
+      .then(function (j) {
+        if (j && j.ok) {
+          form.reset();
+          aviso('Gracias. Su comentario se ha recibido y guardado.', 'ok');
+        } else if (j && j.red) {
+          aviso('No se ha podido enviar el comentario. Compruebe la conexión a internet e inténtelo de nuevo.', 'error');
+        } else {
+          aviso((j && MENSAJES[j.error]) || ERROR_GENERAL, 'error');
+        }
       })
+      .catch(function () { aviso(ERROR_GENERAL, 'error'); })
       .then(function () { boton.disabled = false; });
   });
 })();
