@@ -201,10 +201,53 @@ body.imprimir { background: #8d8780; }
 .hoja .imp-clave i { display: inline-block; width: 2.6mm; height: 2.6mm; border-radius: 50%; background: #111; border: .5mm solid #fff; outline: .2mm solid #111; margin-right: 1.5mm; }
 .hoja .imp-pie { grid-column: 1 / -1; font-size: 8.5pt; color: #555; border-top: .2mm solid #bbb; padding-top: 1.5mm; }
 .imp-rotulo { background: none; border: 0; text-align: center; }
+/* «La parroquia en una hoja» (hoja.html de cada parroquia): A4 vertical; la hoja mide lo mismo en pantalla que en papel */
+.hoja-a4 { display: flex; flex-direction: column; gap: 3.5mm; box-sizing: border-box; width: 194mm; height: 281mm; margin: 14mm auto;
+  box-shadow: 0 0 0 8mm #fff; background: #fff; color: #222; font: 9pt/1.32 Georgia, "Times New Roman", serif; overflow: hidden;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.hoja-a4 h1 { margin: 0; font-size: 19pt; line-height: 1.15; color: #7a1f2b; }
+.hoja-a4 h2 { margin: 0 0 1.5mm; font-size: 8.5pt; text-transform: uppercase; letter-spacing: .05em; color: #555; border-bottom: .2mm solid #bbb; }
+.h4-cab { border-bottom: .5mm solid #7a1f2b; padding-bottom: 1.5mm; }
+.h4-cab p { margin: .5mm 0 0; font-size: 10pt; color: #555; }
+.h4-arriba { display: grid; grid-template-columns: 86mm 1fr; gap: 5mm; }
+.h4-mapa { margin: 0; }
+.h4-mapa img { display: block; width: 86mm; height: 86mm; border: .3mm solid #999; }
+.h4-mapa figcaption, .h4-nota { font-size: 7.5pt; color: #666; margin-top: 1mm; }
+.h4-dl { display: grid; grid-template-columns: auto 1fr; gap: .6mm 3mm; margin: 0 0 3mm; }
+.h4-dl dt { color: #666; }
+.h4-dl dd { margin: 0; overflow-wrap: anywhere; }
+.h4-cifras { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; }
+.h4-cifras div { border: .2mm solid #bbb; border-radius: 1.5mm; padding: 1.5mm 2mm; }
+.h4-cifras b { display: block; font-size: 13pt; color: #222; }
+.h4-cifras span { display: block; font-size: 7.5pt; color: #555; line-height: 1.2; }
+.h4-frase { margin: 2.5mm 0 0; font-size: 9pt; }
+.h4-medio { display: grid; grid-template-columns: 70mm 1fr; gap: 5mm; }
+.h4-leyenda { display: flex; justify-content: center; gap: 6mm; font-size: 7.5pt; color: #555; margin-bottom: 1mm; }
+.h4-leyenda i { display: inline-block; width: 2.5mm; height: 2.5mm; margin-right: 1mm; vertical-align: -.2mm; }
+.h4-leyenda i.h, .h4-h span { background: #2a78d6; }
+.h4-leyenda i.m, .h4-m span { background: #eb6834; }
+.h4-pir { display: grid; grid-template-columns: 1fr 11mm 1fr; gap: .45mm 1mm; align-items: center; }
+.h4-h, .h4-m { height: 2.6mm; display: flex; }
+.h4-h { justify-content: flex-end; }
+.h4-h span, .h4-m span { min-width: .2mm; }
+.h4-e { text-align: center; font: 6.5pt/2.6mm Arial, Helvetica, sans-serif; color: #555; }
+.h4-tabla { width: 100%; border-collapse: collapse; font-size: 8.5pt; font-variant-numeric: tabular-nums; }
+.h4-tabla th, .h4-tabla td { padding: .9mm 1.2mm; border-bottom: .2mm solid #ddd; text-align: right; white-space: nowrap; }
+.h4-tabla thead th { font-size: 7.5pt; color: #555; font-weight: normal; text-transform: uppercase; letter-spacing: .03em; }
+.h4-tabla tbody th { text-align: left; font-weight: normal; white-space: normal; }
+.h4-tabla tbody th small { color: #777; }
+.h4-tabla td:nth-child(2) { font-weight: bold; background: #f6efe9; }
+.h4-des ul { margin: 0; padding-left: 4mm; }
+.h4-des li { margin: .5mm 0; }
+.h4-des p { margin: 0; }
+.h4-des { flex: 1; overflow: hidden; }
+.h4-pie { border-top: .2mm solid #bbb; padding-top: 1.2mm; font-size: 7.2pt; color: #555; }
+.h4-pie p { margin: 0 0 .8mm; }
 @media print {
   body.imprimir { background: #fff; }
   .imp-barra { display: none; }
   .hoja { margin: 0; box-shadow: none; page-break-inside: avoid; }
+  .hoja-a4 { margin: 0; box-shadow: none; page-break-inside: avoid; }
 }
 
 .dm-tabla.dm-ancha { width: min(1320px, 100vw - 32px); margin-left: calc((100% - min(1320px, 100vw - 32px)) / 2);
