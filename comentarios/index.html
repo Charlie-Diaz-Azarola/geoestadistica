@@ -204,6 +204,13 @@ ocupa o cualquier otra cosa. Es voluntario.</span>
 <input type="text" id="c-contacto" name="contacto" maxlength="500" aria-describedby="c-contacto-ayuda">
 </div>
 <div class="campo">
+<label class="opcion" for="c-consiento"><input type="checkbox" id="c-consiento" name="consiento" value="si"
+aria-describedby="c-consiento-ayuda"> Consiento expresamente que se traten el nombre y el dato de contacto que dejo, que pueden
+revelar mi vinculación con una parroquia, para leer y responder este comentario.</label>
+<span class="ayuda" id="c-consiento-ayuda">Solo es necesario si escribe algo en «Quién escribe» o en el dato de contacto.
+Ver el <a href="../aviso-legal/index.html#proteccion-de-datos">Aviso legal y privacidad</a>.</span>
+</div>
+<div class="campo">
 <label for="c-texto">Comentario</label>
 <span class="ayuda" id="c-texto-ayuda">Escriba aquí su comentario, con la extensión que necesite.</span>
 <textarea id="c-texto" name="comentario" maxlength="20000" rows="12" required aria-describedby="c-texto-ayuda"></textarea>
@@ -215,7 +222,8 @@ ocupa o cualquier otra cosa. Es voluntario.</span>
 </form>
 <p class="nota">Lo que escriba en este formulario no se publica en el sitio. Se guarda en una hoja de cálculo de Google, privada,
 y solo se usa para leer los comentarios y, si deja un dato de contacto, para responderle. El nombre y el dato de
-contacto se borran 12 meses después de atender el comentario. Responsable: Charlie Díaz Azarola. Para pedir
+contacto se borran 12 meses después de atender el comentario y, en todo caso, a los 24 meses
+de recibirlo. Responsable: Charlie Díaz Azarola. Para pedir
 el acceso a sus datos o su borrado, envíe un comentario del tipo «Protección de datos». Más información en el
 <a href="../aviso-legal/index.html#proteccion-de-datos">Aviso legal y privacidad</a>.</p>
 </article>
@@ -257,12 +265,20 @@ el acceso a sus datos o su borrado, envíe un comentario del tipo «Protección 
       texto.focus();
       return;
     }
+    var consiento = form.elements.consiento;
+    if ((form.elements.quien.value.trim() || form.elements.contacto.value.trim()) && !consiento.checked) {
+      aviso('Para enviar su nombre o su dato de contacto, marque la casilla de consentimiento. Si lo prefiere, déjelos en blanco.', 'error');
+      consiento.focus();
+      return;
+    }
     boton.disabled = true;
     aviso('Enviando…');
     var datos = new URLSearchParams();
     ['tipo', 'parroquia', 'quien', 'contacto', 'comentario', 'web'].forEach(function (n) { datos.append(n, form.elements[n].value); });
     datos.append('desde', desde);
+    datos.append('consiento', consiento.checked ? 'si' : '');
     var MENSAJES = {
+      'falta consentimiento': 'Para enviar su nombre o su dato de contacto, marque la casilla de consentimiento.',
       'demasiados envíos': 'En este momento se están recibiendo muchos comentarios y no se ha podido guardar el suyo. Inténtelo de nuevo dentro de una hora.',
       'comentario vacío': 'Escriba el comentario antes de enviarlo.'
     };
