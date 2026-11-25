@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Temas de lo más visto en YouTube · Estudios · Geoestadística de la Diócesis de Getafe</title>
 <meta name="description" content="De qué tratan los vídeos más vistos en España: los temas más presentes en la última consulta y en el último día, la última semana y las últimas cuatro semanas, con datos de YouTube que se actualizan cada hora.">
-<link rel="stylesheet" href="../../assets/estilo.css?v=69c23fe4">
+<link rel="stylesheet" href="../../assets/estilo.css?v=cf5eae6c">
 </head>
 <body>
 <header><div class="ancho"><a href="../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Estudios</p></div></header>
@@ -35,7 +35,8 @@
 <p>Escriba una palabra o una frase y verá cuántos vídeos de los más vistos la llevan en el título en cada una de las últimas cuatro
 semanas, contando una sola vez cada vídeo que estuvo en la lista durante esa semana, aunque estuviera varios días. Se aplica el mismo criterio que en el diccionario de temas: no se distinguen mayúsculas ni
 tildes, y un asterisco al final admite cualquier terminación (<code>catolic*</code> incluye «católico» y «católica»).
-Solo se miran los títulos, no el contenido de los vídeos. Lo que escriba no se guarda.</p>
+Solo se miran los títulos, no el contenido de los vídeos. Debajo de la tabla aparecen los vídeos encontrados; cada
+título enlaza con el vídeo en YouTube. Lo que escriba no se guarda.</p>
 <form class="et-buscar" id="et-buscar" role="search">
 <label for="et-q">Palabra o frase</label>
 <input id="et-q" type="search" maxlength="40" autocomplete="off" required>
@@ -258,6 +259,47 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
       '<thead><tr><th scope="col">Semana</th><th scope="col">Las dos listas</th><th scope="col">Populares</th><th scope="col">Recientes</th></tr></thead>' +
       '<tbody>' + filas.join('') + '</tbody></table></div>';
   }
+  // Resalta en el título original las palabras que coinciden con la búsqueda (mismo criterio que el servicio:
+  // sin mayúsculas ni tildes, palabras enteras y «*» final como cualquier terminación)
+  function sinTildes(t) { return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+  function resaltar(titulo, clave) {
+    var pal = String(clave || '').split(' ').filter(Boolean), pref = /\*$/.test(clave);
+    if (pref) pal[pal.length - 1] = pal[pal.length - 1].replace(/\*$/, '');
+    var fichas = [], act = null, chars = Array.from(titulo), pos = 0;
+    chars.forEach(function (ch) {
+      var nch = sinTildes(ch);
+      if (/^[a-z0-9.]+$/.test(nch)) {
+        if (!act) act = { ini: pos, txt: '' };
+        act.txt += nch; act.fin = pos + ch.length;
+      } else if (act) { fichas.push(act); act = null; }
+      pos += ch.length;
+    });
+    if (act) fichas.push(act);
+    var tramos = [];
+    for (var i = 0; i + pal.length <= fichas.length && pal.length; i++) {
+      var ok = pal.every(function (p, k) {
+        var t = fichas[i + k].txt;
+        return pref && k === pal.length - 1 ? t.indexOf(p) === 0 : t === p;
+      });
+      if (ok) { tramos.push([fichas[i].ini, fichas[i + pal.length - 1].fin]); i += pal.length - 1; }
+    }
+    var out = '', ult = 0;
+    tramos.forEach(function (t) { out += esc(titulo.slice(ult, t[0])) + '<mark>' + esc(titulo.slice(t[0], t[1])) + '</mark>'; ult = t[1]; });
+    return out + esc(titulo.slice(ult));
+  }
+  // Lista de los vídeos encontrados (r.videos: de la semana más reciente a la más antigua, y por orden alfabético)
+  function listaVideos(r, q) {
+    if (!r || r.error || !r.videos || !r.videos.length) return '';
+    var total = r.videosTotal || r.videos.length;
+    var cab = '<h4>Vídeos con «' + esc(q) + '» en el título (' + n(total) + ')</h4>';
+    var nota = '<p class="nota">De la semana más reciente a la más antigua y, dentro de cada semana, por orden alfabético. ' +
+      (total > r.videos.length ? 'Se muestran los ' + n(r.videos.length) + ' primeros. ' : '') +
+      'Cada título abre el vídeo en YouTube; alguno puede haber sido retirado después.</p>';
+    return '<div class="et-videos">' + cab + nota + '<ol>' + r.videos.map(function (v) {
+      return '<li><a href="https://www.youtube.com/watch?v=' + encodeURIComponent(v.id) + '" target="_blank" rel="noopener">' +
+        resaltar(String(v.titulo || ''), r.busqueda) + '</a></li>';
+    }).join('') + '</ol></div>';
+  }
   document.getElementById('et-buscar').addEventListener('submit', function (ev) {
     ev.preventDefault();
     var q = document.getElementById('et-q').value.trim().slice(0, 40);
@@ -269,7 +311,7 @@ cualquier final: <code>futbol*</code> incluye «futbolista») y categorías de Y
       boton.disabled = false;
       var o = respuestaBusqueda(r, q);
       res.textContent = o.texto; res.className = 'et-res' + (o.error ? ' error' : '');
-      resSem.innerHTML = tablaSemanas(r, q);
+      resSem.innerHTML = tablaSemanas(r, q) + listaVideos(r, q);
     }
     var reloj = setTimeout(function () { fin(null); }, 20000);
     window[nombre] = fin;
