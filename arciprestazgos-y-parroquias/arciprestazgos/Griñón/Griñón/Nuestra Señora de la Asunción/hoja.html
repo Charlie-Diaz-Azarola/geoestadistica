@@ -9,7 +9,7 @@
 <style>@page { size: A4 portrait; margin: 8mm; }</style>
 </head>
 <body class="imprimir">
-<div class="imp-barra"><a href="index.html">← Volver a la ficha de la parroquia</a>
+<div class="imp-barra"><a href="index.html" onclick="var f = new URL('index.html', location.href).href.replace(/index\.html$/, ''), r = document.referrer.split('#')[0].split('?')[0].replace(/index\.html$/, ''); if (r === f &amp;&amp; history.length > 1) history.back(); else location.replace(this.href); return false;">← Volver a la ficha de la parroquia</a>
 <button type="button" class="boton" onclick="window.print()">Imprimir o guardar como PDF</button>
 <span>Papel A4, orientación vertical. En las opciones de impresión, active «Gráficos de fondo».</span></div>
 <div class="hoja-a4">
