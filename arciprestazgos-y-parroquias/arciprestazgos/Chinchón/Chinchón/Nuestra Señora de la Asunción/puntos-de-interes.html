@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puntos de interés · Nuestra Señora de la Asunción · Chinchón · Geoestadística de la Diócesis de Getafe</title>
+<meta name="description" content="Entidades religiosas no católicas y centros educativos en el territorio de la parroquia Nuestra Señora de la Asunción (Chinchón)">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=356bf9c7">
+</head>
+<body>
+<header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
+<main class="ancho">
+<nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Chinchón</a> › <a href="../../index.html#chinchon">Chinchón</a> › <a href="index.html">Nuestra Señora de la Asunción</a> › Puntos de interés</nav>
+<p class="volver"><a class="boton secundario" href="index.html">← Volver a la ficha de la parroquia</a></p>
+<article class="ficha">
+<h2>Puntos de interés en el territorio parroquial</h2>
+<p>Parroquia Nuestra Señora de la Asunción (Chinchón) · Arciprestazgo de Chinchón</p>
+<div class="puntos-selector"><label for="tipo-puntos">Tipo de puntos de interés</label>
+<select id="tipo-puntos"><option value="entidades">Entidades religiosas no católicas</option><option value="centros">Centros educativos</option></select></div>
+<section class="puntos" id="entidades">
+<h3>Entidades religiosas no católicas</h3>
+<p class="vacio">No hay ninguna entidad religiosa no católica en el territorio de esta parroquia.</p>
+</section>
+<section class="puntos" id="centros">
+<h3>Centros educativos</h3>
+<figure class="puntos-mapa"><a href="../../../../puntos-de-interes/centros/029.jpg"><img src="../../../../puntos-de-interes/centros/029.jpg" alt="Mapa de centros educativos en el territorio de la parroquia Nuestra Señora de la Asunción"></a>
+<figcaption>El punto rojo marca la ubicación de la parroquia. El mapa puede mostrar también puntos cercanos de fuera del territorio; la lista recoge solo los de dentro.</figcaption></figure>
+<p>5 centros educativos en el territorio de la parroquia (público: 4, privado: 1).</p>
+<div class="tabla"><table class="desarrollos">
+<thead><tr><th>Centro</th><th>Tipo</th><th>Titularidad</th><th>Domicilio</th><th>Web</th></tr></thead>
+<tbody>
+<tr><td><strong>CARPE DIEM</strong></td><td>Instituto de educación secundaria</td><td>Público</td><td>Calle Álvarez Laviada, 3, 28370 Chinchón</td><td><a href="http://www.educa.madrid.org/ies.carpediem.chinchon" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>CHINCHON</strong></td><td>Escuela municipal de música</td><td>Público</td><td>Avenida del Generalísimo (Los Huertos), 72, 28370 Chinchón</td><td><a href="http://www.educa.madrid.org/em.chinchon" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>COLORINES</strong></td><td>Escuela infantil privada</td><td>Privado</td><td>Calle Villaviciosa de Odón, 6, 28370 Chinchón</td><td></td></tr>
+<tr><td><strong>EL RINCON MAGICO</strong></td><td>Escuela infantil-casa de niños</td><td>Público</td><td>Calle del Teniente Ortiz de Zarate, 19, 28370 Chinchón</td><td><a href="http://www.educa.madrid.org/cn.chinchon" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>HERMANOS ORTIZ DE ZARATE</strong></td><td>Colegio de educación infantil y primaria</td><td>Público</td><td>Calle Sociedad de Cosecheros, 2, 28370 Chinchón</td><td><a href="http://www.educa.madrid.org/cp.ortizdezarate.chinchon" target="_blank" rel="noopener">Página web</a></td></tr>
+</tbody></table></div>
+<p class="nota">Fuente: registro de centros educativos de la Comunidad de Madrid. Solo se recogen los centros de alta.</p>
+</section>
+<script>
+(function () {
+  var s = document.getElementById('tipo-puntos'), b = document.querySelectorAll('section.puntos');
+  function ver() { for (var i = 0; i < b.length; i++) b[i].hidden = b[i].id !== s.value; }
+  var h = location.hash.slice(1);
+  for (var i = 0; i < s.options.length; i++) if (s.options[i].value === h) s.value = h;
+  s.addEventListener('change', function () { ver(); history.replaceState(null, '', '#' + s.value); });
+  ver();
+})();
+</script>
+</article>
+</main>
+<footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales. · <a href="../../../../../verificar-los-datos/index.html">Cómo verificar los datos</a> · <a href="../../../../../aviso-legal/index.html">Aviso legal y privacidad</a> · <a href="../../../../../comentarios/index.html">Dejar un comentario</a></div></footer>
+</body>
+</html>

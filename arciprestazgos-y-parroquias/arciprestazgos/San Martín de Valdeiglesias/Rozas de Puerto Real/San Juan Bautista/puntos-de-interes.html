@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puntos de interés · San Juan Bautista · Rozas de Puerto Real · Geoestadística de la Diócesis de Getafe</title>
+<meta name="description" content="Entidades religiosas no católicas y centros educativos en el territorio de la parroquia San Juan Bautista (Rozas de Puerto Real)">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=356bf9c7">
+</head>
+<body>
+<header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
+<main class="ancho">
+<nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">San Martín de Valdeiglesias</a> › <a href="../../index.html#rozas-de-puerto-real">Rozas de Puerto Real</a> › <a href="index.html">San Juan Bautista</a> › Puntos de interés</nav>
+<p class="volver"><a class="boton secundario" href="index.html">← Volver a la ficha de la parroquia</a></p>
+<article class="ficha">
+<h2>Puntos de interés en el territorio parroquial</h2>
+<p>Parroquia San Juan Bautista (Rozas de Puerto Real) · Arciprestazgo de San Martín de Valdeiglesias</p>
+<div class="puntos-selector"><label for="tipo-puntos">Tipo de puntos de interés</label>
+<select id="tipo-puntos"><option value="entidades">Entidades religiosas no católicas</option><option value="centros">Centros educativos</option></select></div>
+<section class="puntos" id="entidades">
+<h3>Entidades religiosas no católicas</h3>
+<p class="vacio">No hay ninguna entidad religiosa no católica en el territorio de esta parroquia.</p>
+</section>
+<section class="puntos" id="centros">
+<h3>Centros educativos</h3>
+<figure class="puntos-mapa"><a href="../../../../puntos-de-interes/centros/080.jpg"><img src="../../../../puntos-de-interes/centros/080.jpg" alt="Mapa de centros educativos en el territorio de la parroquia San Juan Bautista"></a>
+<figcaption>El punto rojo marca la ubicación de la parroquia. El mapa puede mostrar también puntos cercanos de fuera del territorio; la lista recoge solo los de dentro.</figcaption></figure>
+<p>3 centros educativos en el territorio de la parroquia (público: 2, privado: 1).</p>
+<div class="tabla"><table class="desarrollos">
+<thead><tr><th>Centro</th><th>Tipo</th><th>Titularidad</th><th>Domicilio</th><th>Web</th></tr></thead>
+<tbody>
+<tr><td><strong>CARLOS RUIZ</strong></td><td>Colegio de educación infantil y primaria</td><td>Público</td><td>Calle de Antonio Machado, 48, 28649 Rozas de Puerto Real</td><td><a href="http://www.educa.madrid.org/cp.carlosruiz.rozasdepuertoreal" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>ILUSIONES</strong></td><td>Escuela infantil-casa de niños</td><td>Público</td><td>Avenida de la Constitución, 32, 28649 Rozas de Puerto Real</td><td><a href="http://www.educa.madrid.org/cn.ilusiones.rozasdepuertoreal" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>SEMINARIO ARZOBISPAL LA INMACULADA Y SAN DAMASO</strong></td><td>Centro privado de educación primaria y secundaria</td><td>Privado</td><td>Carretera Alcorcon-Plasencia, k. 67, 28649 Rozas de Puerto Real</td><td><a href="http://www.rozascs.org" target="_blank" rel="noopener">Página web</a></td></tr>
+</tbody></table></div>
+<p class="nota">Fuente: registro de centros educativos de la Comunidad de Madrid. Solo se recogen los centros de alta.</p>
+</section>
+<script>
+(function () {
+  var s = document.getElementById('tipo-puntos'), b = document.querySelectorAll('section.puntos');
+  function ver() { for (var i = 0; i < b.length; i++) b[i].hidden = b[i].id !== s.value; }
+  var h = location.hash.slice(1);
+  for (var i = 0; i < s.options.length; i++) if (s.options[i].value === h) s.value = h;
+  s.addEventListener('change', function () { ver(); history.replaceState(null, '', '#' + s.value); });
+  ver();
+})();
+</script>
+</article>
+</main>
+<footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales. · <a href="../../../../../verificar-los-datos/index.html">Cómo verificar los datos</a> · <a href="../../../../../aviso-legal/index.html">Aviso legal y privacidad</a> · <a href="../../../../../comentarios/index.html">Dejar un comentario</a></div></footer>
+</body>
+</html>

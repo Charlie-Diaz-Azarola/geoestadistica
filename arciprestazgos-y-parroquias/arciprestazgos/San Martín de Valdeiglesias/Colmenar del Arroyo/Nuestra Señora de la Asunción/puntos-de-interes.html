@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puntos de interés · Nuestra Señora de la Asunción · Colmenar del Arroyo · Geoestadística de la Diócesis de Getafe</title>
+<meta name="description" content="Entidades religiosas no católicas y centros educativos en el territorio de la parroquia Nuestra Señora de la Asunción (Colmenar del Arroyo)">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=356bf9c7">
+</head>
+<body>
+<header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
+<main class="ancho">
+<nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">San Martín de Valdeiglesias</a> › <a href="../../index.html#colmenar-del-arroyo">Colmenar del Arroyo</a> › <a href="index.html">Nuestra Señora de la Asunción</a> › Puntos de interés</nav>
+<p class="volver"><a class="boton secundario" href="index.html">← Volver a la ficha de la parroquia</a></p>
+<article class="ficha">
+<h2>Puntos de interés en el territorio parroquial</h2>
+<p>Parroquia Nuestra Señora de la Asunción (Colmenar del Arroyo) · Arciprestazgo de San Martín de Valdeiglesias</p>
+<div class="puntos-selector"><label for="tipo-puntos">Tipo de puntos de interés</label>
+<select id="tipo-puntos"><option value="entidades">Entidades religiosas no católicas</option><option value="centros">Centros educativos</option></select></div>
+<section class="puntos" id="entidades">
+<h3>Entidades religiosas no católicas</h3>
+<figure class="puntos-mapa"><a href="../../../../puntos-de-interes/entidades/026.jpg"><img src="../../../../puntos-de-interes/entidades/026.jpg" alt="Mapa de entidades religiosas no católicas en el territorio de la parroquia Nuestra Señora de la Asunción"></a>
+<figcaption>El punto rojo marca la ubicación de la parroquia. El mapa puede mostrar también puntos cercanos de fuera del territorio; la lista recoge solo los de dentro.</figcaption></figure>
+<p>1 entidad religiosa no católica en el territorio de la parroquia.</p>
+<h4>Musulmanes (1)</h4>
+<ul class="puntos-lista">
+<li><strong>Comunidad Islámica de Colmenar de Arroyo (Madrid)</strong><span class="nota">Plaza Calvo Sotelo 1, Colmenar del Arroyo</span></li>
+</ul>
+<p class="nota">Fuente: Registro de Entidades Religiosas del Ministerio de la Presidencia, Justicia y Relaciones con las Cortes. Situación en el mapa: dirección geocodificada con CartoCiudad (IGN) o Nominatim (OpenStreetMap).</p>
+</section>
+<section class="puntos" id="centros">
+<h3>Centros educativos</h3>
+<figure class="puntos-mapa"><a href="../../../../puntos-de-interes/centros/026.jpg"><img src="../../../../puntos-de-interes/centros/026.jpg" alt="Mapa de centros educativos en el territorio de la parroquia Nuestra Señora de la Asunción"></a>
+<figcaption>El punto rojo marca la ubicación de la parroquia. El mapa puede mostrar también puntos cercanos de fuera del territorio; la lista recoge solo los de dentro.</figcaption></figure>
+<p>2 centros educativos en el territorio de la parroquia (público: 2).</p>
+<div class="tabla"><table class="desarrollos">
+<thead><tr><th>Centro</th><th>Tipo</th><th>Titularidad</th><th>Domicilio</th><th>Web</th></tr></thead>
+<tbody>
+<tr><td><strong>LA OLMA</strong></td><td>Escuela infantil-casa de niños</td><td>Público</td><td>Calle Guillermo Bonet, s/n, 28213 Colmenar del Arroyo</td><td><a href="http://www.educa.madrid.org/cn.laolma.colmenardelarroyo" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>SAN VICENTE</strong></td><td>Colegio de educación infantil y primaria</td><td>Público</td><td>Calle Escuelas, 1, 28213 Colmenar del Arroyo</td><td><a href="http://www.educa.madrid.org/cp.sanvicente.colmenardelarroyo" target="_blank" rel="noopener">Página web</a></td></tr>
+</tbody></table></div>
+<p class="nota">Fuente: registro de centros educativos de la Comunidad de Madrid. Solo se recogen los centros de alta.</p>
+</section>
+<script>
+(function () {
+  var s = document.getElementById('tipo-puntos'), b = document.querySelectorAll('section.puntos');
+  function ver() { for (var i = 0; i < b.length; i++) b[i].hidden = b[i].id !== s.value; }
+  var h = location.hash.slice(1);
+  for (var i = 0; i < s.options.length; i++) if (s.options[i].value === h) s.value = h;
+  s.addEventListener('change', function () { ver(); history.replaceState(null, '', '#' + s.value); });
+  ver();
+})();
+</script>
+</article>
+</main>
+<footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales. · <a href="../../../../../verificar-los-datos/index.html">Cómo verificar los datos</a> · <a href="../../../../../aviso-legal/index.html">Aviso legal y privacidad</a> · <a href="../../../../../comentarios/index.html">Dejar un comentario</a></div></footer>
+</body>
+</html>

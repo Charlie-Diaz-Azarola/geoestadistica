@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puntos de interés · San Benito Menni · Fuenlabrada · Geoestadística de la Diócesis de Getafe</title>
+<meta name="description" content="Entidades religiosas no católicas y centros educativos en el territorio de la parroquia San Benito Menni (Fuenlabrada)">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=356bf9c7">
+</head>
+<body>
+<header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
+<main class="ancho">
+<nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Fuenlabrada</a> › <a href="../../index.html#fuenlabrada">Fuenlabrada</a> › <a href="index.html">San Benito Menni</a> › Puntos de interés</nav>
+<p class="volver"><a class="boton secundario" href="index.html">← Volver a la ficha de la parroquia</a></p>
+<article class="ficha">
+<h2>Puntos de interés en el territorio parroquial</h2>
+<p>Parroquia San Benito Menni (Fuenlabrada) · Arciprestazgo de Fuenlabrada</p>
+<div class="puntos-selector"><label for="tipo-puntos">Tipo de puntos de interés</label>
+<select id="tipo-puntos"><option value="entidades">Entidades religiosas no católicas</option><option value="centros">Centros educativos</option></select></div>
+<section class="puntos" id="entidades">
+<h3>Entidades religiosas no católicas</h3>
+<figure class="puntos-mapa"><a href="../../../../puntos-de-interes/entidades/110.jpg"><img src="../../../../puntos-de-interes/entidades/110.jpg" alt="Mapa de entidades religiosas no católicas en el territorio de la parroquia San Benito Menni"></a>
+<figcaption>El punto rojo marca la ubicación de la parroquia. El mapa puede mostrar también puntos cercanos de fuera del territorio; la lista recoge solo los de dentro.</figcaption></figure>
+<p>2 entidades religiosas no católicas en el territorio de la parroquia.</p>
+<h4>Evangélicos (2)</h4>
+<ul class="puntos-lista">
+<li><strong>Iglesia Evangélica Reformada Casa del Pan</strong><span class="nota">Calle Méjico 5 Local 2, Fuenlabrada</span></li>
+<li><strong>Movimiento Misionero Mundial (MMM)</strong><span class="nota">Avenida de los Andes 12-14, Fuenlabrada</span></li>
+</ul>
+<p class="nota">Fuente: Registro de Entidades Religiosas del Ministerio de la Presidencia, Justicia y Relaciones con las Cortes. Situación en el mapa: dirección geocodificada con CartoCiudad (IGN) o Nominatim (OpenStreetMap).</p>
+</section>
+<section class="puntos" id="centros">
+<h3>Centros educativos</h3>
+<figure class="puntos-mapa"><a href="../../../../puntos-de-interes/centros/110.jpg"><img src="../../../../puntos-de-interes/centros/110.jpg" alt="Mapa de centros educativos en el territorio de la parroquia San Benito Menni"></a>
+<figcaption>El punto rojo marca la ubicación de la parroquia. El mapa puede mostrar también puntos cercanos de fuera del territorio; la lista recoge solo los de dentro.</figcaption></figure>
+<p>4 centros educativos en el territorio de la parroquia (público: 2, privado concertado: 1, privado: 1).</p>
+<div class="tabla"><table class="desarrollos">
+<thead><tr><th>Centro</th><th>Tipo</th><th>Titularidad</th><th>Domicilio</th><th>Web</th></tr></thead>
+<tbody>
+<tr><td><strong>ALTAMIRA</strong></td><td>Centro privado de educación infantil, primaria y secundaria</td><td>Privado concertado</td><td>Calle Gerona, 4, 28945 Fuenlabrada</td><td><a href="https://www.colegioaltamira.es/" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>ALTAMIRA MUNDO DE TALENTO</strong></td><td>Centro privado de formación profesional específica</td><td>Privado</td><td>Calle Gerona, 4, 28945 Fuenlabrada</td><td></td></tr>
+<tr><td><strong>GINER DE LOS RIOS</strong></td><td>Colegio de educación infantil y primaria</td><td>Público</td><td>Avenida de los Andes, s/n, 28945 Fuenlabrada</td><td><a href="http://www.educa.madrid.org/cp.ginerdelosrios.fuenlabrada" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>JOSE LUIS LOPEZ ARANGUREN</strong></td><td>Instituto de educación secundaria</td><td>Público</td><td>Calle de Colombia, 28-30, 28945 Fuenlabrada</td><td><a href="https://www.educa2.madrid.org/web/centro.ies.lopezaranguren.fuenlabrada" target="_blank" rel="noopener">Página web</a></td></tr>
+</tbody></table></div>
+<p class="nota">Fuente: registro de centros educativos de la Comunidad de Madrid. Solo se recogen los centros de alta.</p>
+</section>
+<script>
+(function () {
+  var s = document.getElementById('tipo-puntos'), b = document.querySelectorAll('section.puntos');
+  function ver() { for (var i = 0; i < b.length; i++) b[i].hidden = b[i].id !== s.value; }
+  var h = location.hash.slice(1);
+  for (var i = 0; i < s.options.length; i++) if (s.options[i].value === h) s.value = h;
+  s.addEventListener('change', function () { ver(); history.replaceState(null, '', '#' + s.value); });
+  ver();
+})();
+</script>
+</article>
+</main>
+<footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales. · <a href="../../../../../verificar-los-datos/index.html">Cómo verificar los datos</a> · <a href="../../../../../aviso-legal/index.html">Aviso legal y privacidad</a> · <a href="../../../../../comentarios/index.html">Dejar un comentario</a></div></footer>
+</body>
+</html>

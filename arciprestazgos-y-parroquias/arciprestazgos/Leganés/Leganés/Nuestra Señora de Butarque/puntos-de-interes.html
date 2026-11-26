@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puntos de interés · Nuestra Señora de Butarque · Leganés · Geoestadística de la Diócesis de Getafe</title>
+<meta name="description" content="Entidades religiosas no católicas y centros educativos en el territorio de la parroquia Nuestra Señora de Butarque (Leganés)">
+<link rel="stylesheet" href="../../../../../assets/estilo.css?v=356bf9c7">
+</head>
+<body>
+<header><div class="ancho"><a href="../../../../../index.html"><h1>Geoestadística de la Diócesis de Getafe</h1></a><p class="sub">Arciprestazgos y parroquias de la Diócesis de Getafe</p></div></header>
+<main class="ancho">
+<nav class="miga"><a href="../../../../../index.html">Geoestadística</a> › <a href="../../../../index.html">Arciprestazgos y parroquias</a> › <a href="../../index.html">Leganés</a> › <a href="../../index.html#leganes">Leganés</a> › <a href="index.html">Nuestra Señora de Butarque</a> › Puntos de interés</nav>
+<p class="volver"><a class="boton secundario" href="index.html">← Volver a la ficha de la parroquia</a></p>
+<article class="ficha">
+<h2>Puntos de interés en el territorio parroquial</h2>
+<p>Parroquia Nuestra Señora de Butarque (Leganés) · Arciprestazgo de Leganés</p>
+<div class="puntos-selector"><label for="tipo-puntos">Tipo de puntos de interés</label>
+<select id="tipo-puntos"><option value="entidades">Entidades religiosas no católicas</option><option value="centros">Centros educativos</option></select></div>
+<section class="puntos" id="entidades">
+<h3>Entidades religiosas no católicas</h3>
+<figure class="puntos-mapa"><a href="../../../../puntos-de-interes/entidades/104.jpg"><img src="../../../../puntos-de-interes/entidades/104.jpg" alt="Mapa de entidades religiosas no católicas en el territorio de la parroquia Nuestra Señora de Butarque"></a>
+<figcaption>El punto rojo marca la ubicación de la parroquia. El mapa puede mostrar también puntos cercanos de fuera del territorio; la lista recoge solo los de dentro.</figcaption></figure>
+<p>2 entidades religiosas no católicas en el territorio de la parroquia.</p>
+<h4>Evangélicos (2)</h4>
+<ul class="puntos-lista">
+<li><strong>Iglesia Bautista de Leganés</strong><span class="nota">Plaza de Navarrevisca 1 Bajo A, Leganés</span></li>
+<li><strong>Iglesia Evangélica de Hermanos de Getafe</strong><span class="nota">Avenida del 2 de Mayo 5, Leganés</span></li>
+</ul>
+<p class="nota">Fuente: Registro de Entidades Religiosas del Ministerio de la Presidencia, Justicia y Relaciones con las Cortes. Situación en el mapa: dirección geocodificada con CartoCiudad (IGN) o Nominatim (OpenStreetMap).</p>
+</section>
+<section class="puntos" id="centros">
+<h3>Centros educativos</h3>
+<figure class="puntos-mapa"><a href="../../../../puntos-de-interes/centros/104.jpg"><img src="../../../../puntos-de-interes/centros/104.jpg" alt="Mapa de centros educativos en el territorio de la parroquia Nuestra Señora de Butarque"></a>
+<figcaption>El punto rojo marca la ubicación de la parroquia. El mapa puede mostrar también puntos cercanos de fuera del territorio; la lista recoge solo los de dentro.</figcaption></figure>
+<p>5 centros educativos en el territorio de la parroquia (público: 3, privado: 2).</p>
+<div class="tabla"><table class="desarrollos">
+<thead><tr><th>Centro</th><th>Tipo</th><th>Titularidad</th><th>Domicilio</th><th>Web</th></tr></thead>
+<tbody>
+<tr><td><strong>BUTARQUE</strong></td><td>Instituto de educación secundaria</td><td>Público</td><td>Calle Adolfo Marsillach, 5, 28918 Leganés</td><td><a href="http://www.educa.madrid.org/ies.butarque.leganes" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>CAMPUS FP LEGANES</strong></td><td>Centro privado de formación profesional específica</td><td>Privado</td><td>Calle Siete Picos, 6, 28912 Leganés</td><td><a href="http://www.campusfp.es" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>EL SOL</strong></td><td>Escuela infantil privada</td><td>Privado</td><td>Calle Butarque, 42, 28912 Leganés</td><td><a href="http://www.preescolarelsol.com" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>JACINTO BENAVENTE</strong></td><td>Colegio de educación infantil y primaria</td><td>Público</td><td>Calle Adolfo Marsillach, 3, 28914 Leganés</td><td><a href="http://www.educa.madrid.org/cp.jacintobenavente.leganes" target="_blank" rel="noopener">Página web</a></td></tr>
+<tr><td><strong>JUAN DE AUSTRIA</strong></td><td>Colegio de educación infantil y primaria</td><td>Público</td><td>Avenida Universidad, 28, 28911 Leganés</td><td><a href="http://www.educa.madrid.org/cp.juandeaustria.leganes" target="_blank" rel="noopener">Página web</a></td></tr>
+</tbody></table></div>
+<p class="nota">Fuente: registro de centros educativos de la Comunidad de Madrid. Solo se recogen los centros de alta.</p>
+</section>
+<script>
+(function () {
+  var s = document.getElementById('tipo-puntos'), b = document.querySelectorAll('section.puntos');
+  function ver() { for (var i = 0; i < b.length; i++) b[i].hidden = b[i].id !== s.value; }
+  var h = location.hash.slice(1);
+  for (var i = 0; i < s.options.length; i++) if (s.options[i].value === h) s.value = h;
+  s.addEventListener('change', function () { ver(); history.replaceState(null, '', '#' + s.value); });
+  ver();
+})();
+</script>
+</article>
+</main>
+<footer><div class="ancho">Geoestadística de la Diócesis de Getafe · Mapa base © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. Los territorios y las extensiones se calculan a partir de la delimitación de los territorios parroquiales. · <a href="../../../../../verificar-los-datos/index.html">Cómo verificar los datos</a> · <a href="../../../../../aviso-legal/index.html">Aviso legal y privacidad</a> · <a href="../../../../../comentarios/index.html">Dejar un comentario</a></div></footer>
+</body>
+</html>
