@@ -1,2 +1,2 @@
 Versión del atlas: 03. Según geopackage del 14-nov-26
-Originales: Distribución territorial de parroquias\Atlas\03. Según geopackage del 14-nov-26
+Originales: Geoestadística\Atlas\03. Según geopackage del 14-nov-26
